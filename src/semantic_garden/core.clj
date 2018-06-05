@@ -23,14 +23,40 @@
   [x]
   (println x "Hello, World!"))
 
+(defn w [out s]
+  (.write out s))
+
+(defn parser [filename out]
+  (proxy [LessParserBaseListener] []
+    (enterStylesheet [ctx]
+      (println "CTX" (.getText ctx))
+      (w out (str "(ns "
+                  filename ")\n")))
+
+    (enterRuleset [ctx]
+      (println "CTX" (.getText ctx))
+      (w out (str "\n(def ")))
+
+    (exitRuleset [ctx]
+      (println "CTX" (.getText ctx))
+      (w out (str ")\n")))
+
+    (enterSelector [ctx]
+      (w out (str "[" (.getText ctx) "]")))))
 
 (comment
   (with-open [output (clojure.java.io/writer "out.stream" :encoding "UTF-8")]
-    (let [is (ANTLRInputStream. (slurp (io/resource "Semantic-UI/src/definitions/collections/form.less")))
+    (let [root "Semantic-UI/src/definitions/"
+          filename "collections/form"
+          ext ".less"
+          is (ANTLRInputStream. (slurp (io/resource (str
+                                                     root
+                                                     filename
+                                                     ext))))
           lessLexer (LessLexer. is)
           tokenStream (CommonTokenStream. lessLexer)
           tokenParser (LessParser. tokenStream)
-          lessListener (LessParserBaseListener. )
+          lessListener (parser filename output)
           stylesheet (.stylesheet tokenParser)
           ]
       (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)))
