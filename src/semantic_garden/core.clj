@@ -1,5 +1,5 @@
 (ns semantic-garden.core
-  (:require ;;[clj-antlr.core :as antlr]
+  (:require [clj-antlr.coerce :as antlr.coerce]
             [clojure.java.io :as io])
   (:import
    (lessparser LessLexer
@@ -27,23 +27,74 @@
   (.write out s))
 
 (defn parser [filename out]
-  (proxy [LessParserBaseListener] []
-    (enterStylesheet [ctx]
-      (println "CTX" (.getText ctx))
-      (w out (str "(ns "
-                  filename ")\n")))
+  (let [cursor (atom {})
+        add-to-cursor! (fn [content]
+                         (swap! cursor #(merge-with into % content)))
+        add! (fn [content]
+            (swap! out #(merge-with into % content)))
+        commit-cursor! (fn []
+                         (add! {:elements [@cursor]})
+                         (reset! cursor {}))
+        ]
+    (proxy [LessParserBaseListener] []
+      (enterStylesheet [ctx]
+        ;; (println "CTX" (.getText ctx))
+        (add! {:ns [filename]} ))
 
-    (enterRuleset [ctx]
-      (println "CTX" (.getText ctx))
-      (w out (str "\n(def ")))
+      (enterRuleset [ctx]
+        ;; (println "CTX" (.getText ctx))
+        ;; (set-cursor! (.selectors ctx))
+        ;; (add! {:elements ["e"]})
+        )
 
-    (exitRuleset [ctx]
-      (println "CTX" (.getText ctx))
-      (w out (str ")\n")))
+      (exitRuleset [ctx]
+        ;; (println "CTX" (.getText ctx))
+        ;; (w out (str ")\n"))
+        (commit-cursor!)
+        )
 
-    (enterSelector [ctx]
-      (w out (str "[" (.getText ctx) "]")))))
+      (enterSelector [ctx]
+        (println "CTX" (.getText ctx))
+        (println (map (fn [e]
+                        (.getText e))
+                      (.element ctx)))
+        ;; (add! {:elements ["e"]})
+        (add-to-cursor! {:selectors [(.toString ctx)]}) 
+        ;; (w out (str "[" (.getText ctx) "]"))
+        ))))
 
+(defn parse-file [filename]
+  (let [output (atom {})
+        root "Semantic-UI/src/definitions/"
+        ext ".less"
+        is (ANTLRInputStream. (slurp (io/resource (str
+                                                   root
+                                                   filename
+                                                   ext))))
+        lessLexer (LessLexer. is)
+        tokenStream (CommonTokenStream. lessLexer)
+        tokenParser (LessParser. tokenStream)
+        lessListener (parser filename output)
+        stylesheet (.stylesheet tokenParser)
+        ]
+    (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
+    @output))
+(defn parse-file-tree [filename]
+  (let [output (atom {})
+        root "Semantic-UI/src/definitions/"
+        ext ".less"
+        is (ANTLRInputStream. (slurp (io/resource (str
+                                                   root
+                                                   filename
+                                                   ext))))
+        lessLexer (LessLexer. is)
+        tokenStream (CommonTokenStream. lessLexer)
+        tokenParser (LessParser. tokenStream)
+        lessListener (parser filename output)
+        stylesheet (.stylesheet tokenParser)
+        ]
+    (antlr.coerce/tree->sexpr {:tree stylesheet
+                               :parser tokenParser})))
 (comment
   (with-open [output (clojure.java.io/writer "out.stream" :encoding "UTF-8")]
     (let [root "Semantic-UI/src/definitions/"
@@ -59,8 +110,12 @@
           lessListener (parser filename output)
           stylesheet (.stylesheet tokenParser)
           ]
-      (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)))
+      ;; (clojure.pprint/pprint stylesheet)
+      ;; (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
+      (antlr.coerce/tree->sexpr {:tree stylesheet
+                                 :parser tokenParser})))
 
+  
 
   (.LessLexer)
 

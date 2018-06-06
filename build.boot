@@ -5,7 +5,7 @@
           :source-paths   #{"test"}
           :checkouts '[[d0x-mike/clj-antlr "0.2.7-SNAPSHOT"]]
           :dependencies   '[[org.clojure/clojure "RELEASE"]
-                            ;; [d0x-mike/clj-antlr "0.2.7-SNAPSHOT"] ;;Grammar parser
+                            [clj-antlr "0.2.4"] ;;Grammar parser
                             [org.antlr/antlr4 "4.7.1"]
                             [org.antlr/antlr4-runtime "4.7.1"]
                             ;; [instaparse "1.4.9"]
