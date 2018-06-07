@@ -1,5 +1,5 @@
+// Generated from LessLexer.g4 by ANTLR 4.7.1
 package lessparser;
-// Generated from resources/grammars/LessLexer.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
