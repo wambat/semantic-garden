@@ -172,6 +172,18 @@ public class LessParserBaseListener implements LessParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterImportOption(LessParser.ImportOptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitImportOption(LessParser.ImportOptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterReferenceUrl(LessParser.ReferenceUrlContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -299,6 +311,18 @@ public class LessParserBaseListener implements LessParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAttrib(LessParser.AttribContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNegation(LessParser.NegationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNegation(LessParser.NegationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

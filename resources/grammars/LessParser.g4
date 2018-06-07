@@ -70,8 +70,12 @@ variableDeclaration
 
 //Imports
 importDeclaration
-  : '@import' referenceUrl mediaTypes? ';'
+  : '@import' (LPAREN (importOption (COMMA importOption)+) RPAREN)? referenceUrl mediaTypes? ';'
   ;
+
+importOption
+    : REFERENCE | INLINE | LESS | CSS | ONCE | MULTIPLE
+    ;
 
 referenceUrl
     : StringLiteral
@@ -113,11 +117,15 @@ selectors
   ;
 
 selector
-  : element+ (selectorPrefix element)* attrib* pseudo?
+  : element+ (selectorPrefix? element+)* attrib* pseudo?
   ;
 
 attrib
   : '[' Identifier (attribRelate (StringLiteral | Identifier))? ']'
+  ;
+
+negation
+  : COLON NOT LPAREN LBRACK? selectors RBRACK? RPAREN
   ;
 
 pseudo
@@ -127,7 +135,8 @@ pseudo
 element
   : identifier
   | '#' identifier
-  | '.' identifier
+  | pseudo
+  | negation
   | PARENTREF
   | '*'
   ;

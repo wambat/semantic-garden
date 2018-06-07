@@ -63,38 +63,43 @@
         ;; (w out (str "[" (.getText ctx) "]"))
         ))))
 
-(defn parse-file [filename]
-  (let [output (atom {})
-        root "Semantic-UI/src/definitions/"
-        ext ".less"
-        is (ANTLRInputStream. (slurp (io/resource (str
-                                                   root
-                                                   filename
-                                                   ext))))
-        lessLexer (LessLexer. is)
-        tokenStream (CommonTokenStream. lessLexer)
-        tokenParser (LessParser. tokenStream)
-        lessListener (parser filename output)
-        stylesheet (.stylesheet tokenParser)
-        ]
-    (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
-    @output))
-(defn parse-file-tree [filename]
-  (let [output (atom {})
-        root "Semantic-UI/src/definitions/"
-        ext ".less"
-        is (ANTLRInputStream. (slurp (io/resource (str
-                                                   root
-                                                   filename
-                                                   ext))))
-        lessLexer (LessLexer. is)
-        tokenStream (CommonTokenStream. lessLexer)
-        tokenParser (LessParser. tokenStream)
-        lessListener (parser filename output)
-        stylesheet (.stylesheet tokenParser)
-        ]
-    (antlr.coerce/tree->sexpr {:tree stylesheet
-                               :parser tokenParser})))
+(defn parse-file
+  ([filename]
+   (parse-file "Semantic-UI/src/definitions/" filename))
+  ([root filename]
+   (let [output (atom {})
+         ext ".less"
+         is (ANTLRInputStream. (slurp (io/resource (str
+                                                    root
+                                                    filename
+                                                    ext))))
+         lessLexer (LessLexer. is)
+         tokenStream (CommonTokenStream. lessLexer)
+         tokenParser (LessParser. tokenStream)
+         lessListener (parser filename output)
+         stylesheet (.stylesheet tokenParser)
+         ]
+     (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
+     @output)))
+
+(defn parse-file-tree
+  ([filename]
+   (parse-file-tree "Semantic-UI/src/definitions/" filename))
+  ([root filename]
+   (let [output (atom {})
+         ext ".less"
+         is (ANTLRInputStream. (slurp (io/resource (str
+                                                    root
+                                                    filename
+                                                    ext))))
+         lessLexer (LessLexer. is)
+         tokenStream (CommonTokenStream. lessLexer)
+         tokenParser (LessParser. tokenStream)
+         lessListener (parser filename output)
+         stylesheet (.stylesheet tokenParser)
+         ]
+     (antlr.coerce/tree->sexpr {:tree stylesheet
+                                :parser tokenParser}))))
 (comment
   (with-open [output (clojure.java.io/writer "out.stream" :encoding "UTF-8")]
     (let [root "Semantic-UI/src/definitions/"

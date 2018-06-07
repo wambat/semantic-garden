@@ -138,6 +138,16 @@ public interface LessParserListener extends ParseTreeListener {
 	 */
 	void exitImportDeclaration(LessParser.ImportDeclarationContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LessParser#importOption}.
+	 * @param ctx the parse tree
+	 */
+	void enterImportOption(LessParser.ImportOptionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LessParser#importOption}.
+	 * @param ctx the parse tree
+	 */
+	void exitImportOption(LessParser.ImportOptionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LessParser#referenceUrl}.
 	 * @param ctx the parse tree
 	 */
@@ -247,6 +257,16 @@ public interface LessParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAttrib(LessParser.AttribContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LessParser#negation}.
+	 * @param ctx the parse tree
+	 */
+	void enterNegation(LessParser.NegationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LessParser#negation}.
+	 * @param ctx the parse tree
+	 */
+	void exitNegation(LessParser.NegationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LessParser#pseudo}.
 	 * @param ctx the parse tree
