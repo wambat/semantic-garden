@@ -38,11 +38,13 @@ mathStatement
 
 expression
   : measurement
+  | identifier IMPORTANT
   | identifier
   | identifier LPAREN values? RPAREN
   | Color
   | StringLiteral
   | url
+  | variableName IMPORTANT
   | variableName
   ;
 
