@@ -1,5 +1,6 @@
 (ns semantic-garden.core
   (:require [clj-antlr.coerce :as antlr.coerce]
+            [com.rpl.specter :as sp]
             [clojure.java.io :as io])
   (:import
    (lessparser LessLexer
@@ -18,10 +19,78 @@
                          ParserInterpreter)
    (org.antlr.v4.runtime.tree ParseTree ParseTreeWalker)))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn sexpr-named? [name]
+  (fn [sexpr]
+    ;; (println sexpr)
+    (when (seq? sexpr)
+      (= (first sexpr)
+         name))))
+;; (defn dig-s [name]
+;;   "call it like (dig-s sexprs [:variableDeclaration :values :commandStatement :expression])
+;; (dig-s sexprs [:variableDeclaration :variableName])
+;; "
+;;   ())
+(defn import-path [name]
+  name
+  '"theme.config")
+
+(defn translate-imports [ss]
+  (when-let [imports (sp/select [sp/ALL
+                                 (sp/pred (sexpr-named? :statement))
+                                 (sp/nthpath 1)
+                                 (sp/pred (sexpr-named? :importDeclaration))]
+                                ss)]
+    `(:require
+      ~@(let [paths (map (fn [i]
+                           [(import-path
+                             (first (sp/select [sp/ALL
+                                                (sp/pred (sexpr-named? :referenceUrl))
+                                                sp/LAST] i)))
+                            :refer :all])
+                       imports)]
+        paths))))
+
+(defn translate-variables [ss]
+  (when-let [declarations (sp/select [sp/ALL
+                                      (sp/pred (sexpr-named? :statement))
+                                      (sp/nthpath 1)
+                                      (sp/pred (sexpr-named? :variableDeclaration))
+                                      ]
+                                     ss)]
+    ;; (println declarations)
+    (map (fn [i]
+           (println i)
+           (let [var (sp/select-first [sp/ALL
+                                       (sp/pred (sexpr-named? :variableName))
+                                       sp/LAST]
+                                      i)
+                 val (sp/select-first [sp/ALL
+                                       (sp/pred (sexpr-named? :values))
+                                       sp/LAST
+                                       (sp/pred (sexpr-named? :commandStatement))
+                                       sp/LAST
+                                       (sp/pred (sexpr-named? :expression))
+                                       sp/LAST
+                                       ]
+                                      i)]
+             `(def ~var ~val)))
+         declarations)))
+
+(defn translate-rulesets [ss]
+  (when-let [declarations (sp/select [sp/ALL
+                                      (sp/pred (sexpr-named? :statement))
+                                      (sp/nthpath 1)
+                                      (sp/pred (sexpr-named? :ruleset))]
+                                     ss)]
+    declarations))
+
+(defn translate-stylesheet
+  [filename ss]
+  (concat [`(ns ~filename
+              ~(translate-imports (rest ss)))
+           (translate-variables (rest ss))
+           (translate-rulesets (rest ss))
+           ]))
 
 (defn w [out s]
   (.write out s))
@@ -101,6 +170,17 @@
      (antlr.coerce/tree->sexpr {:tree stylesheet
                                 :parser tokenParser}))))
 (comment
+  (let [ss (parse-file-tree "test/" "problems")
+
+        statements (sp/select [sp/LAST
+                               ;; (sp/pred #(= (first %) :statement))
+                               ;; sp/LAST
+                               ]
+                              ss)
+        ]
+
+    statements)
+
   (with-open [output (clojure.java.io/writer "out.stream" :encoding "UTF-8")]
     (let [root "Semantic-UI/src/definitions/"
           filename "collections/form"
@@ -135,6 +215,7 @@
 ;; (def less (antlr/parser (slurp (io/resource "grammars/Less.g4"))))
 
 (comment
+  
   (less-lex form)
 
   (less-a form)
