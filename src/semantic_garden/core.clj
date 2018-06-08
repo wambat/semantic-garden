@@ -82,8 +82,9 @@
            path []]
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)]
-          (println "CHUNK")
-          (println (first chunks))
+          ;; (println "CHUNK")
+          ;; (println (ffirst chunks))
+          ;; (println (first chunks))
           (cond
             (and
              (seq? ch)
@@ -96,7 +97,16 @@
              (= :pseudo (first ch)))
             (recur
              (rest chunks)
-             (update-in path [(- (count path) 1)] #(apply str % (rest ch))))))
+             (update-in path [(- (count path) 1)] #(apply str % (rest ch))))
+            (and
+             (seq? ch)
+             (= :selectorPrefix (first ch)))
+            (recur
+             (rest chunks)
+             (conj path (str (last ch)
+                             " "
+                             (last (last (first chunks))))))
+            ))
         path))))
 
 (defn translate-selectors [ss]
