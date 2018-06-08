@@ -111,16 +111,30 @@
 
 (defn translate-selectors [ss]
   (let [forms (sp/select [sp/ALL
-                          (sp/pred (sexpr-named? :selector))
-                          ;; (sp/srange 1 999)
-                          ]
+                          (sp/pred (sexpr-named? :selector))]
                          (first ss))]
     (map translate-selector
          (map rest forms)))
   )
+(defn translate-property [ss]
+  (let [identifier (sp/select-first [sp/ALL
+                                     (sp/pred (sexpr-named? :identifier))]
+                                    ss)
+        val (sp/select-first [sp/ALL
+                              (sp/pred (sexpr-named? :values))]
+                             ss)
+        ]
+    {(last identifier) val}))
 
 (defn translate-block [ss]
-  {:block :pock})
+  {:block :pock}
+  ss
+  (let [forms (sp/select [sp/ALL
+                          (sp/pred (sexpr-named? :property))
+                          ;; (sp/srange 1 999)
+                          ]
+                         ss)]
+    (map translate-property forms)))
 
 (defn translate-rulesets [ss]
   (when-let [declarations (sp/select [sp/ALL
