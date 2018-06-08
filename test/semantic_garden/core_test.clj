@@ -10,7 +10,7 @@
          (translate-stylesheet "test.problems"
                                  (parse-file-tree "test/" "problems"))))))
 
-(deftest parse
+#_(deftest parse
   (testing "Parse into structure"
     ;; (is (= (parse-file-tree "collections/form") ""))
     (is (= (parse-file-tree "test/" "problems")

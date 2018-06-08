@@ -119,7 +119,7 @@ selectors
   ;
 
 selector
-  : element+ (selectorPrefix? element+)* attrib* pseudo?
+  : element+  attrib* pseudo?
   ;
 
 attrib
@@ -135,7 +135,8 @@ pseudo
   ;
 
 element
-  : identifier
+  : selectorPrefix identifier
+  | identifier
   | '#' identifier
   | pseudo
   | negation

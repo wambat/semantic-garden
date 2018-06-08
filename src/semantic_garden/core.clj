@@ -76,17 +76,64 @@
              `(def ~var ~val)))
          declarations)))
 
+(defn translate-selector [ss]
+  (let [chunks (map rest ss)]
+    (loop [chunks chunks
+           path []]
+      (if (pos? (count chunks))
+        (let [ch (ffirst chunks)]
+          (println "CHUNK")
+          (println (first chunks))
+          (cond
+            (and
+             (seq? ch)
+             (= :identifier (first ch)))
+            (recur
+             (rest chunks)
+             (conj path (last ch)))
+            (and
+             (seq? ch)
+             (= :pseudo (first ch)))
+            (recur
+             (rest chunks)
+             (update-in path [(- (count path) 1)] #(apply str % (rest ch))))))
+        path))))
+
+(defn translate-selectors [ss]
+  (let [forms (sp/select [sp/ALL
+                          (sp/pred (sexpr-named? :selector))
+                          ;; (sp/srange 1 999)
+                          ]
+                         (first ss))]
+    (map translate-selector
+         (map rest forms)))
+  )
+
+(defn translate-block [ss]
+  {:block :pock})
+
 (defn translate-rulesets [ss]
   (when-let [declarations (sp/select [sp/ALL
                                       (sp/pred (sexpr-named? :statement))
                                       (sp/nthpath 1)
                                       (sp/pred (sexpr-named? :ruleset))]
                                      ss)]
-    declarations))
+    (map (fn [i]
+           (let [selectors (sp/select [sp/ALL
+                                    (sp/pred (sexpr-named? :selectors))]
+                                   i)
+                 block (sp/select-first [sp/ALL
+                                         (sp/pred (sexpr-named? :block))
+                                         ]
+                                        i)]
+             (println selectors)
+             (concat (translate-selectors selectors)
+                     (translate-block block)
+                     ))) declarations)))
 
 (defn translate-stylesheet
   [filename ss]
-  (concat [`(ns ~filename
+  (conj [`(ns ~filename
               ~(translate-imports (rest ss)))
            (translate-variables (rest ss))
            (translate-rulesets (rest ss))

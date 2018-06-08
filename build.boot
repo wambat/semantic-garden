@@ -8,6 +8,7 @@
                             [clj-antlr "0.2.4"] ;;Grammar parser
                             [org.antlr/antlr4 "4.7.1"]
                             [org.antlr/antlr4-runtime "4.7.1"]
+                            [com.rpl/specter "1.1.1"]
                             ;; [instaparse "1.4.9"]
                             [adzerk/boot-test "RELEASE" :scope "test"]])
 
