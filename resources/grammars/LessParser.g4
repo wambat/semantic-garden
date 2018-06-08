@@ -72,7 +72,7 @@ variableDeclaration
 
 //Imports
 importDeclaration
-  : '@import' (LPAREN (importOption (COMMA importOption)+) RPAREN)? referenceUrl mediaTypes? ';'
+  : '@import' (LPAREN (importOption (COMMA importOption)*) RPAREN)? referenceUrl mediaTypes? ';'
   ;
 
 importOption
