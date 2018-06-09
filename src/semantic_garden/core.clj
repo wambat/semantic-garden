@@ -57,9 +57,9 @@
                                       (sp/pred (sexpr-named? :variableDeclaration))
                                       ]
                                      ss)]
-    ;; (println declarations)
+    (println declarations)
     (map (fn [i]
-           (println i)
+           ;; (println i)
            (let [var (sp/select-first [sp/ALL
                                        (sp/pred (sexpr-named? :variableName))
                                        sp/LAST]
@@ -116,15 +116,57 @@
     (map translate-selector
          (map rest forms)))
   )
+(defn translate-expression [ss]
+  ;; (println "EXPR")
+  ;; (println (map rest ss))
+  (let [chunks (map rest ss)
+        pimp (fn [i s]
+               (if (= "!important" i)
+                 [s i]
+                 [s]))]
+    (loop [chunks chunks
+           props []]
+      (if (pos? (count chunks))
+        (let [ch (ffirst chunks)
+              imp (last (first chunks))]
+          ;; (println "PROP")
+          ;; (println ch imp)
+          (cond
+            (and
+             (seq? ch)
+             (= :identifier (first ch)))
+            (recur
+             (rest chunks)
+             (conj props (pimp imp (last ch))))
+            (and
+             (seq? ch)
+             (= :measurement (first ch)))
+            (recur
+             (rest chunks)
+             (conj props (pimp imp
+                               (str (second ch)
+                                       (last ch)))))
+            (and
+             (seq? ch)
+             (= :variableName (first ch)))
+            (recur
+             (rest chunks)
+             (conj props (pimp imp (last ch))))
+            ))
+        (flatten props))))
+  )
 (defn translate-property [ss]
   (let [identifier (sp/select-first [sp/ALL
                                      (sp/pred (sexpr-named? :identifier))]
                                     ss)
-        val (sp/select-first [sp/ALL
-                              (sp/pred (sexpr-named? :values))]
-                             ss)
+        val (rest (sp/select-first [sp/ALL
+                                    (sp/pred (sexpr-named? :values))
+                                    sp/LAST
+                                    (sp/pred (sexpr-named? :commandStatement))
+                                    ]
+                                   ss))
         ]
-    {(last identifier) val}))
+    {(last identifier) (translate-expression val)}))
 
 (defn translate-block [ss]
   {:block :pock}
@@ -150,7 +192,7 @@
                                          (sp/pred (sexpr-named? :block))
                                          ]
                                         i)]
-             (println selectors)
+             ;; (println selectors)
              (concat (translate-selectors selectors)
                      (translate-block block)
                      ))) declarations)))

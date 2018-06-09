@@ -1,7 +1,7 @@
 (def project 'semantic-garden)
 (def version "0.1.0-SNAPSHOT")
 
-(set-env! :resource-paths #{"resources" "src" "java_src"}
+(set-env! :resource-paths #{"resources" "src"}
           :source-paths   #{"test"}
           :checkouts '[[d0x-mike/clj-antlr "0.2.7-SNAPSHOT"]]
           :dependencies   '[[org.clojure/clojure "RELEASE"]
