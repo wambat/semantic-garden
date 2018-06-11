@@ -5,8 +5,8 @@
 (deftest translate
   (testing "Translate into garden"
     (is (=
-         `(ns "test.problems"
-            (:import))
+         `(ns test.problems
+            (:require [theme.config :refer :all]))
          (translate-stylesheet "test.problems"
                                  (parse-file-tree "test/" "problems"))))))
 

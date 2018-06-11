@@ -1,7 +1,8 @@
 (ns semantic-garden.core
   (:require [clj-antlr.coerce :as antlr.coerce]
             [com.rpl.specter :as sp]
-            [clojure.java.io :as io])
+            [clojure.java.io :as io]
+            [clojure.string :as str])
   (:import
    (lessparser LessLexer
                LessParser
@@ -30,9 +31,12 @@
 ;; (dig-s sexprs [:variableDeclaration :variableName])
 ;; "
 ;;   ())
-(defn import-path [name]
-  name
-  '"theme.config")
+(defn unq [n]
+  (let [nn (str/replace n #"\'" "")]
+    nn))
+
+(defn import-path [n]
+  (symbol(unq n)))
 
 (defn translate-imports [ss]
   (when-let [imports (sp/select [sp/ALL
@@ -41,6 +45,10 @@
                                  (sp/pred (sexpr-named? :importDeclaration))]
                                 ss)]
     `(:require
+      [garden.def :refer [~(symbol "defstyles")]]
+      [garden.stylesheet :refer [~(symbol "at-media")]]
+      [garden.selectors :as ~(symbol "sel")]
+      [garden.units :refer [~(symbol "px")]]
       ~@(let [paths (map (fn [i]
                            [(import-path
                              (first (sp/select [sp/ALL
@@ -73,7 +81,7 @@
                                        sp/LAST
                                        ]
                                       i)]
-             `(def ~var ~val)))
+             `(def ~(symbol (unq var)) ~(unq val))))
          declarations)))
 
 (defn translate-selector [ss]
@@ -109,19 +117,27 @@
             ))
         path))))
 
+(defn fold-in-block [s block]
+  (reduce (fn [acc i]
+            (if (nil? acc)
+                [i block]
+                [i acc])
+            ) nil (reverse s)))
+
 (defn translate-selectors [ss]
   (let [forms (sp/select [sp/ALL
                           (sp/pred (sexpr-named? :selector))]
                          (first ss))]
+
     (map translate-selector
-         (map rest forms)))
-  )
+         (map rest forms))))
+
 (defn translate-expression [ss]
   ;; (println "EXPR")
   ;; (println (map rest ss))
   (let [chunks (map rest ss)
         pimp (fn [i s]
-               (if (= "!important" i)
+               (if (= " !important" i)
                  [s i]
                  [s]))]
     (loop [chunks chunks
@@ -151,9 +167,9 @@
              (= :variableName (first ch)))
             (recur
              (rest chunks)
-             (conj props (pimp imp (last ch))))
+             (conj props (pimp imp (symbol (last ch)))))
             ))
-        (flatten props))))
+        `(str ~@(flatten props)))))
   )
 (defn translate-property [ss]
   (let [identifier (sp/select-first [sp/ALL
@@ -178,32 +194,40 @@
                          ss)]
     (map translate-property forms)))
 
+(defn make-defstyles [rulesets]
+  `(~(symbol "defstyles") ~(symbol "root") ~@(map first rulesets)))
+
 (defn translate-rulesets [ss]
   (when-let [declarations (sp/select [sp/ALL
                                       (sp/pred (sexpr-named? :statement))
                                       (sp/nthpath 1)
                                       (sp/pred (sexpr-named? :ruleset))]
                                      ss)]
-    (map (fn [i]
-           (let [selectors (sp/select [sp/ALL
-                                    (sp/pred (sexpr-named? :selectors))]
-                                   i)
-                 block (sp/select-first [sp/ALL
-                                         (sp/pred (sexpr-named? :block))
-                                         ]
-                                        i)]
-             ;; (println selectors)
-             (concat (translate-selectors selectors)
-                     (translate-block block)
-                     ))) declarations)))
+    (make-defstyles
+     (map (fn [i]
+            (let [selectors (sp/select [sp/ALL
+                                        (sp/pred (sexpr-named? :selectors))]
+                                       i)
+                  block (sp/select-first [sp/ALL
+                                          (sp/pred (sexpr-named? :block))
+                                          ]
+                                         i)]
+              ;; (println selectors)
+              ;; (concat (translate-selectors selectors)
+              ;;         )
+              (let [tblock (apply merge (translate-block block))]
+                (map #(fold-in-block % tblock) (translate-selectors selectors)))
+              )) declarations))))
 
 (defn translate-stylesheet
   [filename ss]
-  (conj [`(ns ~filename
-              ~(translate-imports (rest ss)))
-           (translate-variables (rest ss))
-           (translate-rulesets (rest ss))
-           ]))
+  `((ns ~(symbol filename)
+      ~(translate-imports (rest ss)))
+    ~@(translate-variables (rest ss))
+    ;;DEFSTYLES
+    ;; ("I'm not working without this line")
+    ~(translate-rulesets (rest ss))
+    ))
 
 (defn w [out s]
   (.write out s))
@@ -282,59 +306,3 @@
          ]
      (antlr.coerce/tree->sexpr {:tree stylesheet
                                 :parser tokenParser}))))
-(comment
-  (let [ss (parse-file-tree "test/" "problems")
-
-        statements (sp/select [sp/LAST
-                               ;; (sp/pred #(= (first %) :statement))
-                               ;; sp/LAST
-                               ]
-                              ss)
-        ]
-
-    statements)
-
-  (with-open [output (clojure.java.io/writer "out.stream" :encoding "UTF-8")]
-    (let [root "Semantic-UI/src/definitions/"
-          filename "collections/form"
-          ext ".less"
-          is (ANTLRInputStream. (slurp (io/resource (str
-                                                     root
-                                                     filename
-                                                     ext))))
-          lessLexer (LessLexer. is)
-          tokenStream (CommonTokenStream. lessLexer)
-          tokenParser (LessParser. tokenStream)
-          lessListener (parser filename output)
-          stylesheet (.stylesheet tokenParser)
-          ]
-      ;; (clojure.pprint/pprint stylesheet)
-      ;; (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
-      (antlr.coerce/tree->sexpr {:tree stylesheet
-                                 :parser tokenParser})))
-
-  
-
-  (.LessLexer)
-
-  )
-;; (def form (io/resource "Semantic-UI/src/definitions/collections/form.less"))
-
-;; (def less-parse (antlr/parser (slurp (io/resource "grammars/LessParser.g4"))))
-;; (def less-lex (antlr/parser (slurp (io/resource "grammars/LessLexer.g4"))))
-;; (def less-a (antlr/parser (slurp (io/resource "grammars/LessLexer.g4"))
-;;                         (slurp (io/resource "grammars/LessParser.g4"))))
-
-;; (def less (antlr/parser (slurp (io/resource "grammars/Less.g4"))))
-
-(comment
-  
-  (less-lex form)
-
-  (less-a form)
-
-  (less form)
-
-  (slurp form)
-
-  )
