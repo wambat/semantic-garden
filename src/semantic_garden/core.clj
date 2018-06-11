@@ -169,7 +169,7 @@
              (rest chunks)
              (conj props (pimp imp (symbol (last ch)))))
             ))
-        `(str ~@(flatten props)))))
+        `(str ~@(flatten (interpose " " props))))))
   )
 (defn translate-property [ss]
   (let [identifier (sp/select-first [sp/ALL
