@@ -20,6 +20,8 @@
                          ParserInterpreter)
    (org.antlr.v4.runtime.tree ParseTree ParseTreeWalker)))
 
+(declare translate-selectors)
+
 (defn sexpr-named? [name]
   (fn [sexpr]
     ;; (println sexpr)
@@ -32,7 +34,7 @@
 ;; "
 ;;   ())
 (defn unq [n]
-  (let [nn (str/replace n #"\'" "")]
+  (let [nn (str/replace n #"\'\"" "")]
     nn))
 
 (defn import-path [n]
@@ -84,28 +86,61 @@
              `(def ~(symbol (unq var)) ~(unq val))))
          declarations)))
 
+(defn translate-not-selectors [ss]
+  (map unq
+       (translate-selectors
+        (sp/select [sp/ALL
+                    (sp/pred (sexpr-named? :selectors))]
+                   ss))))
+
+(defn make-identifier [parts]
+  (cond
+    (= 1 (count parts))
+    (first parts)
+
+    (= 3 (count parts))
+    (str (first parts)
+         "["
+         (last (second parts))
+         "='"
+         (last (last parts))
+         "']")))
+
 (defn translate-selector [ss]
+  (println (str "TRANSLATE-SELECTOR:" ss))
   (let [chunks (map rest ss)]
     (loop [chunks chunks
            path []]
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)]
-          ;; (println "CHUNK")
-          ;; (println (ffirst chunks))
-          ;; (println (first chunks))
+          (println "CHUNK")
+          (println (str "P:" path))
+          (println (ffirst chunks))
+          (println (first chunks))
           (cond
             (and
              (seq? ch)
              (= :identifier (first ch)))
             (recur
              (rest chunks)
-             (conj path (last ch)))
+             (conj path (make-identifier (rest ch))))
+
             (and
              (seq? ch)
              (= :pseudo (first ch)))
             (recur
              (rest chunks)
-             (update-in path [(- (count path) 1)] #(apply str % (rest ch))))
+             (update-in path [(max 0 (- (count path) 1))] #(apply str % (rest ch))))
+
+            (and
+             (seq? ch)
+             (= :negation (first ch)))
+            (recur
+             (rest chunks)
+             (update-in path [(- (count path) 1)] #(apply str % ":not("
+                                                          (str/join "," (translate-not-selectors
+                                                                         (rest ch))) ")")))
+
             (and
              (seq? ch)
              (= :selectorPrefix (first ch)))
@@ -125,10 +160,11 @@
             ) nil (reverse s)))
 
 (defn translate-selectors [ss]
+  (println (str "Translating Selectors" ss "\n"))
   (let [forms (sp/select [sp/ALL
                           (sp/pred (sexpr-named? :selector))]
                          (first ss))]
-
+    (println (str "=>FORMS:" forms "\n"))
     (map translate-selector
          (map rest forms))))
 
@@ -195,7 +231,8 @@
     (map translate-property forms)))
 
 (defn make-defstyles [rulesets]
-  `(~(symbol "defstyles") ~(symbol "root") ~@(map first rulesets)))
+  ;; (clojure.pprint/pprint rulesets)
+  `(~(symbol "defstyles") ~(symbol "root") ~@(apply concat rulesets)))
 
 (defn translate-rulesets [ss]
   (when-let [declarations (sp/select [sp/ALL
@@ -217,10 +254,12 @@
               ;;         )
               (let [tblock (apply merge (translate-block block))]
                 (map #(fold-in-block % tblock) (translate-selectors selectors)))
-              )) declarations))))
+              ))
+          declarations))))
 
 (defn translate-stylesheet
   [filename ss]
+  (clojure.pprint/pprint ss)
   `((ns ~(symbol filename)
       ~(translate-imports (rest ss)))
     ~@(translate-variables (rest ss))

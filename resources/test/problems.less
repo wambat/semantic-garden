@@ -1,20 +1,14 @@
-@element : 'form';
-@import (multiple) 'theme.config';
-
-.ui.form .field .prompt.label {
-  white-space: normal;
-  background: @promptBackground !important;
-  border: @promptBorder !important;
-  margin: 0em 0em @rowDistance;
+.ui.form .error ::-webkit-input-placeholder {
+  color: @inputErrorPlaceholderColor;
+}
+.ui.form .error :-ms-input-placeholder,
+.ui.form .error :-ms-input-placeholder2 {
+  color: @inputErrorPlaceholderColor !important;
+}
+.ui.form .error ::-moz-placeholder {
+  color: @inputErrorPlaceholderColor;
 }
 
-.ui.form ::-webkit-datetime-edit,
-.ui.form ::-webkit-inner-spin-button {
-  height: @inputLineHeight;
+.ui.form .error :focus ::-webkit-input-placeholder {
+  color: @inputErrorPlaceholderFocusColor;
 }
-
-
-.ui.form .field > .selection.dropdown > .dropdown.icon {
-  float: right;
-}
-
