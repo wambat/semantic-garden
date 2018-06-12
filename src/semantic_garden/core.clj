@@ -2,7 +2,8 @@
   (:require [clj-antlr.coerce :as antlr.coerce]
             [com.rpl.specter :as sp]
             [clojure.java.io :as io]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [me.raynes.fs :as fs])
   (:import
    (lessparser LessLexer
                LessParser
@@ -331,12 +332,18 @@
   ([filename]
    (parse-file-tree "Semantic-UI/src/definitions/" filename))
   ([root filename]
+   (println (str
+             root
+             "/"
+             filename
+             ".less"))
    (let [output (atom {})
          ext ".less"
-         is (ANTLRInputStream. (slurp (io/resource (str
-                                                    root
-                                                    filename
-                                                    ext))))
+         is (ANTLRInputStream. (slurp (io/file (str
+                                                root
+                                                "/"
+                                                filename
+                                                ext))))
          lessLexer (LessLexer. is)
          tokenStream (CommonTokenStream. lessLexer)
          tokenParser (LessParser. tokenStream)
@@ -345,3 +352,43 @@
          ]
      (antlr.coerce/tree->sexpr {:tree stylesheet
                                 :parser tokenParser}))))
+
+(defn less->clj [root filename]
+  (let [ns (str/replace filename #"\/" ".")]
+    (println (str ns
+                  ":"
+                  root
+                  ":"
+                  filename))
+    (translate-stylesheet ns (parse-file-tree root filename))))
+
+(defn get-files [dir]
+  ;; fs/file
+  (let [dir (fs/file dir)
+        files (fs/find-files  dir #".*\.less")]
+    (map (fn [f]
+           (let [rel-path
+                 (str/replace (fs/parent f)
+                              (str dir) "")
+                 ]
+             [rel-path
+              ;; (str (fs/parent f))
+              ;; (str dir)
+              (fs/name f)]
+             (str/replace
+              (str rel-path
+                   "/"
+                   (fs/name f))
+              #"^\/" ""))) files)))
+
+(defn process-semantic [dir]
+  (map
+   #(less->clj dir %)
+   (get-files dir)))
+
+(comment
+  (str (fs/file "resources/semantic/src"))
+
+  (process-semantic "resources/semantic/src")
+
+  )
