@@ -21,11 +21,14 @@
                          ParserInterpreter)
    (org.antlr.v4.runtime.tree ParseTree ParseTreeWalker)))
 
+(defn info [s]
+  nil)
+
 (declare translate-selectors)
 
 (defn sexpr-named? [name]
   (fn [sexpr]
-    ;; (println sexpr)
+    ;; (info sexpr)
     (when (seq? sexpr)
       (= (first sexpr)
          name))))
@@ -68,9 +71,9 @@
                                       (sp/pred (sexpr-named? :variableDeclaration))
                                       ]
                                      ss)]
-    (println declarations)
+    (info declarations)
     (map (fn [i]
-           ;; (println i)
+           ;; (info i)
            (let [var (sp/select-first [sp/ALL
                                        (sp/pred (sexpr-named? :variableName))
                                        sp/LAST]
@@ -108,16 +111,16 @@
          "']")))
 
 (defn translate-selector [ss]
-  (println (str "TRANSLATE-SELECTOR:" ss))
+  (info (str "TRANSLATE-SELECTOR:" ss))
   (let [chunks (map rest ss)]
     (loop [chunks chunks
            path []]
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)]
-          (println "CHUNK")
-          (println (str "P:" path))
-          (println (ffirst chunks))
-          (println (first chunks))
+          (info "CHUNK")
+          (info (str "P:" path))
+          (info (ffirst chunks))
+          (info (first chunks))
           (cond
             (and
              (seq? ch)
@@ -161,17 +164,17 @@
             ) nil (reverse s)))
 
 (defn translate-selectors [ss]
-  (println (str "Translating Selectors" ss "\n"))
+  (info (str "Translating Selectors" ss "\n"))
   (let [forms (sp/select [sp/ALL
                           (sp/pred (sexpr-named? :selector))]
                          (first ss))]
-    (println (str "=>FORMS:" forms "\n"))
+    (info (str "=>FORMS:" forms "\n"))
     (map translate-selector
          (map rest forms))))
 
 (defn translate-expression [ss]
-  ;; (println "EXPR")
-  ;; (println (map rest ss))
+  ;; (info "EXPR")
+  ;; (info (map rest ss))
   (let [chunks (map rest ss)
         pimp (fn [i s]
                (if (= " !important" i)
@@ -182,8 +185,8 @@
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)
               imp (last (first chunks))]
-          ;; (println "PROP")
-          ;; (println ch imp)
+          ;; (info "PROP")
+          ;; (info ch imp)
           (cond
             (and
              (seq? ch)
@@ -250,7 +253,7 @@
                                           (sp/pred (sexpr-named? :block))
                                           ]
                                          i)]
-              ;; (println selectors)
+              ;; (info selectors)
               ;; (concat (translate-selectors selectors)
               ;;         )
               (let [tblock (apply merge (translate-block block))]
@@ -260,7 +263,7 @@
 
 (defn translate-stylesheet
   [filename ss]
-  (clojure.pprint/pprint ss)
+  (info ss)
   `((ns ~(symbol filename)
       ~(translate-imports (rest ss)))
     ~@(translate-variables (rest ss))
@@ -284,24 +287,24 @@
         ]
     (proxy [LessParserBaseListener] []
       (enterStylesheet [ctx]
-        ;; (println "CTX" (.getText ctx))
+        ;; (info "CTX" (.getText ctx))
         (add! {:ns [filename]} ))
 
       (enterRuleset [ctx]
-        ;; (println "CTX" (.getText ctx))
+        ;; (info "CTX" (.getText ctx))
         ;; (set-cursor! (.selectors ctx))
         ;; (add! {:elements ["e"]})
         )
 
       (exitRuleset [ctx]
-        ;; (println "CTX" (.getText ctx))
+        ;; (info "CTX" (.getText ctx))
         ;; (w out (str ")\n"))
         (commit-cursor!)
         )
 
       (enterSelector [ctx]
-        (println "CTX" (.getText ctx))
-        (println (map (fn [e]
+        (info "CTX" (.getText ctx))
+        (info (map (fn [e]
                         (.getText e))
                       (.element ctx)))
         ;; (add! {:elements ["e"]})
@@ -332,7 +335,7 @@
   ([filename]
    (parse-file-tree "Semantic-UI/src/definitions/" filename))
   ([root filename]
-   (println (str
+   (info (str
              root
              "/"
              filename
@@ -355,7 +358,7 @@
 
 (defn less->clj [root filename]
   (let [ns (str/replace filename #"\/" ".")]
-    (println (str ns
+    (info (str ns
                   ":"
                   root
                   ":"
@@ -382,8 +385,15 @@
               #"^\/" ""))) files)))
 
 (defn process-semantic [dir]
-  (map
-   #(less->clj dir %)
+  (mapv
+   (fn [i]
+     (let [outdir (str "out/" dir)
+           outfile (str outdir "/" i ".clj")
+           clj (doall (less->clj dir i))]
+       (clojure.java.io/make-parents outfile)
+
+       (spit outfile
+             (prn-str clj))))
    (get-files dir)))
 
 (comment
