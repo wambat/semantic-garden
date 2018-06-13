@@ -384,6 +384,9 @@
                    (fs/name f))
               #"^\/" ""))) files)))
 
+(defn fmt [src]
+  (with-out-str (clojure.pprint/pprint src)))
+
 (defn process-semantic [dir]
   (mapv
    (fn [i]
@@ -392,11 +395,15 @@
            clj (doall (less->clj dir i))]
        (clojure.java.io/make-parents outfile)
 
+       ;; (def a clj)
        (spit outfile
-             (prn-str clj))))
+             (fmt clj))))
    (get-files dir)))
 
 (comment
+
+  (clojure.pprint/pprint a)
+
   (str (fs/file "resources/semantic/src"))
 
   (process-semantic "resources/semantic/src")
