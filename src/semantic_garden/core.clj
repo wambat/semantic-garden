@@ -151,8 +151,8 @@
          (map rest forms))))
 
 (defn translate-expression [ss]
-  ;; (info "EXPR")
-  ;; (info (map rest ss))
+  (println "EXPR")
+  (println (map rest ss))
   (let [chunks (map rest ss)
         pimp (fn [i s]
                (if (= " !important" i)
@@ -163,9 +163,13 @@
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)
               imp (last (first chunks))]
-          ;; (info "PROP")
-          ;; (info ch imp)
+          (println "PROP")
+          (println imp)
           (cond
+            (string? ch)
+            (recur
+             (rest chunks)
+             (conj props ch))
             (and
              (seq? ch)
              (= :identifier (first ch)))
@@ -185,7 +189,9 @@
              (= :variableName (first ch)))
             (recur
              (rest chunks)
-             (conj props (pimp imp (symbol (last ch)))))
+             (conj props (pimp imp (try (symbol (last ch))
+                                        (catch Exception e
+                                          (str "ERR>" (last ch)"<"))))))
             ))
         `(str ~@(flatten (interpose " " props))))))
   )
