@@ -12,5 +12,5 @@
   [@{themesFolder}/default/@{type}s/@{element}.variables :refer :all]
   [@{themesFolder}/@{theme}/@{type}s/@{element}.variables :refer :all]
   [@{siteFolder}/@{type}s/@{element}.variables :refer :all]))
-(def theme "(:variableName @ (:variableName @ element))")
+(def theme (clojure.core/str "ERR>(:variableName \"@\" \"element\")<"))
 (defstyles root)

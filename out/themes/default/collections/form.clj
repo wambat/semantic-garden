@@ -5,122 +5,178 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def gutterWidth "(:measurement 1 em)")
-(def rowDistance "(:measurement 1 em)")
-(def paragraphMargin "(:measurement 0 em)")
-(def fieldMargin "(:variableName @ rowDistance)")
-(def labelDistance "(:measurement 4 px)")
-(def labelMargin "(:measurement 0 em)")
-(def labelFontSize "(:variableName @ relativeSmall)")
-(def labelFontWeight "(:variableName @ bold)")
-(def labelTextTransform "(:identifier none)")
-(def labelColor "(:variableName @ textColor)")
-(def inputFont "(:variableName @ pageFont)")
-(def inputWidth "(:measurement 100 %)")
-(def inputFontSize "(:measurement 1 em)")
-(def inputPadding "")
-(def inputBorder "(:variableName @ borderColor)")
-(def inputBorderRadius "(:variableName @ absoluteBorderRadius)")
-(def inputColor "(:variableName @ textColor)")
-(def inputTransition "(:variableName @ defaultEasing)")
-(def inputBoxShadow "(:identifier inset)")
-(def selectBackground "(:variableName @ white)")
-(def selectBorderRadius "(:variableName @ inputBorderRadius)")
-(def selectBorder "(:variableName @ inputBorder)")
-(def selectPadding "(:variableName @ inputHorizontalPadding)")
-(def selectBoxShadow "(:variableName @ inputBoxShadow)")
-(def selectTransition "(:variableName @ inputTransition)")
-(def selectColor "(:variableName @ inputColor)")
-(def textAreaPadding "(:variableName @ inputHorizontalPadding)")
-(def textAreaHeight "(:measurement 12 em)")
-(def textAreaResize "(:identifier vertical)")
-(def textAreaLineHeight "(:measurement 1.2857)")
-(def textAreaMinHeight "(:measurement 8 em)")
-(def textAreaMaxHeight "(:measurement 24 em)")
-(def textAreaBackground "(:variableName @ inputBackground)")
-(def textAreaBorder "(:variableName @ inputBorder)")
-(def textAreaFontSize "(:variableName @ inputFontSize)")
-(def textAreaTransition "(:variableName @ inputTransition)")
-(def checkboxVerticalAlign "(:identifier top)")
-(def checkboxLabelFontSize "(:measurement 1 em)")
-(def checkboxLabelTextTransform "(:variableName @ labelTextTransform)")
-(def promptBackground "(:variableName @ white)")
-(def promptBorderColor "(:variableName @ formErrorBorder)")
-(def promptBorder "(:variableName @ promptBorderColor)")
-(def promptTextColor "(:variableName @ formErrorColor)")
-(def inlinePromptMargin "(:measurement 0.5 em)")
-(def inlinePromptBorderWidth "(:measurement 1 px)")
-(def inputFocusPointerSize "(:measurement 0 px)")
-(def inputFocusBackground "(:variableName @ inputBackground)")
-(def inputFocusBorderColor "(:variableName @ focusedFormBorderColor)")
-(def inputFocusColor "(:variableName @ selectedTextColor)")
-(def inputFocusBoxShadow "(:identifier inset)")
-(def inputFocusBorderRadius "(:variableName @ inputBorderRadius)")
-(def textAreaFocusBackground "(:variableName @ inputFocusBackground)")
-(def textAreaFocusBorderColor "(:variableName @ inputFocusBorderColor)")
-(def textAreaFocusColor "(:variableName @ inputFocusColor)")
-(def textAreaFocusBoxShadow "(:variableName @ inputFocusBoxShadow)")
+(def gutterWidth (clojure.core/str "1em"))
+(def rowDistance (clojure.core/str "1em"))
+(def paragraphMargin (clojure.core/str rowDistance " " "0em"))
+(def fieldMargin (clojure.core/str "0em" " " "0em" " " rowDistance))
+(def labelDistance nil)
+(def
+ labelMargin
+ (clojure.core/str "0em" " " "0em" " " labelDistance " " "0em"))
+(def labelFontSize (clojure.core/str relativeSmall))
+(def labelFontWeight (clojure.core/str bold))
+(def labelTextTransform (clojure.core/str "none"))
+(def labelColor (clojure.core/str textColor))
+(def inputFont (clojure.core/str pageFont))
+(def inputWidth (clojure.core/str "100%"))
+(def inputFontSize (clojure.core/str "1em"))
+(def inputPadding nil)
+(def inputBorder (clojure.core/str "1px" " " "solid" " " borderColor))
+(def inputBorderRadius (clojure.core/str absoluteBorderRadius))
+(def inputColor (clojure.core/str textColor))
+(def
+ inputTransition
+ (clojure.core/str
+  "border-color"
+  " "
+  defaultDuration
+  " "
+  defaultEasing))
+(def
+ inputBoxShadow
+ (clojure.core/str
+  "0em"
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  "transparent"
+  " "
+  "inset"))
+(def selectBackground (clojure.core/str white))
+(def selectBorderRadius (clojure.core/str inputBorderRadius))
+(def selectBorder (clojure.core/str inputBorder))
+(def
+ selectPadding
+ (clojure.core/str "0.62em" " " inputHorizontalPadding))
+(def selectBoxShadow (clojure.core/str inputBoxShadow))
+(def selectTransition (clojure.core/str inputTransition))
+(def selectColor (clojure.core/str inputColor))
+(def
+ textAreaPadding
+ (clojure.core/str inputVerticalPadding " " inputHorizontalPadding))
+(def textAreaHeight (clojure.core/str "12em"))
+(def textAreaResize (clojure.core/str "vertical"))
+(def textAreaLineHeight (clojure.core/str "1.28571.2857"))
+(def textAreaMinHeight (clojure.core/str "8em"))
+(def textAreaMaxHeight (clojure.core/str "24em"))
+(def textAreaBackground (clojure.core/str inputBackground))
+(def textAreaBorder (clojure.core/str inputBorder))
+(def textAreaFontSize (clojure.core/str inputFontSize))
+(def textAreaTransition (clojure.core/str inputTransition))
+(def checkboxVerticalAlign (clojure.core/str "top"))
+(def checkboxLabelFontSize (clojure.core/str "1em"))
+(def checkboxLabelTextTransform (clojure.core/str labelTextTransform))
+(def promptBackground (clojure.core/str white))
+(def promptBorderColor (clojure.core/str formErrorBorder))
+(def
+ promptBorder
+ (clojure.core/str "1px" " " "solid" " " promptBorderColor))
+(def promptTextColor (clojure.core/str formErrorColor))
+(def
+ inlinePromptMargin
+ (clojure.core/str "-0.25em" " " "0em" " " "-0.5em" " " "0.5em"))
+(def inlinePromptBorderWidth (clojure.core/str "1px"))
+(def inputFocusPointerSize (clojure.core/str "0px"))
+(def inputFocusBackground (clojure.core/str inputBackground))
+(def inputFocusBorderColor (clojure.core/str focusedFormBorderColor))
+(def inputFocusColor (clojure.core/str selectedTextColor))
+(def
+ inputFocusBoxShadow
+ (clojure.core/str
+  inputFocusPointerSize
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  selectedBorderColor
+  " "
+  "inset"))
+(def inputFocusBorderRadius (clojure.core/str inputBorderRadius))
+(def textAreaFocusBackground (clojure.core/str inputFocusBackground))
+(def textAreaFocusBorderColor (clojure.core/str inputFocusBorderColor))
+(def textAreaFocusColor (clojure.core/str inputFocusColor))
+(def textAreaFocusBoxShadow (clojure.core/str inputFocusBoxShadow))
 (def
  textAreaFocusBorderRadius
- "(:variableName @ inputFocusBorderRadius)")
-(def disabledLabelOpacity "(:variableName @ disabledOpacity)")
-(def formErrorColor "(:variableName @ negativeTextColor)")
-(def formErrorBorder "(:variableName @ negativeBorderColor)")
-(def formErrorBackground "(:variableName @ negativeBackgroundColor)")
-(def inputAutoFillBackground "#FFFFF0")
-(def inputAutoFillBorder "#E5DFA1")
+ (clojure.core/str inputFocusBorderRadius))
+(def disabledLabelOpacity (clojure.core/str disabledOpacity))
+(def formErrorColor (clojure.core/str negativeTextColor))
+(def formErrorBorder (clojure.core/str negativeBorderColor))
+(def formErrorBackground (clojure.core/str negativeBackgroundColor))
+(def inputAutoFillBackground nil)
+(def inputAutoFillBorder nil)
 (def
  inputAutoFillFocusBackground
- "(:variableName @ inputAutoFillBackground)")
-(def inputAutoFillFocusBorder "#D5C315")
-(def inputAutoFillErrorBackground "#FFFAF0")
-(def inputAutoFillErrorBorder "#E0B4B4")
-(def inputErrorBorderRadius "")
-(def inputErrorBoxShadow "(:identifier none)")
-(def dropdownErrorHoverBackground "#FBE7E7")
+ (clojure.core/str inputAutoFillBackground))
+(def inputAutoFillFocusBorder nil)
+(def inputAutoFillErrorBackground nil)
+(def inputAutoFillErrorBorder nil)
+(def inputErrorBorderRadius nil)
+(def inputErrorBoxShadow (clojure.core/str "none"))
+(def dropdownErrorHoverBackground nil)
 (def
  dropdownErrorSelectedBackground
- "(:variableName @ dropdownErrorHoverBackground)")
-(def dropdownErrorActiveBackground "#FDCFCF")
-(def dropdownErrorLabelBackground "#EACBCB")
-(def dropdownErrorLabelColor "(:variableName @ errorTextColor)")
+ (clojure.core/str dropdownErrorHoverBackground))
+(def dropdownErrorActiveBackground nil)
+(def dropdownErrorLabelBackground nil)
+(def dropdownErrorLabelColor (clojure.core/str errorTextColor))
 (def
  inputErrorFocusBackground
- "(:variableName @ negativeBackgroundColor)")
-(def inputErrorFocusColor "(:variableName @ negativeTextColor)")
-(def inputErrorFocusBorder "(:variableName @ negativeBorderColor)")
-(def inputErrorFocusBoxShadow "(:identifier none)")
-(def inputErrorPlaceholderColor ")")
-(def inputErrorPlaceholderFocusColor ")")
-(def loaderDimmerColor ")")
-(def loaderDimmerZIndex "(:measurement 100)")
-(def loaderSize "(:measurement 3 em)")
-(def loaderLineZIndex "(:measurement 101)")
-(def requiredContent "*")
-(def requiredColor "(:variableName @ negativeColor)")
-(def requiredVerticalOffset "(:measurement -0.2 em)")
-(def requiredDistance "(:measurement 0.2 em)")
-(def requiredMargin "(:variableName @ requiredDistance)")
-(def invertedInputBackground "(:variableName @ inputBackground)")
-(def invertedInputBorderColor "(:variableName @ whiteBorderColor)")
-(def invertedInputBoxShadow "(:variableName @ inputBoxShadow)")
-(def invertedInputColor "(:variableName @ inputColor)")
-(def invertedLabelColor "(:variableName @ invertedTextColor)")
-(def invertedInputBoxShadow "(:identifier none)")
-(def groupedMargin "(:variableName @ fieldMargin)")
-(def groupedFieldMargin "(:measurement 0 em)")
-(def groupedLabelDistance "(:variableName @ labelDistance)")
-(def groupedLabelColor "(:variableName @ labelColor)")
-(def groupedLabelMargin "(:variableName @ labelMargin)")
-(def groupedLabelFontSize "(:variableName @ labelFontSize)")
-(def groupedLabelFontWeight "(:variableName @ labelFontWeight)")
-(def groupedLabelTextTransform "(:variableName @ labelTextTransform)")
-(def inlineInputSize "(:variableName @ relativeMedium)")
-(def inlineLabelDistance "(:variableName @ relativeTiny)")
-(def inlineLabelColor "(:variableName @ labelColor)")
-(def inlineLabelFontSize "(:variableName @ labelFontSize)")
-(def inlineLabelFontWeight "(:variableName @ labelFontWeight)")
-(def inlineLabelTextTransform "(:variableName @ labelTextTransform)")
-(def groupedInlineLabelMargin "(:measurement 0 em)")
-(def inlineFieldsMargin "(:measurement 0 em)")
+ (clojure.core/str negativeBackgroundColor))
+(def inputErrorFocusColor (clojure.core/str negativeTextColor))
+(def inputErrorFocusBorder (clojure.core/str negativeBorderColor))
+(def inputErrorFocusBoxShadow (clojure.core/str "none"))
+(def inputErrorPlaceholderColor (clojure.core/str "lighten"))
+(def inputErrorPlaceholderFocusColor (clojure.core/str "lighten"))
+(def loaderDimmerColor (clojure.core/str "rgba"))
+(def loaderDimmerZIndex (clojure.core/str "100100"))
+(def loaderSize (clojure.core/str "3em"))
+(def loaderLineZIndex (clojure.core/str "101101"))
+(def requiredContent nil)
+(def requiredColor (clojure.core/str negativeColor))
+(def requiredVerticalOffset (clojure.core/str "-0.2em"))
+(def requiredDistance (clojure.core/str "0.2em"))
+(def
+ requiredMargin
+ (clojure.core/str
+  requiredVerticalOffset
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  requiredDistance))
+(def invertedInputBackground (clojure.core/str inputBackground))
+(def invertedInputBorderColor (clojure.core/str whiteBorderColor))
+(def invertedInputBoxShadow (clojure.core/str inputBoxShadow))
+(def invertedInputColor (clojure.core/str inputColor))
+(def invertedLabelColor (clojure.core/str invertedTextColor))
+(def invertedInputBoxShadow (clojure.core/str "none"))
+(def groupedMargin (clojure.core/str fieldMargin))
+(def groupedFieldMargin (clojure.core/str "0.5em" " " "0em"))
+(def groupedLabelDistance (clojure.core/str labelDistance))
+(def groupedLabelColor (clojure.core/str labelColor))
+(def groupedLabelMargin (clojure.core/str labelMargin))
+(def groupedLabelFontSize (clojure.core/str labelFontSize))
+(def groupedLabelFontWeight (clojure.core/str labelFontWeight))
+(def groupedLabelTextTransform (clojure.core/str labelTextTransform))
+(def inlineInputSize (clojure.core/str relativeMedium))
+(def inlineLabelDistance (clojure.core/str relativeTiny))
+(def inlineLabelColor (clojure.core/str labelColor))
+(def inlineLabelFontSize (clojure.core/str labelFontSize))
+(def inlineLabelFontWeight (clojure.core/str labelFontWeight))
+(def inlineLabelTextTransform (clojure.core/str labelTextTransform))
+(def
+ groupedInlineLabelMargin
+ (clojure.core/str "0.035714em" " " "1em" " " "0em" " " "0em"))
+(def
+ inlineFieldsMargin
+ (clojure.core/str "0em" " " "1em" " " "0em" " " "0em"))
 (defstyles root)

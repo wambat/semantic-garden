@@ -5,9 +5,9 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def dividerOpacity "(:measurement 1)")
-(def dividerSpacing "(:measurement 0)")
-(def dividerSize "(:variableName @ big)")
-(def dividerColor "(:identifier inherit)")
-(def huge "(:measurement 1.5384 em)")
+(def dividerOpacity (clojure.core/str "11"))
+(def dividerSpacing (clojure.core/str "00"))
+(def dividerSize (clojure.core/str big))
+(def dividerColor (clojure.core/str "inherit"))
+(def huge (clojure.core/str "1.5384em"))
 (defstyles root)

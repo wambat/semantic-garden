@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "global")
-(def element "reset")
+(def type nil)
+(def element nil)
 (defstyles
  root
  nil

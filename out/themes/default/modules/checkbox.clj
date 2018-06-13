@@ -5,127 +5,163 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def checkboxSize "(:measurement 17 px)")
-(def checkboxColor "(:variableName @ textColor)")
-(def checkboxLineHeight "(:variableName @ checkboxSize)")
-(def labelDistance "(:measurement 1.85714 em)")
-(def checkboxBackground "(:variableName @ white)")
-(def checkboxBorder "(:variableName @ solidBorderColor)")
-(def checkboxBorderRadius "(:measurement 3 px)")
-(def checkboxTransition "(:variableName @ defaultEasing)")
-(def checkboxCheckFontSize "(:measurement 14 px)")
-(def checkboxCheckTop "(:measurement 0 px)")
-(def checkboxCheckLeft "(:measurement 0 px)")
-(def checkboxCheckSize "(:variableName @ checkboxSize)")
-(def labelFontSize "(:variableName @ relativeMedium)")
-(def labelColor "(:variableName @ textColor)")
-(def labelTransition "(:variableName @ defaultEasing)")
-(def checkboxHoverBackground "(:variableName @ checkboxBackground)")
-(def checkboxHoverBorderColor "(:variableName @ selectedBorderColor)")
-(def labelHoverColor "(:variableName @ hoveredTextColor)")
-(def checkboxPressedBackground "(:variableName @ offWhite)")
-(def checkboxPressedBorderColor "(:variableName @ selectedBorderColor)")
-(def checkboxPressedColor "(:variableName @ selectedTextColor)")
-(def labelPressedColor "(:variableName @ selectedTextColor)")
-(def checkboxFocusBackground "(:variableName @ white)")
+(def checkboxSize (clojure.core/str "17px"))
+(def checkboxColor (clojure.core/str textColor))
+(def checkboxLineHeight (clojure.core/str checkboxSize))
+(def labelDistance (clojure.core/str "1.85714em"))
+(def checkboxBackground (clojure.core/str white))
+(def
+ checkboxBorder
+ (clojure.core/str "1px" " " "solid" " " solidBorderColor))
+(def checkboxBorderRadius nil)
+(def
+ checkboxTransition
+ (clojure.core/str "box-shadow" " " defaultDuration " " defaultEasing))
+(def checkboxCheckFontSize (clojure.core/str "14px"))
+(def checkboxCheckTop (clojure.core/str "0px"))
+(def checkboxCheckLeft (clojure.core/str "0px"))
+(def checkboxCheckSize (clojure.core/str checkboxSize))
+(def labelFontSize (clojure.core/str relativeMedium))
+(def labelColor (clojure.core/str textColor))
+(def
+ labelTransition
+ (clojure.core/str "color" " " defaultDuration " " defaultEasing))
+(def checkboxHoverBackground (clojure.core/str checkboxBackground))
+(def checkboxHoverBorderColor (clojure.core/str selectedBorderColor))
+(def labelHoverColor (clojure.core/str hoveredTextColor))
+(def checkboxPressedBackground (clojure.core/str offWhite))
+(def checkboxPressedBorderColor (clojure.core/str selectedBorderColor))
+(def checkboxPressedColor (clojure.core/str selectedTextColor))
+(def labelPressedColor (clojure.core/str selectedTextColor))
+(def checkboxFocusBackground (clojure.core/str white))
 (def
  checkboxFocusBorderColor
- "(:variableName @ focusedFormMutedBorderColor)")
-(def checkboxFocusCheckColor "(:variableName @ selectedTextColor)")
-(def labelFocusColor "(:variableName @ selectedTextColor)")
-(def labelActiveColor "(:variableName @ selectedTextColor)")
-(def checkboxActiveBackground "(:variableName @ white)")
-(def checkboxActiveBorderColor "(:variableName @ selectedBorderColor)")
-(def checkboxActiveCheckColor "(:variableName @ selectedTextColor)")
-(def checkboxActiveCheckOpacity "(:measurement 1)")
-(def checkboxActiveFocusBackground "(:variableName @ white)")
+ (clojure.core/str focusedFormMutedBorderColor))
+(def checkboxFocusCheckColor (clojure.core/str selectedTextColor))
+(def labelFocusColor (clojure.core/str selectedTextColor))
+(def labelActiveColor (clojure.core/str selectedTextColor))
+(def checkboxActiveBackground (clojure.core/str white))
+(def checkboxActiveBorderColor (clojure.core/str selectedBorderColor))
+(def checkboxActiveCheckColor (clojure.core/str selectedTextColor))
+(def checkboxActiveCheckOpacity (clojure.core/str "11"))
+(def checkboxActiveFocusBackground (clojure.core/str white))
 (def
  checkboxActiveFocusBorderColor
- "(:variableName @ checkboxFocusBorderColor)")
-(def
- checkboxActiveFocusCheckColor
- "(:variableName @ selectedTextColor)")
+ (clojure.core/str checkboxFocusBorderColor))
+(def checkboxActiveFocusCheckColor (clojure.core/str selectedTextColor))
 (def
  checkboxIndeterminateBackground
- "(:variableName @ checkboxActiveBackground)")
+ (clojure.core/str checkboxActiveBackground))
 (def
  checkboxIndeterminateBorderColor
- "(:variableName @ checkboxActiveBorderColor)")
-(def checkboxIndeterminateCheckOpacity "(:measurement 1)")
+ (clojure.core/str checkboxActiveBorderColor))
+(def checkboxIndeterminateCheckOpacity (clojure.core/str "11"))
 (def
  checkboxIndeterminateCheckColor
- "(:variableName @ checkboxActiveCheckColor)")
-(def disabledCheckboxOpacity "(:measurement 0.5)")
-(def disabledCheckboxLabelColor ")")
-(def radioSize "(:measurement 15 px)")
-(def radioTop "(:measurement 1 px)")
-(def radioLeft "(:measurement 0 px)")
-(def radioLabelDistance "(:variableName @ labelDistance)")
-(def bulletTop "(:measurement 1 px)")
-(def bulletLeft "(:measurement 0 px)")
-(def bulletScale "")
-(def bulletColor "(:variableName @ textColor)")
-(def bulletRadius "(:variableName @ circularRadius)")
-(def radioFocusBackground "(:variableName @ checkboxFocusBackground)")
-(def radioFocusBulletColor "(:variableName @ checkboxFocusCheckColor)")
-(def radioActiveBackground "(:variableName @ checkboxActiveBackground)")
-(def
- radioActiveBulletColor
- "(:variableName @ checkboxActiveCheckColor)")
+ (clojure.core/str checkboxActiveCheckColor))
+(def disabledCheckboxOpacity (clojure.core/str "0.50.5"))
+(def disabledCheckboxLabelColor (clojure.core/str "rgba"))
+(def radioSize (clojure.core/str "15px"))
+(def radioTop (clojure.core/str "1px"))
+(def radioLeft (clojure.core/str "0px"))
+(def radioLabelDistance (clojure.core/str labelDistance))
+(def bulletTop (clojure.core/str "1px"))
+(def bulletLeft (clojure.core/str "0px"))
+(def bulletScale nil)
+(def bulletColor (clojure.core/str textColor))
+(def bulletRadius (clojure.core/str circularRadius))
+(def radioFocusBackground (clojure.core/str checkboxFocusBackground))
+(def radioFocusBulletColor (clojure.core/str checkboxFocusCheckColor))
+(def radioActiveBackground (clojure.core/str checkboxActiveBackground))
+(def radioActiveBulletColor (clojure.core/str checkboxActiveCheckColor))
 (def
  radioActiveFocusBackground
- "(:variableName @ checkboxActiveFocusBackground)")
+ (clojure.core/str checkboxActiveFocusBackground))
 (def
  radioActiveFocusBulletColor
- "(:variableName @ checkboxActiveFocusCheckColor)")
-(def handleBackground "(:variableName @ subtleGradient)")
-(def handleBoxShadow "(:identifier inset)")
-(def sliderHandleSize "(:identifier rem)")
-(def sliderLineWidth "(:identifier rem)")
-(def sliderTransitionDuration "(:measurement 0.3 s)")
-(def sliderHandleTransition "(:variableName @ defaultEasing)")
-(def sliderWidth "(:variableName @ sliderLineWidth)")
-(def sliderHeight "")
-(def sliderLineHeight "(:measurement 3 px)")
-(def sliderLineVerticalOffset "(:identifier rem)")
-(def sliderLineColor "(:variableName @ transparentBlack)")
-(def sliderLineRadius "(:variableName @ circularRadius)")
-(def sliderLineTransition "(:variableName @ defaultEasing)")
-(def sliderTravelDistance "")
-(def sliderLabelDistance "")
-(def sliderOffLabelColor "(:variableName @ unselectedTextColor)")
-(def sliderLabelLineHeight "(:identifier rem)")
+ (clojure.core/str checkboxActiveFocusCheckColor))
+(def handleBackground (clojure.core/str white " " subtleGradient))
+(def
+ handleBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  borderColor
+  " "
+  "inset"))
+(def sliderHandleSize (clojure.core/str "1.51.5" " " "rem"))
+(def sliderLineWidth (clojure.core/str "3.53.5" " " "rem"))
+(def sliderTransitionDuration (clojure.core/str "0.3s"))
+(def
+ sliderHandleTransition
+ (clojure.core/str
+  "left"
+  " "
+  sliderTransitionDuration
+  " "
+  defaultEasing))
+(def sliderWidth (clojure.core/str sliderLineWidth))
+(def sliderHeight nil)
+(def sliderLineHeight nil)
+(def sliderLineVerticalOffset (clojure.core/str "0.40.4" " " "rem"))
+(def sliderLineColor (clojure.core/str transparentBlack))
+(def sliderLineRadius (clojure.core/str circularRadius))
+(def
+ sliderLineTransition
+ (clojure.core/str
+  "background"
+  " "
+  sliderTransitionDuration
+  " "
+  defaultEasing))
+(def sliderTravelDistance nil)
+(def sliderLabelDistance nil)
+(def sliderOffLabelColor (clojure.core/str unselectedTextColor))
+(def sliderLabelLineHeight (clojure.core/str "11" " " "rem"))
 (def
  sliderHoverLaneBackground
- "(:variableName @ veryStrongTransparentBlack)")
-(def sliderHoverLabelColor "(:variableName @ hoveredTextColor)")
-(def sliderOnLineColor "(:variableName @ lightBlack)")
-(def sliderOnLabelColor "(:variableName @ selectedTextColor)")
-(def sliderOnFocusLineColor "(:variableName @ lightBlackFocus)")
-(def sliderOnFocusLabelColor "(:variableName @ sliderOnLabelColor)")
-(def toggleLaneWidth "(:identifier rem)")
-(def toggleHandleSize "(:identifier rem)")
-(def toggleTransitionDuration "(:measurement 0.2 s)")
-(def toggleWidth "(:variableName @ toggleLaneWidth)")
-(def toggleHeight "(:variableName @ toggleHandleSize)")
-(def toggleHandleRadius "(:variableName @ circularRadius)")
-(def toggleHandleOffset "(:identifier rem)")
-(def toggleHandleTransition "(:variableName @ defaultEasing)")
-(def toggleLaneBackground "(:variableName @ transparentBlack)")
-(def toggleLaneHeight "(:variableName @ toggleHandleSize)")
-(def toggleLaneBoxShadow "(:identifier none)")
-(def toggleLaneVerticalOffset "(:identifier rem)")
-(def toggleOffOffset "(:identifier rem)")
-(def toggleLabelDistance "")
-(def toggleLabelLineHeight "(:identifier rem)")
-(def toggleLabelOffset "(:measurement 0.15 em)")
-(def toggleFocusColor "(:variableName @ veryStrongTransparentBlack)")
-(def toggleHoverColor "(:variableName @ toggleFocusColor)")
-(def toggleOffLabelColor "(:variableName @ checkboxColor)")
-(def toggleOffHandleBoxShadow "(:variableName @ handleBoxShadow)")
-(def toggleOnLabelColor "(:variableName @ selectedTextColor)")
-(def toggleOnLaneColor "(:variableName @ primaryColor)")
-(def toggleOnHandleBoxShadow "(:variableName @ handleBoxShadow)")
-(def toggleOnFocusLaneColor "(:variableName @ primaryColorFocus)")
-(def toggleOnFocusLabelColor "(:variableName @ toggleOnLabelColor)")
+ (clojure.core/str veryStrongTransparentBlack))
+(def sliderHoverLabelColor (clojure.core/str hoveredTextColor))
+(def sliderOnLineColor (clojure.core/str lightBlack))
+(def sliderOnLabelColor (clojure.core/str selectedTextColor))
+(def sliderOnFocusLineColor (clojure.core/str lightBlackFocus))
+(def sliderOnFocusLabelColor (clojure.core/str sliderOnLabelColor))
+(def toggleLaneWidth (clojure.core/str "3.53.5" " " "rem"))
+(def toggleHandleSize (clojure.core/str "1.51.5" " " "rem"))
+(def toggleTransitionDuration (clojure.core/str "0.2s"))
+(def toggleWidth (clojure.core/str toggleLaneWidth))
+(def toggleHeight (clojure.core/str toggleHandleSize))
+(def toggleHandleRadius (clojure.core/str circularRadius))
+(def toggleHandleOffset (clojure.core/str "00" " " "rem"))
+(def
+ toggleHandleTransition
+ (clojure.core/str
+  "left"
+  " "
+  sliderTransitionDuration
+  " "
+  defaultEasing))
+(def toggleLaneBackground (clojure.core/str transparentBlack))
+(def toggleLaneHeight (clojure.core/str toggleHandleSize))
+(def toggleLaneBoxShadow (clojure.core/str "none"))
+(def toggleLaneVerticalOffset (clojure.core/str "00" " " "rem"))
+(def toggleOffOffset (clojure.core/str "-0.05-0.05" " " "rem"))
+(def toggleLabelDistance nil)
+(def toggleLabelLineHeight (clojure.core/str "1.51.5" " " "rem"))
+(def toggleLabelOffset (clojure.core/str "0.15em"))
+(def toggleFocusColor (clojure.core/str veryStrongTransparentBlack))
+(def toggleHoverColor (clojure.core/str toggleFocusColor))
+(def toggleOffLabelColor (clojure.core/str checkboxColor))
+(def toggleOffHandleBoxShadow (clojure.core/str handleBoxShadow))
+(def toggleOnLabelColor (clojure.core/str selectedTextColor))
+(def toggleOnLaneColor (clojure.core/str primaryColor))
+(def toggleOnHandleBoxShadow (clojure.core/str handleBoxShadow))
+(def toggleOnFocusLaneColor (clojure.core/str primaryColorFocus))
+(def toggleOnFocusLabelColor (clojure.core/str toggleOnLabelColor))
 (defstyles root)

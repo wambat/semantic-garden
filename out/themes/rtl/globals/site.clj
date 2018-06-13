@@ -5,7 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def googleFontName "Droid Sans")
-(def headerFont "(:identifier sans-serif)")
-(def pageFont "(:identifier sans-serif)")
+(def googleFontName nil)
+(def headerFont (clojure.core/str "sans-serif"))
+(def pageFont (clojure.core/str "sans-serif"))
 (defstyles root)

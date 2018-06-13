@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "view")
-(def element "feed")
+(def type nil)
+(def element nil)
 (defstyles
  root
  [".ui.feed" {"margin" (clojure.core/str margin)}]

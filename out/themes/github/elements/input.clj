@@ -5,10 +5,14 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def boxShadow "(:identifier inset)")
-(def verticalPadding "(:variableName @ relative7px)")
-(def horizontalPadding "(:variableName @ relative8px)")
-(def borderColor "#CCCCCC")
-(def focusBorderColor "#51A7E8")
-(def focusBoxShadow ")")
+(def
+ boxShadow
+ (clojure.core/str "00" " " "1px" " " "2px" " " "rgba" " " "inset"))
+(def verticalPadding (clojure.core/str relative7px))
+(def horizontalPadding (clojure.core/str relative8px))
+(def borderColor nil)
+(def focusBorderColor nil)
+(def
+ focusBoxShadow
+ (clojure.core/str "00" " " "00" " " "5px" " " "rgba"))
 (defstyles root)

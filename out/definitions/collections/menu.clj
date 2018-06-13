@@ -6,12 +6,12 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "collection")
-(def element "menu")
+(def type nil)
+(def element nil)
 (def
  dropdownMenuBorderRadius
- "(:variableName @ dropdownMenuBorderRadius)")
-(def dropdownMenuDistance "(:measurement 0 px)")
+ (clojure.core/str dropdownMenuBorderRadius))
+(def dropdownMenuDistance (clojure.core/str "0px" " " "0px"))
 (defstyles
  root
  [".ui.menu"

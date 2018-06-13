@@ -5,21 +5,47 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def background "#FEFEFE")
-(def boxShadow "(:identifier inset)")
-(def verticalPadding "(:measurement 15 px)")
-(def horizontalPadding "(:measurement 15 px)")
-(def headerFontSize "(:measurement 1.15 em)")
-(def infoTextColor "#264C72")
-(def warningTextColor "#613A00")
-(def errorTextColor "#991111")
-(def floatingBoxShadow "(:identifier inset)")
-(def infoBorderColor "#97C1DA")
-(def errorBorderColor "#DA9797")
-(def warningBorderColor "#DCA874")
-(def small "(:measurement 12 px)")
-(def medium "(:measurement 13 px)")
-(def large "(:measurement 14 px)")
-(def huge "(:measurement 16 px)")
-(def massive "(:measurement 18 px)")
+(def background nil)
+(def
+ boxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  "rgba"
+  " "
+  "inset"))
+(def verticalPadding (clojure.core/str "15px"))
+(def horizontalPadding (clojure.core/str "15px"))
+(def headerFontSize (clojure.core/str "1.15em"))
+(def infoTextColor nil)
+(def warningTextColor nil)
+(def errorTextColor nil)
+(def
+ floatingBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  "rgba"
+  " "
+  "inset"))
+(def infoBorderColor nil)
+(def errorBorderColor nil)
+(def warningBorderColor nil)
+(def small (clojure.core/str "12px"))
+(def medium (clojure.core/str "13px"))
+(def large (clojure.core/str "14px"))
+(def huge (clojure.core/str "16px"))
+(def massive (clojure.core/str "18px"))
 (defstyles root)

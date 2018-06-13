@@ -4,69 +4,43 @@
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
-  [garden.units :refer [px]]
-  [) :refer :all]))
-(defstyles
- root
- [".ui.labeled.icon.buttons"
-  ["> .button"
-   ["> .icon"
-    {"box-shadow"
-     (clojure.core/str
-      "-1px"
-      " "
-      "0px"
-      " "
-      "0px"
-      " "
-      "0px"
-      " "
-      "rgba"
-      " "
-      "inset")}]]]
- [".ui.labeled.icon.button"
-  ["> .icon"
-   {"box-shadow"
-    (clojure.core/str
-     "-1px"
-     " "
-     "0px"
-     " "
-     "0px"
-     " "
-     "0px"
-     " "
-     "rgba"
-     " "
-     "inset")}]]
- [".ui.right.labeled.icon.buttons"
-  [".button"
-   [".icon"
-    {"box-shadow"
-     (clojure.core/str
-      "1px"
-      " "
-      "0px"
-      " "
-      "0px"
-      " "
-      "0px"
-      " "
-      "rgba"
-      " "
-      "inset")}]]]
- [".ui.right.labeled.icon.button"
-  [".icon"
-   {"box-shadow"
-    (clojure.core/str
-     "1px"
-     " "
-     "0px"
-     " "
-     "0px"
-     " "
-     "0px"
-     " "
-     "rgba"
-     " "
-     "inset")}]])
+  [garden.units :refer [px]]))
+(def pageFont (clojure.core/str "sans-serif"))
+(def textTransform (clojure.core/str "none"))
+(def fontWeight (clojure.core/str normal))
+(def textColor nil)
+(def verticalPadding (clojure.core/str "1.1em"))
+(def horizontalPadding (clojure.core/str "2.5em"))
+(def invertedBorderSize (clojure.core/str "3px"))
+(def basicBorderRadius (clojure.core/str "0.4em"))
+(def basicFontWeight (clojure.core/str "bold"))
+(def basicTextTransform (clojure.core/str "uppercase"))
+(def blue nil)
+(def primaryColor (clojure.core/str blue))
+(def borderRadius (clojure.core/str "0.25em"))
+(def backgroundColor nil)
+(def backgroundImage (clojure.core/str "none"))
+(def boxShadow (clojure.core/str "none"))
+(def hoverBackgroundColor nil)
+(def hoverBackgroundImage (clojure.core/str "none"))
+(def hoverBoxShadow (clojure.core/str "none"))
+(def downBackgroundColor nil)
+(def downBackgroundImage (clojure.core/str "none"))
+(def downBoxShadow (clojure.core/str "none"))
+(def activeBackgroundColor nil)
+(def activeBackgroundImage (clojure.core/str "none"))
+(def activeBoxShadow (clojure.core/str "none"))
+(def verticalBoxShadow (clojure.core/str "none"))
+(def loadingBackgroundColor nil)
+(def compactVerticalPadding nil)
+(def compactHorizontalPadding nil)
+(def labeledIconBackgroundColor (clojure.core/str "transparent"))
+(def mini (clojure.core/str "0.70.7" " " "rem"))
+(def tiny (clojure.core/str "0.750.75" " " "rem"))
+(def small (clojure.core/str "0.80.8" " " "rem"))
+(def medium (clojure.core/str "0.920.92" " " "rem"))
+(def large (clojure.core/str "11" " " "rem"))
+(def big (clojure.core/str "1.1251.125" " " "rem"))
+(def huge (clojure.core/str "1.21.2" " " "rem"))
+(def massive (clojure.core/str "1.31.3" " " "rem"))
+(defstyles root)

@@ -5,9 +5,9 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def fontFamily "(:identifier sans-serif)")
-(def boxShadow ")")
-(def dividerSize "(:measurement 0 px)")
-(def itemVerticalPadding "(:variableName @ relativeLarge)")
-(def itemHorizontalPadding "(:variableName @ relativeLarge)")
+(def fontFamily (clojure.core/str "sans-serif"))
+(def boxShadow (clojure.core/str "0px" " " "1px" " " "6px" " " "rgba"))
+(def dividerSize (clojure.core/str "0px"))
+(def itemVerticalPadding (clojure.core/str relativeLarge))
+(def itemHorizontalPadding (clojure.core/str relativeLarge))
 (defstyles root)

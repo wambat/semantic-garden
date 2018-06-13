@@ -5,24 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(defstyles
- root
- [".ui.loader:after"
-  {"-webkit-animation"
-   (clojure.core/str
-    "loader-pulsar"
-    " "
-    "2s"
-    " "
-    "infinite"
-    " "
-    "linear"),
-   "animation"
-   (clojure.core/str
-    "loader-pulsar"
-    " "
-    "2s"
-    " "
-    "infinite"
-    " "
-    "linear")}])
+(def loaderSpeed (clojure.core/str "2s"))
+(def loaderLineColor (clojure.core/str primaryColor))
+(def invertedLoaderLineColor (clojure.core/str lightPrimaryColor))
+(defstyles root)

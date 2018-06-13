@@ -6,6 +6,6 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "element")
-(def element "button")
+(def type nil)
+(def element nil)
 (defstyles root [".ui.button" nil])

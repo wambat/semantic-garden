@@ -5,9 +5,9 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def loadingMinHeight "(:measurement 250 px)")
-(def loadingContentPosition "(:identifier relative)")
-(def loadingContentOffset "(:measurement -10000 px)")
-(def loaderDistanceFromTop "(:measurement 100 px)")
-(def loaderSize "(:measurement 2.5 em)")
+(def loadingMinHeight (clojure.core/str "250px"))
+(def loadingContentPosition (clojure.core/str "relative"))
+(def loadingContentOffset (clojure.core/str "-10000px"))
+(def loaderDistanceFromTop (clojure.core/str "100px"))
+(def loaderSize (clojure.core/str "2.5em"))
 (defstyles root)

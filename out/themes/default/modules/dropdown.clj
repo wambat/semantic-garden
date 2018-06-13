@@ -5,276 +5,431 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def transition "(:variableName @ defaultEasing)")
-(def borderRadius "(:variableName @ defaultBorderRadius)")
-(def raisedShadow "(:variableName @ borderColor)")
-(def dropdownIconSize "(:variableName @ relative12px)")
-(def dropdownIconMargin "(:measurement 1 em)")
-(def textTransition "(:identifier none)")
-(def menuBackground "#FFFFFF")
-(def menuMargin "(:measurement 0 em)")
-(def menuPadding "(:measurement 0 em)")
-(def menuTop "(:measurement 100 %)")
-(def menuTextAlign "(:identifier left)")
-(def menuBorderWidth "(:measurement 1 px)")
-(def menuBorderColor "(:variableName @ borderColor)")
-(def menuBorder "(:variableName @ menuBorderColor)")
-(def menuBoxShadow "(:variableName @ raisedShadow)")
-(def menuBorderRadius "(:variableName @ borderRadius)")
-(def menuTransition "(:variableName @ defaultEasing)")
-(def menuZIndex "(:measurement 11)")
-(def textLineHeight "(:measurement 1 em)")
-(def textLineHeightOffset "")
-(def textCursorSpacing "(:measurement 1 px)")
-(def itemFontSize "(:variableName @ medium)")
-(def itemTextAlign "(:identifier left)")
-(def itemBorder "(:identifier none)")
-(def itemHeight "(:identifier auto)")
-(def itemDivider "(:identifier none)")
-(def itemColor "(:variableName @ textColor)")
-(def itemVerticalPadding "(:variableName @ mini)")
-(def itemHorizontalPadding "(:variableName @ large)")
-(def itemPadding "(:variableName @ itemHorizontalPadding)")
-(def itemFontWeight "(:variableName @ normal)")
-(def itemLineHeight "(:measurement 1 em)")
-(def itemLineHeightOffset "")
-(def itemTextTransform "(:identifier none)")
-(def itemBoxShadow "(:identifier none)")
-(def subMenuTop "(:measurement 0 %)")
-(def subMenuLeft "(:measurement 100 %)")
-(def subMenuRight "(:identifier auto)")
-(def subMenuDistanceAway "(:measurement -0.5 em)")
-(def subMenuMargin "(:variableName @ subMenuDistanceAway)")
-(def subMenuBorderRadius "(:variableName @ borderRadius)")
-(def subMenuZIndex "(:measurement 21)")
-(def menuHeaderColor "(:variableName @ darkTextColor)")
-(def menuHeaderFontSize "(:variableName @ relative11px)")
-(def menuHeaderFontWeight "(:variableName @ bold)")
-(def menuHeaderTextTransform "(:identifier uppercase)")
-(def menuHeaderMargin "(:identifier rem)")
-(def menuHeaderPadding "(:variableName @ itemHorizontalPadding)")
-(def menuDividerMargin "(:measurement 0 em)")
-(def menuDividerColor "(:variableName @ internalBorderColor)")
-(def menuDividerSize "(:measurement 1 px)")
-(def menuDividerBorder "(:variableName @ menuDividerColor)")
-(def menuInputMargin "(:variableName @ mini)")
-(def menuInputMinWidth "(:identifier rem)")
-(def menuInputVerticalPadding "(:measurement 0.5 em)")
+(def
+ transition
+ (clojure.core/str "width" " " defaultDuration " " defaultEasing))
+(def borderRadius (clojure.core/str defaultBorderRadius))
+(def
+ raisedShadow
+ (clojure.core/str "0px" " " "2px" " " "3px" " " "0px" " " borderColor))
+(def dropdownIconSize (clojure.core/str relative12px))
+(def
+ dropdownIconMargin
+ (clojure.core/str "0em" " " "0em" " " "0em" " " "1em"))
+(def textTransition (clojure.core/str "none"))
+(def menuBackground nil)
+(def menuMargin (clojure.core/str "0em"))
+(def menuPadding (clojure.core/str "0em" " " "0em"))
+(def menuTop (clojure.core/str "100%"))
+(def menuTextAlign (clojure.core/str "left"))
+(def menuBorderWidth (clojure.core/str "1px"))
+(def menuBorderColor (clojure.core/str borderColor))
+(def
+ menuBorder
+ (clojure.core/str menuBorderWidth " " "solid" " " menuBorderColor))
+(def menuBoxShadow (clojure.core/str raisedShadow))
+(def menuBorderRadius (clojure.core/str borderRadius))
+(def
+ menuTransition
+ (clojure.core/str "opacity" " " defaultDuration " " defaultEasing))
+(def menuZIndex (clojure.core/str "1111"))
+(def textLineHeight (clojure.core/str "1em"))
+(def textLineHeightOffset nil)
+(def textCursorSpacing (clojure.core/str "1px"))
+(def itemFontSize (clojure.core/str medium))
+(def itemTextAlign (clojure.core/str "left"))
+(def itemBorder (clojure.core/str "none"))
+(def itemHeight (clojure.core/str "auto"))
+(def itemDivider (clojure.core/str "none"))
+(def itemColor (clojure.core/str textColor))
+(def itemVerticalPadding (clojure.core/str mini))
+(def itemHorizontalPadding (clojure.core/str large))
+(def
+ itemPadding
+ (clojure.core/str itemVerticalPadding " " itemHorizontalPadding))
+(def itemFontWeight (clojure.core/str normal))
+(def itemLineHeight (clojure.core/str "1em"))
+(def itemLineHeightOffset nil)
+(def itemTextTransform (clojure.core/str "none"))
+(def itemBoxShadow (clojure.core/str "none"))
+(def subMenuTop (clojure.core/str "0%"))
+(def subMenuLeft (clojure.core/str "100%"))
+(def subMenuRight (clojure.core/str "auto"))
+(def subMenuDistanceAway (clojure.core/str "-0.5em"))
+(def
+ subMenuMargin
+ (clojure.core/str "0em" " " "0em" " " "0em" " " subMenuDistanceAway))
+(def subMenuBorderRadius (clojure.core/str borderRadius))
+(def subMenuZIndex (clojure.core/str "2121"))
+(def menuHeaderColor (clojure.core/str darkTextColor))
+(def menuHeaderFontSize (clojure.core/str relative11px))
+(def menuHeaderFontWeight (clojure.core/str bold))
+(def menuHeaderTextTransform (clojure.core/str "uppercase"))
+(def
+ menuHeaderMargin
+ (clojure.core/str
+  "11"
+  " "
+  "rem"
+  " "
+  "00"
+  " "
+  "rem"
+  " "
+  "0.750.75"
+  " "
+  "rem"))
+(def
+ menuHeaderPadding
+ (clojure.core/str "0em" " " itemHorizontalPadding))
+(def menuDividerMargin (clojure.core/str "0.5em" " " "0em"))
+(def menuDividerColor (clojure.core/str internalBorderColor))
+(def menuDividerSize (clojure.core/str "1px"))
+(def
+ menuDividerBorder
+ (clojure.core/str menuDividerSize " " "solid" " " menuDividerColor))
+(def menuInputMargin (clojure.core/str large " " mini))
+(def menuInputMinWidth (clojure.core/str "1010" " " "rem"))
+(def menuInputVerticalPadding (clojure.core/str "0.5em"))
 (def
  menuInputHorizontalPadding
- "(:variableName @ inputHorizontalPadding)")
-(def menuInputPadding "(:variableName @ menuInputHorizontalPadding)")
-(def menuImageMaxHeight "(:measurement 2 em)")
-(def menuImageVerticalMargin "")
-(def itemElementFloat "(:identifier none)")
-(def itemElementDistance "(:variableName @ mini)")
-(def itemDropdownIconDistance "(:measurement 1 em)")
-(def itemDropdownIconFloat "(:identifier right)")
+ (clojure.core/str inputHorizontalPadding))
+(def
+ menuInputPadding
+ (clojure.core/str
+  menuInputVerticalPadding
+  " "
+  menuInputHorizontalPadding))
+(def menuImageMaxHeight (clojure.core/str "2em"))
+(def menuImageVerticalMargin (clojure.core/str))
+(def itemElementFloat (clojure.core/str "none"))
+(def itemElementDistance (clojure.core/str mini))
+(def itemDropdownIconDistance (clojure.core/str "1em"))
+(def itemDropdownIconFloat (clojure.core/str "right"))
 (def
  itemDropdownIconMargin
- "(:variableName @ itemDropdownIconDistance)")
-(def itemDescriptionFloat "(:identifier right)")
-(def itemDescriptionMargin "(:measurement 1 em)")
-(def itemDescriptionColor "(:variableName @ lightTextColor)")
-(def messagePadding "(:variableName @ selectionItemPadding)")
-(def messageFontWeight "(:variableName @ normal)")
-(def messageColor "(:variableName @ unselectedTextColor)")
-(def floatedDistance "(:measurement 1 em)")
-(def selectionMinWidth "(:measurement 14 em)")
-(def selectionVerticalPadding "(:variableName @ inputVerticalPadding)")
+ (clojure.core/str
+  itemLineHeightOffset
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  itemDropdownIconDistance))
+(def itemDescriptionFloat (clojure.core/str "right"))
+(def
+ itemDescriptionMargin
+ (clojure.core/str "0em" " " "0em" " " "0em" " " "1em"))
+(def itemDescriptionColor (clojure.core/str lightTextColor))
+(def messagePadding (clojure.core/str selectionItemPadding))
+(def messageFontWeight (clojure.core/str normal))
+(def messageColor (clojure.core/str unselectedTextColor))
+(def floatedDistance (clojure.core/str "1em"))
+(def selectionMinWidth (clojure.core/str "14em"))
+(def selectionVerticalPadding (clojure.core/str inputVerticalPadding))
 (def
  selectionHorizontalPadding
- "(:variableName @ inputHorizontalPadding)")
-(def selectionBorderEmWidth "(:variableName @ relative1px)")
-(def selectionBackground "(:variableName @ inputBackground)")
-(def selectionDisplay "(:identifier inline-block)")
-(def selectionIconDistance "")
-(def selectionPadding "(:variableName @ selectionHorizontalPadding)")
-(def selectionZIndex "(:measurement 10)")
-(def selectionItemDivider "(:variableName @ solidInternalBorderColor)")
-(def selectionMessagePadding "(:variableName @ selectionItemPadding)")
-(def selectBorder "(:variableName @ borderColor)")
-(def selectPadding "(:measurement 0.5 em)")
-(def selectVisibility "(:identifier visible)")
-(def selectHeight "(:measurement 38 px)")
-(def selectionTextColor "(:variableName @ textColor)")
+ (clojure.core/str inputHorizontalPadding))
+(def selectionBorderEmWidth (clojure.core/str relative1px))
+(def selectionBackground (clojure.core/str inputBackground))
+(def selectionDisplay (clojure.core/str "inline-block"))
+(def selectionIconDistance nil)
+(def
+ selectionPadding
+ (clojure.core/str
+  selectionVerticalPadding
+  " "
+  selectionIconDistance
+  " "
+  selectionVerticalPadding
+  " "
+  selectionHorizontalPadding))
+(def selectionZIndex (clojure.core/str "1010"))
+(def
+ selectionItemDivider
+ (clojure.core/str "1px" " " "solid" " " solidInternalBorderColor))
+(def selectionMessagePadding (clojure.core/str selectionItemPadding))
+(def selectBorder (clojure.core/str "1px" " " "solid" " " borderColor))
+(def selectPadding (clojure.core/str "0.5em"))
+(def selectVisibility (clojure.core/str "visible"))
+(def selectHeight (clojure.core/str "38px"))
+(def selectionTextColor (clojure.core/str textColor))
 (def
  selectionTextUnderlayIconOpacity
- "(:variableName @ disabledOpacity)")
+ (clojure.core/str disabledOpacity))
 (def
  selectionTextUnderlayColor
- "(:variableName @ inputPlaceholderFocusColor)")
-(def selectionBoxShadow "(:identifier none)")
-(def selectionBorderColor "(:variableName @ borderColor)")
-(def selectionBorder "(:variableName @ selectionBorderColor)")
-(def selectionBorderRadius "(:variableName @ borderRadius)")
-(def selectionIconOpacity "(:measurement 0.8)")
-(def selectionIconZIndex "(:measurement 3)")
-(def selectionIconHitbox "(:variableName @ selectionVerticalPadding)")
-(def selectionIconMargin "(:variableName @ selectionIconHitbox)")
-(def selectionIconPadding "")
-(def selectionIconTransition "(:variableName @ defaultEasing)")
-(def selectionMenuBorderRadius "(:variableName @ borderRadius)")
-(def selectionMenuBoxShadow "(:variableName @ raisedShadow)")
-(def selectionMenuItemBoxShadow "(:identifier none)")
+ (clojure.core/str inputPlaceholderFocusColor))
+(def selectionBoxShadow (clojure.core/str "none"))
+(def selectionBorderColor (clojure.core/str borderColor))
+(def
+ selectionBorder
+ (clojure.core/str "1px" " " "solid" " " selectionBorderColor))
+(def selectionBorderRadius (clojure.core/str borderRadius))
+(def selectionIconOpacity (clojure.core/str "0.80.8"))
+(def selectionIconZIndex (clojure.core/str "33"))
+(def selectionIconHitbox (clojure.core/str selectionVerticalPadding))
+(def selectionIconMargin nil)
+(def selectionIconPadding nil)
+(def
+ selectionIconTransition
+ (clojure.core/str "opacity" " " defaultDuration " " defaultEasing))
+(def
+ selectionMenuBorderRadius
+ (clojure.core/str "0em" " " "0em" " " borderRadius " " borderRadius))
+(def selectionMenuBoxShadow (clojure.core/str raisedShadow))
+(def selectionMenuItemBoxShadow (clojure.core/str "none"))
 (def
  selectionItemHorizontalPadding
- "(:variableName @ itemHorizontalPadding)")
+ (clojure.core/str itemHorizontalPadding))
 (def
  selectionItemVerticalPadding
- "(:variableName @ itemVerticalPadding)")
+ (clojure.core/str itemVerticalPadding))
 (def
  selectionItemPadding
- "(:variableName @ selectionItemHorizontalPadding)")
-(def selectionTransition "(:variableName @ transition)")
-(def selectionMenuTransition "(:variableName @ menuTransition)")
-(def selectionMobileMaxItems "(:measurement 3)")
-(def selectionTabletMaxItems "(:measurement 4)")
-(def selectionComputerMaxItems "(:measurement 6)")
-(def selectionWidescreenMaxItems "(:measurement 8)")
-(def selectedBorderEMWidth "(:measurement 0.1 em)")
-(def selectionMobileMaxMenuHeight "")
-(def selectionTabletMaxMenuHeight "")
-(def selectionComputerMaxMenuHeight "")
-(def selectionWidescreenMaxMenuHeight "")
-(def selectionHoverBorderColor "(:variableName @ selectedBorderColor)")
-(def selectionHoverBoxShadow "(:identifier none)")
+ (clojure.core/str
+  selectionItemVerticalPadding
+  " "
+  selectionItemHorizontalPadding))
+(def selectionTransition (clojure.core/str transition))
+(def selectionMenuTransition (clojure.core/str menuTransition))
+(def selectionMobileMaxItems (clojure.core/str "33"))
+(def selectionTabletMaxItems (clojure.core/str "44"))
+(def selectionComputerMaxItems (clojure.core/str "66"))
+(def selectionWidescreenMaxItems (clojure.core/str "88"))
+(def selectedBorderEMWidth (clojure.core/str "0.1em"))
+(def selectionMobileMaxMenuHeight nil)
+(def selectionTabletMaxMenuHeight nil)
+(def selectionComputerMaxMenuHeight nil)
+(def selectionWidescreenMaxMenuHeight nil)
+(def selectionHoverBorderColor (clojure.core/str selectedBorderColor))
+(def selectionHoverBoxShadow (clojure.core/str "none"))
 (def
  selectionFocusBorderColor
- "(:variableName @ focusedFormMutedBorderColor)")
-(def selectionFocusBoxShadow "(:identifier none)")
-(def selectionFocusMenuBoxShadow "(:variableName @ raisedShadow)")
-(def selectionVisibleTextFontWeight "(:variableName @ normal)")
-(def selectionVisibleTextColor "(:variableName @ hoveredTextColor)")
+ (clojure.core/str focusedFormMutedBorderColor))
+(def selectionFocusBoxShadow (clojure.core/str "none"))
+(def selectionFocusMenuBoxShadow (clojure.core/str raisedShadow))
+(def selectionVisibleTextFontWeight (clojure.core/str normal))
+(def selectionVisibleTextColor (clojure.core/str hoveredTextColor))
 (def
  selectionVisibleBorderColor
- "(:variableName @ focusedFormMutedBorderColor)")
-(def selectionVisibleBoxShadow "(:variableName @ raisedShadow)")
-(def selectionVisibleMenuBoxShadow "(:variableName @ raisedShadow)")
+ (clojure.core/str focusedFormMutedBorderColor))
+(def selectionVisibleBoxShadow (clojure.core/str raisedShadow))
+(def selectionVisibleMenuBoxShadow (clojure.core/str raisedShadow))
 (def
  selectionActiveHoverBorderColor
- "(:variableName @ focusedFormMutedBorderColor)")
+ (clojure.core/str focusedFormMutedBorderColor))
 (def
  selectionActiveHoverBoxShadow
- "(:variableName @ selectionVisibleBoxShadow)")
+ (clojure.core/str selectionVisibleBoxShadow))
 (def
  selectionActiveHoverMenuBoxShadow
- "(:variableName @ selectionVisibleMenuBoxShadow)")
-(def selectionVisibleConnectingBorder "(:measurement 0 em)")
-(def selectionVisibleIconOpacity "(:measurement 1)")
-(def searchMinWidth "")
-(def searchSelectionLineHeight "(:variableName @ inputLineHeight)")
-(def searchSelectionLineHeightOffset "")
-(def searchSelectionVerticalPadding "")
+ (clojure.core/str selectionVisibleMenuBoxShadow))
+(def selectionVisibleConnectingBorder (clojure.core/str "0em"))
+(def selectionVisibleIconOpacity (clojure.core/str "11"))
+(def searchMinWidth nil)
+(def searchSelectionLineHeight (clojure.core/str inputLineHeight))
+(def searchSelectionLineHeightOffset (clojure.core/str))
+(def searchSelectionVerticalPadding nil)
 (def
  searchSelectionHorizontalPadding
- "(:variableName @ selectionHorizontalPadding)")
+ (clojure.core/str selectionHorizontalPadding))
 (def
  searchSelectionInputPadding
- "(:variableName @ searchSelectionHorizontalPadding)")
+ (clojure.core/str
+  searchSelectionVerticalPadding
+  " "
+  selectionIconDistance
+  " "
+  searchSelectionVerticalPadding
+  " "
+  searchSelectionHorizontalPadding))
 (def
  searchMobileMaxMenuHeight
- "(:variableName @ selectionMobileMaxMenuHeight)")
+ (clojure.core/str selectionMobileMaxMenuHeight))
 (def
  searchTabletMaxMenuHeight
- "(:variableName @ selectionTabletMaxMenuHeight)")
+ (clojure.core/str selectionTabletMaxMenuHeight))
 (def
  searchComputerMaxMenuHeight
- "(:variableName @ selectionComputerMaxMenuHeight)")
+ (clojure.core/str selectionComputerMaxMenuHeight))
 (def
  searchWidescreenMaxMenuHeight
- "(:variableName @ selectionWidescreenMaxMenuHeight)")
-(def inlineIconMargin "(:variableName @ relative3px)")
-(def inlineTextColor "(:identifier inherit)")
-(def inlineTextFontWeight "(:variableName @ bold)")
-(def inlineMenuDistance "(:variableName @ relative3px)")
-(def inlineMenuBorderRadius "(:variableName @ borderRadius)")
-(def multipleSelectionLeftPadding "(:variableName @ relative5px)")
+ (clojure.core/str selectionWidescreenMaxMenuHeight))
+(def
+ inlineIconMargin
+ (clojure.core/str "0em" " " relative7px " " "0em" " " relative3px))
+(def inlineTextColor (clojure.core/str "inherit"))
+(def inlineTextFontWeight (clojure.core/str bold))
+(def inlineMenuDistance (clojure.core/str relative3px))
+(def inlineMenuBorderRadius (clojure.core/str borderRadius))
+(def multipleSelectionLeftPadding (clojure.core/str relative5px))
 (def
  multipleSelectionRightPadding
- "(:variableName @ selectionIconDistance)")
+ (clojure.core/str selectionIconDistance))
 (def
  multipleSelectionPadding
- "(:variableName @ multipleSelectionLeftPadding)")
-(def multipleSelectionChildLeftMargin "")
+ (clojure.core/str
+  multipleSelectionVerticalPadding
+  " "
+  multipleSelectionRightPadding
+  " "
+  multipleSelectionVerticalPadding
+  " "
+  multipleSelectionLeftPadding))
+(def multipleSelectionChildLeftMargin nil)
 (def
  multipleSelectionChildMargin
- "(:variableName @ multipleSelectionChildLeftMargin)")
-(def multipleSelectionChildLineHeight "(:variableName @ relative17px)")
-(def multipleSelectionSearchStartWidth "")
-(def multipleSelectionDropdownIconMargin "")
-(def multipleSelectionDropdownIconPadding "")
+ (clojure.core/str
+  multipleSelectionChildVerticalMargin
+  " "
+  "0em"
+  " "
+  multipleSelectionChildVerticalMargin
+  " "
+  multipleSelectionChildLeftMargin))
+(def multipleSelectionChildLineHeight (clojure.core/str relative17px))
+(def multipleSelectionSearchStartWidth nil)
+(def multipleSelectionDropdownIconMargin nil)
+(def multipleSelectionDropdownIconPadding nil)
 (def
  multipleSelectionSearchAfterLabelDistance
- "(:variableName @ relative2px)")
-(def labelSize "(:variableName @ relativeMedium)")
-(def labelHorizontalMargin "(:measurement 4 px)")
-(def labelVerticalMargin "(:measurement 2 px)")
-(def labelMargin "(:measurement 0 em)")
-(def labelBorderWidth "(:measurement 1 px)")
-(def labelBoxShadow "(:identifier inset)")
-(def labelVerticalPadding "(:variableName @ relative5px)")
-(def labelHorizontalPadding "(:variableName @ relativeMini)")
-(def labelPadding "(:variableName @ labelHorizontalPadding)")
-(def hoveredItemBackground "(:variableName @ transparentBlack)")
-(def hoveredItemColor "(:variableName @ selectedTextColor)")
-(def hoveredZIndex "")
-(def defaultTextColor "(:variableName @ inputPlaceholderColor)")
+ (clojure.core/str relative2px))
+(def labelSize (clojure.core/str relativeMedium))
+(def labelHorizontalMargin nil)
+(def labelVerticalMargin nil)
+(def
+ labelMargin
+ (clojure.core/str
+  labelVerticalMargin
+  " "
+  labelHorizontalMargin
+  " "
+  labelVerticalMargin
+  " "
+  "0em"))
+(def labelBorderWidth (clojure.core/str "1px"))
+(def
+ labelBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  labelBorderWidth
+  " "
+  borderColor
+  " "
+  "inset"))
+(def labelVerticalPadding (clojure.core/str relative5px))
+(def labelHorizontalPadding (clojure.core/str relativeMini))
+(def
+ labelPadding
+ (clojure.core/str labelVerticalPadding " " labelHorizontalPadding))
+(def hoveredItemBackground (clojure.core/str transparentBlack))
+(def hoveredItemColor (clojure.core/str selectedTextColor))
+(def hoveredZIndex nil)
+(def defaultTextColor (clojure.core/str inputPlaceholderColor))
 (def
  defaultTextFocusColor
- "(:variableName @ inputPlaceholderFocusColor)")
-(def loadingZIndex "(:measurement -1)")
-(def activeItemZIndex "")
-(def activeItemBackground "(:identifier transparent)")
-(def activeItemBoxShadow "(:identifier none)")
-(def activeItemFontWeight "(:variableName @ bold)")
-(def activeItemColor "(:variableName @ selectedTextColor)")
-(def selectedBackground "(:variableName @ subtleTransparentBlack)")
-(def selectedColor "(:variableName @ selectedTextColor)")
-(def errorLabelBackground "#EACBCB")
-(def errorLabelColor "(:variableName @ errorTextColor)")
-(def errorItemTextColor "(:variableName @ errorTextColor)")
-(def errorItemHoverBackground "#FFF2F2")
-(def errorItemActiveBackground "#FDCFCF")
-(def scrollingMenuWidth "(:measurement 100 %)")
-(def scrollingMenuItemBorder "(:identifier none)")
-(def scrollingMobileMaxItems "(:measurement 4)")
-(def scrollingTabletMaxItems "(:measurement 6)")
-(def scrollingComputerMaxItems "(:measurement 8)")
-(def scrollingWidescreenMaxItems "(:measurement 12)")
-(def scrollingBorderEMWidth "(:measurement 0 em)")
-(def scrollingMobileMaxMenuHeight "")
-(def scrollingTabletMaxMenuHeight "")
-(def scrollingComputerMaxMenuHeight "")
-(def scrollingWidescreenMaxMenuHeight "")
+ (clojure.core/str inputPlaceholderFocusColor))
+(def loadingZIndex (clojure.core/str "-1-1"))
+(def activeItemZIndex nil)
+(def activeItemBackground (clojure.core/str "transparent"))
+(def activeItemBoxShadow (clojure.core/str "none"))
+(def activeItemFontWeight (clojure.core/str bold))
+(def activeItemColor (clojure.core/str selectedTextColor))
+(def selectedBackground (clojure.core/str subtleTransparentBlack))
+(def selectedColor (clojure.core/str selectedTextColor))
+(def errorLabelBackground nil)
+(def errorLabelColor (clojure.core/str errorTextColor))
+(def errorItemTextColor (clojure.core/str errorTextColor))
+(def errorItemHoverBackground nil)
+(def errorItemActiveBackground nil)
+(def scrollingMenuWidth (clojure.core/str "100%"))
+(def scrollingMenuItemBorder (clojure.core/str "none"))
+(def scrollingMobileMaxItems (clojure.core/str "44"))
+(def scrollingTabletMaxItems (clojure.core/str "66"))
+(def scrollingComputerMaxItems (clojure.core/str "88"))
+(def scrollingWidescreenMaxItems (clojure.core/str "1212"))
+(def scrollingBorderEMWidth (clojure.core/str "0em"))
+(def scrollingMobileMaxMenuHeight nil)
+(def scrollingTabletMaxMenuHeight nil)
+(def scrollingComputerMaxMenuHeight nil)
+(def scrollingWidescreenMaxMenuHeight nil)
 (def
  upwardSelectionVisibleBorderRadius
- "(:variableName @ borderRadius)")
-(def upwardMenuBoxShadow ")")
-(def upwardSelectionMenuBoxShadow ")")
-(def upwardMenuBorderRadius "(:measurement 0 em)")
-(def upwardSelectionHoverBoxShadow ")")
-(def upwardSelectionVisibleBoxShadow ")")
-(def upwardSelectionActiveHoverBoxShadow ")")
-(def upwardSelectionActiveHoverMenuBoxShadow ")")
-(def leftMenuDropdownIconFloat "(:identifier left)")
-(def leftMenuDropdownIconMargin "(:measurement 0 em)")
-(def leftSubMenuBorderRadius "(:variableName @ borderRadius)")
-(def leftSubMenuMargin "(:measurement 0 em)")
-(def simpleTransitionDuration "(:variableName @ defaultDuration)")
-(def simpleTransition "(:variableName @ defaultEasing)")
-(def floatingMenuDistance "(:measurement 0.5 em)")
-(def floatingMenuBoxShadow "(:variableName @ floatingShadow)")
-(def floatingMenuBorderRadius "(:variableName @ borderRadius)")
-(def pointingArrowOffset "")
-(def pointingArrowDistanceFromEdge "(:measurement 1 em)")
-(def pointingArrowBackground "(:variableName @ white)")
-(def pointingArrowZIndex "(:measurement 2)")
-(def pointingArrowBoxShadow "")
-(def pointingArrowSize "(:variableName @ relative7px)")
-(def pointingMenuDistance "(:variableName @ mini)")
-(def pointingMenuBorderRadius "(:variableName @ borderRadius)")
-(def pointingArrowBoxShadow "")
-(def pointingUpwardMenuBorderRadius "(:variableName @ borderRadius)")
-(def pointingUpwardArrowBoxShadow "(:variableName @ menuBorderColor)")
+ (clojure.core/str
+  selectionVisibleConnectingBorder
+  " "
+  selectionVisibleConnectingBorder
+  " "
+  borderRadius
+  " "
+  borderRadius))
+(def
+ upwardMenuBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "3px" " " "0px" " " "rgba"))
+(def
+ upwardSelectionMenuBoxShadow
+ (clojure.core/str "0px" " " "-2px" " " "3px" " " "0px" " " "rgba"))
+(def
+ upwardMenuBorderRadius
+ (clojure.core/str borderRadius " " borderRadius " " "0em" " " "0em"))
+(def
+ upwardSelectionHoverBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "2px" " " "0px" " " "rgba"))
+(def
+ upwardSelectionVisibleBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "3px" " " "0px" " " "rgba"))
+(def
+ upwardSelectionActiveHoverBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "3px" " " "0px" " " "rgba"))
+(def
+ upwardSelectionActiveHoverMenuBoxShadow
+ (clojure.core/str "0px" " " "-2px" " " "3px" " " "0px" " " "rgba"))
+(def leftMenuDropdownIconFloat (clojure.core/str "left"))
+(def
+ leftMenuDropdownIconMargin
+ (clojure.core/str itemLineHeightOffset " " "0em" " " "0em" " " "0em"))
+(def leftSubMenuBorderRadius (clojure.core/str borderRadius))
+(def
+ leftSubMenuMargin
+ (clojure.core/str "0em" " " subMenuDistanceAway " " "0em" " " "0em"))
+(def simpleTransitionDuration (clojure.core/str defaultDuration))
+(def
+ simpleTransition
+ (clojure.core/str
+  "opacity"
+  " "
+  simpleTransitionDuration
+  " "
+  defaultEasing))
+(def floatingMenuDistance (clojure.core/str "0.5em"))
+(def floatingMenuBoxShadow (clojure.core/str floatingShadow))
+(def floatingMenuBorderRadius (clojure.core/str borderRadius))
+(def pointingArrowOffset (clojure.core/str))
+(def pointingArrowDistanceFromEdge (clojure.core/str "1em"))
+(def pointingArrowBackground (clojure.core/str white))
+(def pointingArrowZIndex (clojure.core/str "22"))
+(def pointingArrowBoxShadow nil)
+(def pointingArrowSize (clojure.core/str relative7px))
+(def pointingMenuDistance (clojure.core/str mini))
+(def pointingMenuBorderRadius (clojure.core/str borderRadius))
+(def pointingArrowBoxShadow nil)
+(def pointingUpwardMenuBorderRadius (clojure.core/str borderRadius))
+(def
+ pointingUpwardArrowBoxShadow
+ (clojure.core/str
+  menuBorderWidth
+  " "
+  menuBorderWidth
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  menuBorderColor))
 (defstyles root)

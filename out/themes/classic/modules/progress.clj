@@ -5,9 +5,11 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def background ")")
-(def boxShadow "(:identifier inset)")
-(def barBackground "#888888")
-(def border "(:variableName @ borderColor)")
-(def padding "(:variableName @ relative3px)")
+(def background (clojure.core/str "rgba"))
+(def
+ boxShadow
+ (clojure.core/str "0px" " " "0px" " " "4px" " " "rgba" " " "inset"))
+(def barBackground nil)
+(def border (clojure.core/str "1px" " " "solid" " " borderColor))
+(def padding (clojure.core/str relative3px))
 (defstyles root)

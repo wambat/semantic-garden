@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "module")
-(def element "tab")
+(def type nil)
+(def element nil)
 (defstyles
  root
  [".ui.tab" {"display" (clojure.core/str "none")}]

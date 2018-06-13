@@ -5,5 +5,5 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def gutterWidth "(:identifier rem)")
+(def gutterWidth (clojure.core/str "1.5381.538" " " "rem"))
 (defstyles root)

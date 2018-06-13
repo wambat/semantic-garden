@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "element")
-(def element "step")
+(def type nil)
+(def element nil)
 (defstyles
  root
  [".ui.steps"

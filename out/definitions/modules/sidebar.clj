@@ -6,6 +6,6 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "module")
-(def element "sidebar")
+(def type nil)
+(def element nil)
 (defstyles root [".ui.sidebar" nil])

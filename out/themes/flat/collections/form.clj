@@ -5,40 +5,55 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def paragraphMargin "(:measurement 0 em)")
-(def fieldMargin "(:measurement 1 em)")
-(def labelFontSize "(:variableName @ relative11px)")
-(def labelTextTransform "(:identifier uppercase)")
-(def groupedLabelTextTransform "(:identifier none)")
-(def inputHorizontalPadding "(:measurement 0.5 em)")
-(def inputBackground "(:identifier transparent)")
-(def inputBorder "(:identifier none)")
-(def inputBorderRadius "(:measurement 0 em)")
-(def inputBoxShadow "(:identifier none)")
-(def invertedInputColor "(:variableName @ invertedTextColor)")
-(def textAreaPadding "(:measurement 1 em)")
-(def textAreaBackground "(:identifier transparent)")
-(def textAreaFocusBackground "#EEEEEE")
-(def textAreaBorder "#DDDDDD")
-(def dividerMargin "(:measurement 0 em)")
-(def validationMargin "(:measurement 1 em)")
-(def validationArrowOffset "(:measurement -0.3 em)")
-(def inputFocusPointerSize "(:measurement 0 px)")
-(def inputErrorPointerSize "(:measurement 0 px)")
-(def dropdownErrorHoverBackground "#FFF2F2")
-(def dropdownErrorActiveBackground "#FDCFCF")
+(def paragraphMargin (clojure.core/str "1em" " " "0em"))
+(def fieldMargin (clojure.core/str "0em" " " "0em" " " "1em"))
+(def labelFontSize (clojure.core/str relative11px))
+(def labelTextTransform (clojure.core/str "uppercase"))
+(def groupedLabelTextTransform (clojure.core/str "none"))
+(def inputHorizontalPadding (clojure.core/str "0.5em"))
+(def inputBackground (clojure.core/str "transparent"))
+(def inputBorder (clojure.core/str "none"))
+(def inputBorderRadius (clojure.core/str "0em"))
+(def inputBoxShadow (clojure.core/str "none"))
+(def invertedInputColor (clojure.core/str invertedTextColor))
+(def textAreaPadding (clojure.core/str "1em"))
+(def textAreaBackground (clojure.core/str "transparent"))
+(def textAreaFocusBackground nil)
+(def textAreaBorder nil)
+(def dividerMargin (clojure.core/str "1em" " " "0em"))
+(def
+ validationMargin
+ (clojure.core/str "0em" " " "0em" " " "0em" " " "1em"))
+(def validationArrowOffset (clojure.core/str "-0.3em"))
+(def inputFocusPointerSize (clojure.core/str "0px"))
+(def inputErrorPointerSize (clojure.core/str "0px"))
+(def dropdownErrorHoverBackground nil)
+(def dropdownErrorActiveBackground nil)
 (def
  inputErrorFocusBackground
- "(:variableName @ negativeBackgroundColor)")
-(def inputErrorFocusColor "(:variableName @ negativeColorHover)")
-(def inputErrorFocusBorder "(:variableName @ negativeBorderColor)")
-(def inputErrorFocusBoxShadow "(:identifier inset)")
-(def inputPlaceholderColor ")")
-(def inputPlaceholderFocusColor ")")
-(def inputErrorPlaceholderColor ")")
-(def inputErrorPlaceholderFocusColor ")")
-(def formLoaderDimmerColor ")")
-(def formLoaderPath "@{imagePath}/loader-large.gif")
-(def formLoaderPosition "(:measurement 50 %)")
-(def gutterWidth "(:measurement 1.5 em)")
+ (clojure.core/str negativeBackgroundColor))
+(def inputErrorFocusColor (clojure.core/str negativeColorHover))
+(def inputErrorFocusBorder (clojure.core/str negativeBorderColor))
+(def
+ inputErrorFocusBoxShadow
+ (clojure.core/str
+  inputErrorPointerSize
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  negativeColorHover
+  " "
+  "inset"))
+(def inputPlaceholderColor (clojure.core/str "lighten"))
+(def inputPlaceholderFocusColor (clojure.core/str "lighten"))
+(def inputErrorPlaceholderColor (clojure.core/str "lighten"))
+(def inputErrorPlaceholderFocusColor (clojure.core/str "lighten"))
+(def formLoaderDimmerColor (clojure.core/str "rgba"))
+(def formLoaderPath nil)
+(def formLoaderPosition (clojure.core/str "50%" " " "50%"))
+(def gutterWidth (clojure.core/str "1.5em"))
 (defstyles root)

@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "global")
-(def element "site")
+(def type nil)
+(def element nil)
 (defstyles
  root
  ["html" {"height" (clojure.core/str "100%")}]

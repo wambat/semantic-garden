@@ -5,9 +5,9 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def transitionDefaultEasing "(:variableName @ defaultEasing)")
-(def transitionDefaultFill "(:identifier both)")
-(def transitionDefaultDuration "(:measurement 300 ms)")
-(def use3DAcceleration ")")
-(def backfaceVisibility "(:identifier hidden)")
+(def transitionDefaultEasing (clojure.core/str defaultEasing))
+(def transitionDefaultFill (clojure.core/str "both"))
+(def transitionDefaultDuration (clojure.core/str "300ms"))
+(def use3DAcceleration (clojure.core/str "translateZ"))
+(def backfaceVisibility (clojure.core/str "hidden"))
 (defstyles root)

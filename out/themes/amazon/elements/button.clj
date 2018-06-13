@@ -5,63 +5,52 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(defstyles
- root
- [".ui.button"
-  {"background-image"
-   (clojure.core/str
-    "linear-gradient"
-    " "
-    "repeat"
-    " "
-    "scroll"
-    " "
-    "00"
-    " "
-    "00"
-    " "
-    "rgba")}]
- [".ui.primary.button"
-  {"color" nil,
-   "border" (clojure.core/str "1px" " " "solid"),
-   "border-color" nil}]
- [".ui.primary.button:hover" {"border-color" nil, "color" nil}]
- [".ui.secondary.button"
-  {"border" (clojure.core/str "1px" " " "solid"), "border-color" nil}]
- [".ui.secondary.button:hover" {"border-color" nil}]
- [".ui.labeled.icon.buttons"
-  [".button"
-   ["> .icon"
-    {"padding-bottom" (clojure.core/str "0.48em"),
-     "padding-top" (clojure.core/str "0.48em"),
-     "position" (clojure.core/str "absolute"),
-     "text-align" (clojure.core/str "center"),
-     "width" (clojure.core/str "2em"),
-     "height" (clojure.core/str "2em"),
-     "top" (clojure.core/str "0.35em"),
-     "left" (clojure.core/str "0.4em"),
-     "border-radius" (clojure.core/str "3px")}]]]
- [".ui.labeled.icon.button"
-  ["> .icon"
-   {"padding-bottom" (clojure.core/str "0.48em"),
-    "padding-top" (clojure.core/str "0.48em"),
-    "position" (clojure.core/str "absolute"),
-    "text-align" (clojure.core/str "center"),
-    "width" (clojure.core/str "2em"),
-    "height" (clojure.core/str "2em"),
-    "top" (clojure.core/str "0.35em"),
-    "left" (clojure.core/str "0.4em"),
-    "border-radius" (clojure.core/str "3px")}]]
- [".ui.right.labeled.icon.buttons"
-  [".button"
-   ["> .icon"
-    {"left" (clojure.core/str "auto"),
-     "right" (clojure.core/str "0.4em"),
-     "border-radius" (clojure.core/str "3px")}]]]
- [".ui.right.labeled.icon.button"
-  ["> .icon"
-   {"left" (clojure.core/str "auto"),
-    "right" (clojure.core/str "0.4em"),
-    "border-radius" (clojure.core/str "3px")}]]
- [".ui.basic.labeled.icon.buttons" [".button" ["> .icon" nil]]]
- [".ui.basic.labeled.icon.button" ["> .icon" nil]])
+(def pageFont (clojure.core/str "sans-serif"))
+(def textTransform (clojure.core/str "none"))
+(def textColor nil)
+(def fontWeight (clojure.core/str "normal"))
+(def
+ transition
+ (clojure.core/str "background" " " defaultDuration " " defaultEasing))
+(def hoverBackgroundColor nil)
+(def borderRadius (clojure.core/str "3px"))
+(def verticalPadding (clojure.core/str "0.8em"))
+(def horizontalPadding (clojure.core/str "1.75em"))
+(def backgroundColor nil)
+(def backgroundImage (clojure.core/str "linear-gradient"))
+(def boxShadow nil)
+(def coloredBackgroundImage (clojure.core/str "linear-gradient"))
+(def
+ coloredBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "1px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "rgba"
+  " "
+  "inset"))
+(def
+ downBoxShadow
+ (clojure.core/str "00" " " "1px" " " "3px" " " "rgba" " " "inset"))
+(def labeledIconBackgroundColor nil)
+(def labeledIconColor nil)
+(def labeledIconBorder (clojure.core/str "transparent"))
+(def black nil)
+(def orange nil)
+(def coloredBackgroundImage (clojure.core/str "linear-gradient"))
+(def primaryColor (clojure.core/str orange))
+(def secondaryColor (clojure.core/str black))
+(def mini (clojure.core/str "10px"))
+(def tiny (clojure.core/str "11px"))
+(def small (clojure.core/str "12px"))
+(def medium (clojure.core/str "13px"))
+(def large (clojure.core/str "14px"))
+(def big (clojure.core/str "16px"))
+(def huge (clojure.core/str "18px"))
+(def massive (clojure.core/str "22px"))
+(defstyles root)

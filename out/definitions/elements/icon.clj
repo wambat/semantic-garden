@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "element")
-(def element "icon")
+(def type nil)
+(def element nil)
 (defstyles
  root
  ["i.icon"

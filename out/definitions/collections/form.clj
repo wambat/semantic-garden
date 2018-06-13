@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "collection")
-(def element "form")
+(def type nil)
+(def element nil)
 (defstyles
  root
  [".ui.form"

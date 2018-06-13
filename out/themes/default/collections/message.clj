@@ -5,60 +5,92 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def verticalMargin "(:measurement 1 em)")
-(def verticalPadding "(:measurement 1 em)")
-(def horizontalPadding "(:measurement 1.5 em)")
-(def padding "(:variableName @ horizontalPadding)")
-(def background "#F8F8F9")
-(def lineHeightOffset "")
-(def borderRadius "(:variableName @ defaultBorderRadius)")
-(def borderWidth "(:measurement 1 px)")
-(def borderShadow "(:identifier inset)")
-(def shadowShadow ")")
-(def boxShadow "(:variableName @ shadowShadow)")
-(def transition "(:variableName @ defaultEasing)")
-(def headerFontSize "(:variableName @ relativeLarge)")
-(def headerFontWeight "(:variableName @ bold)")
-(def headerDisplay "(:identifier block)")
-(def headerDistance "(:identifier rem)")
-(def headerMargin "(:measurement 0 em)")
-(def headerParagraphDistance "(:measurement 0.25 em)")
-(def messageTextOpacity "(:measurement 0.85)")
-(def messageParagraphMargin "(:measurement 0.75 em)")
-(def listOpacity "(:measurement 0.85)")
-(def listStylePosition "(:identifier inside)")
-(def listMargin "(:measurement 0.5 em)")
-(def listItemIndent "(:measurement 1 em)")
-(def listItemMargin "(:measurement 0.3 em)")
-(def iconDistance "(:measurement 0.6 em)")
-(def closeTopDistance "")
-(def closeRightDistance "(:measurement 0.5 em)")
-(def closeOpacity "(:measurement 0.7)")
-(def closeTransition "(:variableName @ defaultEasing)")
-(def iconSize "(:measurement 3 em)")
-(def iconOpacity "(:measurement 0.8)")
-(def iconContentDistance "(:identifier rem)")
-(def iconVerticalAlign "(:identifier middle)")
-(def attachedXOffset "(:measurement -1 px)")
-(def attachedYOffset "(:measurement -1 px)")
-(def attachedBoxShadow "(:identifier inset)")
-(def attachedBottomBoxShadow "(:variableName @ subtleShadow)")
-(def floatingBoxShadow "(:variableName @ floatingShadow)")
-(def redBoxShadow "(:variableName @ shadowShadow)")
-(def orangeBoxShadow "(:variableName @ shadowShadow)")
-(def yellowBoxShadow "(:variableName @ shadowShadow)")
-(def oliveBoxShadow "(:variableName @ shadowShadow)")
-(def greenBoxShadow "(:variableName @ shadowShadow)")
-(def tealBoxShadow "(:variableName @ shadowShadow)")
-(def blueBoxShadow "(:variableName @ shadowShadow)")
-(def violetBoxShadow "(:variableName @ shadowShadow)")
-(def purpleBoxShadow "(:variableName @ shadowShadow)")
-(def pinkBoxShadow "(:variableName @ shadowShadow)")
-(def brownBoxShadow "(:variableName @ shadowShadow)")
-(def positiveBoxShadow "(:variableName @ shadowShadow)")
-(def negativeBoxShadow "(:variableName @ shadowShadow)")
-(def infoBoxShadow "(:variableName @ shadowShadow)")
-(def warningBoxShadow "(:variableName @ shadowShadow)")
-(def errorBoxShadow "(:variableName @ shadowShadow)")
-(def successBoxShadow "(:variableName @ shadowShadow)")
+(def verticalMargin (clojure.core/str "1em"))
+(def verticalPadding (clojure.core/str "1em"))
+(def horizontalPadding (clojure.core/str "1.5em"))
+(def padding (clojure.core/str verticalPadding " " horizontalPadding))
+(def background nil)
+(def lineHeightOffset (clojure.core/str))
+(def borderRadius (clojure.core/str defaultBorderRadius))
+(def borderWidth (clojure.core/str "1px"))
+(def
+ borderShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  borderWidth
+  " "
+  strongBorderColor
+  " "
+  "inset"))
+(def
+ shadowShadow
+ (clojure.core/str "0px" " " "0px" " " "0px" " " "0px" " " "rgba"))
+(def boxShadow (clojure.core/str shadowShadow))
+(def
+ transition
+ (clojure.core/str "box-shadow" " " defaultDuration " " defaultEasing))
+(def headerFontSize (clojure.core/str relativeLarge))
+(def headerFontWeight (clojure.core/str bold))
+(def headerDisplay (clojure.core/str "block"))
+(def headerDistance (clojure.core/str "00" " " "rem"))
+(def headerMargin nil)
+(def headerParagraphDistance (clojure.core/str "0.25em"))
+(def messageTextOpacity (clojure.core/str "0.850.85"))
+(def messageParagraphMargin (clojure.core/str "0.75em"))
+(def listOpacity (clojure.core/str "0.850.85"))
+(def listStylePosition (clojure.core/str "inside"))
+(def listMargin (clojure.core/str "0.5em"))
+(def listItemIndent (clojure.core/str "1em"))
+(def listItemMargin (clojure.core/str "0.3em"))
+(def iconDistance (clojure.core/str "0.6em"))
+(def closeTopDistance nil)
+(def closeRightDistance (clojure.core/str "0.5em"))
+(def closeOpacity (clojure.core/str "0.70.7"))
+(def
+ closeTransition
+ (clojure.core/str "opacity" " " defaultDuration " " defaultEasing))
+(def iconSize (clojure.core/str "3em"))
+(def iconOpacity (clojure.core/str "0.80.8"))
+(def iconContentDistance (clojure.core/str "00" " " "rem"))
+(def iconVerticalAlign (clojure.core/str "middle"))
+(def attachedXOffset (clojure.core/str "-1px"))
+(def attachedYOffset (clojure.core/str "-1px"))
+(def
+ attachedBoxShadow
+ (clojure.core/str
+  "0em"
+  " "
+  "0em"
+  " "
+  "0em"
+  " "
+  borderWidth
+  " "
+  borderColor
+  " "
+  "inset"))
+(def attachedBottomBoxShadow (clojure.core/str subtleShadow))
+(def floatingBoxShadow (clojure.core/str floatingShadow))
+(def redBoxShadow (clojure.core/str shadowShadow))
+(def orangeBoxShadow (clojure.core/str shadowShadow))
+(def yellowBoxShadow (clojure.core/str shadowShadow))
+(def oliveBoxShadow (clojure.core/str shadowShadow))
+(def greenBoxShadow (clojure.core/str shadowShadow))
+(def tealBoxShadow (clojure.core/str shadowShadow))
+(def blueBoxShadow (clojure.core/str shadowShadow))
+(def violetBoxShadow (clojure.core/str shadowShadow))
+(def purpleBoxShadow (clojure.core/str shadowShadow))
+(def pinkBoxShadow (clojure.core/str shadowShadow))
+(def brownBoxShadow (clojure.core/str shadowShadow))
+(def positiveBoxShadow (clojure.core/str shadowShadow))
+(def negativeBoxShadow (clojure.core/str shadowShadow))
+(def infoBoxShadow (clojure.core/str shadowShadow))
+(def warningBoxShadow (clojure.core/str shadowShadow))
+(def errorBoxShadow (clojure.core/str shadowShadow))
+(def successBoxShadow (clojure.core/str shadowShadow))
 (defstyles root)

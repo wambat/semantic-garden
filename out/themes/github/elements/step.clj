@@ -5,23 +5,22 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(defstyles
- root
- [".ui.steps" [".step:after" {"display" (clojure.core/str "none")}]]
- [".ui.steps"
-  [".completed.step:before" {"opacity" (clojure.core/str "0.50.5")}]]
- [".ui.steps"
-  [".step.active:after"
-   {"display" (clojure.core/str "block"),
-    "border" (clojure.core/str "none"),
-    "border-bottom" (clojure.core/str "1px" " " "solid" " " "rgba"),
-    "border-left" (clojure.core/str "1px" " " "solid" " " "rgba")}]]
- [".ui.vertical.steps"
-  [".step.active:after"
-   {"display" (clojure.core/str "block"),
-    "border" (clojure.core/str "none"),
-    "top" (clojure.core/str "50%"),
-    "right" (clojure.core/str "0%"),
-    "border-left" (clojure.core/str "none"),
-    "border-bottom" (clojure.core/str "1px" " " "solid" " " "rgba"),
-    "border-right" (clojure.core/str "1px" " " "solid" " " "rgba")}]])
+(def background (clojure.core/str "transparent" " " "linear-gradient"))
+(def verticalPadding (clojure.core/str "1em"))
+(def arrowDisplay (clojure.core/str "none"))
+(def lastArrowDisplay (clojure.core/str "none"))
+(def activeArrowDisplay (clojure.core/str "block"))
+(def activeLastArrowDisplay (clojure.core/str "block"))
+(def stepsBackground nil)
+(def
+ stepsBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "1px" " " "0px" " " "rgba"))
+(def activeBackground nil)
+(def activeIconColor (clojure.core/str darkTextColor))
+(def arrowTopOffset (clojure.core/str "100%"))
+(def arrowRightOffset (clojure.core/str "50%"))
+(def arrowBorderColor (clojure.core/str "rgba"))
+(def
+ arrowBorderWidth
+ (clojure.core/str "0px" " " "0px" " " borderWidth " " borderWidth))
+(defstyles root)

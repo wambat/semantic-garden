@@ -5,9 +5,9 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def small "(:variableName @ relative10px)")
-(def medium "(:variableName @ relative11px)")
-(def large "(:variableName @ relative13px)")
-(def verticalPadding "(:variableName @ relative7px)")
-(def horizontalPadding "(:variableName @ relative11px)")
+(def small (clojure.core/str relative10px))
+(def medium (clojure.core/str relative11px))
+(def large (clojure.core/str relative13px))
+(def verticalPadding (clojure.core/str relative7px))
+(def horizontalPadding (clojure.core/str relative11px))
 (defstyles root)

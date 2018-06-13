@@ -5,5 +5,5 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def miniWidth "(:measurement 20 px)")
+(def miniWidth (clojure.core/str "20px"))
 (defstyles root)

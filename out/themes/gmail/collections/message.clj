@@ -5,14 +5,29 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def background "#F3F3F3")
-(def boxShadow "(:identifier inset)")
-(def borderRadius "(:measurement 4 px)")
-(def verticalPadding "(:measurement 7 px)")
-(def horizontalPadding "(:measurement 15 px)")
-(def headerFontSize "(:measurement 1 em)")
-(def floatingBoxShadow ")")
-(def iconSize "(:measurement 1.5 em)")
-(def iconDistance "(:measurement 1 em)")
-(def warningBackgroundColor "#F9EDBE")
+(def background nil)
+(def
+ boxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  "rgba"
+  " "
+  "inset"))
+(def borderRadius (clojure.core/str "4px"))
+(def verticalPadding (clojure.core/str "7px"))
+(def horizontalPadding (clojure.core/str "15px"))
+(def headerFontSize (clojure.core/str "1em"))
+(def
+ floatingBoxShadow
+ (clojure.core/str "0px" " " "2px" " " "4px" " " "rgba"))
+(def iconSize (clojure.core/str "1.5em"))
+(def iconDistance (clojure.core/str "1em"))
+(def warningBackgroundColor nil)
 (defstyles root)

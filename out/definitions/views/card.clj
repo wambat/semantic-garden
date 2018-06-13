@@ -6,9 +6,9 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type "view")
-(def element "card")
-(def borderRadius "(:measurement 0 em)")
+(def type nil)
+(def element nil)
+(def borderRadius (clojure.core/str borderRadius " " "0em" " " "0em"))
 (defstyles
  root
  [".ui.cards"
