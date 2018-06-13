@@ -151,8 +151,8 @@
          (map rest forms))))
 
 (defn translate-expression [ss]
-  (println "EXPR")
-  (println (map rest ss))
+  (info "EXPR")
+  (info (map rest ss))
   (let [chunks (map rest ss)
         pimp (fn [i s]
                (if (= " !important" i)
@@ -163,8 +163,8 @@
       (if (pos? (count chunks))
         (let [ch (ffirst chunks)
               imp (last (first chunks))]
-          (println "PROP")
-          (println imp)
+          (info "PROP")
+          (info imp)
           (cond
             (string? ch)
             (recur
@@ -366,7 +366,7 @@
 (defn less->clj [root filename]
   (let [rn (relative-name root filename)
         ns (str/replace rn #"\/" ".")]
-    (println (str root
+    (info (str root
                ":"
                filename
                ":"

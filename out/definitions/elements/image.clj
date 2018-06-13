@@ -363,29 +363,7 @@
  [".ui.huge.image"
   {"width" (clojure.core/str hugeWidth),
    "height" (clojure.core/str "auto"),
-   "font-size" (clojure.core/str huge)}]EXPR
-(((:measurement 0 em)))
-PROP
-(:measurement 0 em)
-EXPR
-(((:measurement 0 em)) ((:mathCharacter -) (:commandStatement (:expression (:variableName @ imageHorizontalMargin)) (:expression (:measurement 0)) (:expression (:identifier rem)))))
-PROP
-(:measurement 0 em)
-PROP
-(:commandStatement (:expression (:variableName @ imageHorizontalMargin)) (:expression (:measurement 0)) (:expression (:identifier rem)))
-EXPR
-(((:identifier inline-block)))
-PROP
-(:identifier inline-block)
-EXPR
-(((:measurement 0 em)) ((:variableName @ imageHorizontalMargin)) ((:variableName @ imageVerticalMargin)))
-PROP
-(:measurement 0 em)
-PROP
-(:variableName @ imageHorizontalMargin)
-PROP
-(:variableName @ imageVerticalMargin)
-
+   "font-size" (clojure.core/str huge)}]
  [".ui.massive.images"
   [".image"
    {"width" (clojure.core/str massiveWidth),

@@ -214,20 +214,7 @@
       {"cursor" (clojure.core/str metadataActionCursor),
        "opacity" (clojure.core/str metadataActionOpacity),
        "color" (clojure.core/str metadataActionColor),
-       "transition"
-       (clojure.core/str metadataActionTransition)}]]]]]EXPR
-(((:variableName @ small)))
-PROP
-(:variableName @ small)
-EXPR
-(((:variableName @ medium)))
-PROP
-(:variableName @ medium)
-EXPR
-(((:variableName @ large)))
-PROP
-(:variableName @ large)
-
+       "transition" (clojure.core/str metadataActionTransition)}]]]]]
  [".ui.feed"
   ["> .event"
    ["> .content"

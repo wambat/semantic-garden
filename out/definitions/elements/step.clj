@@ -202,11 +202,7 @@
   [".step:after" {"display" (clojure.core/str verticalArrowDisplay)}]]
  [".ui.vertical.steps"
   [".active.step:after"
-   {"display" (clojure.core/str verticalActiveArrowDisplay)}]]EXPR
-(((:variableName @ verticalActiveLastArrowDisplay)))
-PROP
-(:variableName @ verticalActiveLastArrowDisplay)
-
+   {"display" (clojure.core/str verticalActiveArrowDisplay)}]]
  [".ui.vertical.steps"
   [".step:last-child"
    {"display" (clojure.core/str verticalLastArrowDisplay)}]]
