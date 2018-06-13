@@ -1,0 +1,36 @@
+(clojure.core/ns
+ themes.github.collections.menu
+ (:require
+  [garden.def :refer [defstyles]]
+  [garden.stylesheet :refer [at-media]]
+  [garden.selectors :as sel]
+  [garden.units :refer [px]]))
+(def itemVerticalPadding "(:measurement 1 em)")
+(def itemHorizontalPadding "(:measurement 1.25 em)")
+(def background ")")
+(def fontWeight "(:identifier normal)")
+(def activeBorderSize "(:measurement 0 em)")
+(def hoverBackground ")")
+(def downBackground ")")
+(def activeBackground ")")
+(def activeHoverBackground ")")
+(def headerBackground ")")
+(def subMenuMargin "(:measurement 0)")
+(def subMenuHorizontalPadding "(:measurement 0.7 em)")
+(def arrowHoverColor "#EEEEEE")
+(def arrowActiveColor "#EEEEEE")
+(def arrowVerticalHoverColor "#F4F4F4")
+(def arrowVerticalActiveColor "#F4F4F4")
+(def dividerBackground "#E8E8E8")
+(def verticalDividerBackground "#E8E8E8")
+(def buttonOffset "(:measurement -0.15 em)")
+(def buttonVerticalPadding "(:measurement 0.75 em)")
+(def paginationMinWidth "(:measurement 3.5 em)")
+(def tieredActiveItemBackground "#F5F5F5")
+(def tieredActiveMenuBackground "#F5F5F5")
+(def verticalBackground "#FFFFFF")
+(def verticalItemBackground ")")
+(def invertedBackground ")")
+(def invertedBoxShadow ")")
+(def secondaryVerticalPadding "(:measurement 0.75 em)")
+(defstyles root)

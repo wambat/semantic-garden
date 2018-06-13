@@ -1,0 +1,36 @@
+(clojure.core/ns
+ themes.github.globals.site
+ (:require
+  [garden.def :refer [defstyles]]
+  [garden.stylesheet :refer [at-media]]
+  [garden.selectors :as sel]
+  [garden.units :refer [px]]))
+(def pageMinWidth "(:measurement 1049 px)")
+(def pageOverflowX "(:identifier visible)")
+(def emSize "(:measurement 13 px)")
+(def fontSize "(:measurement 13 px)")
+(def fontName "Arial")
+(def h1 "(:measurement 2.25 em)")
+(def defaultBorderRadius "(:measurement 0.2307 em)")
+(def disabledOpacity "(:measurement 0.3)")
+(def blue "#80A6CD")
+(def green "#78CB5B")
+(def orange "#D26911")
+(def black "#333333")
+(def primaryColor "(:variableName @ green)")
+(def secondaryColor "(:variableName @ black)")
+(def linkColor "#4078C0")
+(def linkHoverColor "(:variableName @ linkColor)")
+(def linkHoverUnderline "(:identifier underline)")
+(def borderColor ")")
+(def solidBorderColor "#DDDDDD")
+(def internalBorderColor ")")
+(def selectedBorderColor "#51A7E8")
+(def largeMonitorBreakpoint "(:measurement 1049 px)")
+(def computerBreakpoint "(:variableName @ largeMonitorBreakpoint)")
+(def tabletBreakpoint "(:variableName @ largeMonitorBreakpoint)")
+(def infoBackgroundColor "#E6F1F6")
+(def infoTextColor "#4E575B")
+(def warningTextColor "#613A00")
+(def errorTextColor "#991111")
+(defstyles root)
