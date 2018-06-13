@@ -38,8 +38,10 @@
 ;; "
 ;;   ())
 (defn unq [n]
-  (let [nn (str/replace n #"\'\"" "")]
-    nn))
+  (if n
+    (let [nn (str/replace n #"\'|\"" "")]
+      nn)
+    ""))
 
 (defn import-path [n]
   (symbol(unq n)))
@@ -64,31 +66,7 @@
                        imports)]
         paths))))
 
-(defn translate-variables [ss]
-  (when-let [declarations (sp/select [sp/ALL
-                                      (sp/pred (sexpr-named? :statement))
-                                      (sp/nthpath 1)
-                                      (sp/pred (sexpr-named? :variableDeclaration))
-                                      ]
-                                     ss)]
-    (info declarations)
-    (map (fn [i]
-           ;; (info i)
-           (let [var (sp/select-first [sp/ALL
-                                       (sp/pred (sexpr-named? :variableName))
-                                       sp/LAST]
-                                      i)
-                 val (sp/select-first [sp/ALL
-                                       (sp/pred (sexpr-named? :values))
-                                       sp/LAST
-                                       (sp/pred (sexpr-named? :commandStatement))
-                                       sp/LAST
-                                       (sp/pred (sexpr-named? :expression))
-                                       sp/LAST
-                                       ]
-                                      i)]
-             `(def ~(symbol (unq var)) ~(unq val))))
-         declarations)))
+
 
 (defn translate-not-selectors [ss]
   (map unq
@@ -211,6 +189,29 @@
             ))
         `(str ~@(flatten (interpose " " props))))))
   )
+
+(defn translate-variables [ss]
+  (when-let [declarations (sp/select [sp/ALL
+                                      (sp/pred (sexpr-named? :statement))
+                                      (sp/nthpath 1)
+                                      (sp/pred (sexpr-named? :variableDeclaration))
+                                      ]
+                                     ss)]
+    (info declarations)
+    (map (fn [i]
+           ;; (info i)
+           (let [var (sp/select-first [sp/ALL
+                                       (sp/pred (sexpr-named? :variableName))
+                                       sp/LAST]
+                                      i)
+                 exp (rest (sp/select-first [sp/ALL
+                                             (sp/pred (sexpr-named? :values))
+                                             sp/LAST
+                                             (sp/pred (sexpr-named? :commandStatement))]
+                                            i))]
+             `(def ~(symbol (unq var)) ~(translate-expression exp))))
+         declarations)))
+
 (defn translate-property [ss]
   (let [identifier (sp/select-first [sp/ALL
                                      (sp/pred (sexpr-named? :identifier))]
@@ -333,69 +334,58 @@
 
 (defn parse-file-tree
   ([filename]
-   (parse-file-tree "Semantic-UI/src/definitions/" filename))
-  ([root filename]
-   (info (str
-             root
-             "/"
-             filename
+   (info (str filename
              ".less"))
    (let [output (atom {})
          ext ".less"
-         is (ANTLRInputStream. (slurp (io/file (str
-                                                root
-                                                "/"
-                                                filename
-                                                ext))))
+         is (ANTLRInputStream. (slurp (io/file filename)))
          lessLexer (LessLexer. is)
          tokenStream (CommonTokenStream. lessLexer)
          tokenParser (LessParser. tokenStream)
          lessListener (parser filename output)
-         stylesheet (.stylesheet tokenParser)
-         ]
+         stylesheet (.stylesheet tokenParser)]
      (antlr.coerce/tree->sexpr {:tree stylesheet
                                 :parser tokenParser}))))
 
+(defn relative-name [dir f]
+  (let [dir (fs/file dir)
+        rel-path (str/replace (fs/parent f)
+                              (str dir) "")]
+    (str/replace
+     (str rel-path
+          "/"
+          (fs/name f))
+     #"^\/" "")))
+
 (defn less->clj [root filename]
-  (let [ns (str/replace filename #"\/" ".")]
-    (info (str ns
-                  ":"
-                  root
-                  ":"
-                  filename))
-    (translate-stylesheet ns (parse-file-tree root filename))))
+  (let [rn (relative-name root filename)
+        ns (str/replace rn #"\/" ".")]
+    (println (str root
+               ":"
+               filename
+               ":"
+               ns))
+    (translate-stylesheet ns (parse-file-tree filename))))
 
 (defn get-files [dir]
   ;; fs/file
   (let [dir (fs/file dir)
-        files (fs/find-files  dir #".*\.less")]
-    (map (fn [f]
-           (let [rel-path
-                 (str/replace (fs/parent f)
-                              (str dir) "")
-                 ]
-             [rel-path
-              ;; (str (fs/parent f))
-              ;; (str dir)
-              (fs/name f)]
-             (str/replace
-              (str rel-path
-                   "/"
-                   (fs/name f))
-              #"^\/" ""))) files)))
+        files (fs/find-files  dir #".*\.(less|variables)")]
+    files))
 
 (defn fmt [src]
-  (with-out-str (clojure.pprint/pprint src)))
+  (apply str
+         (map
+          #(with-out-str (clojure.pprint/pprint %))
+          src)))
 
 (defn process-semantic [dir]
   (mapv
    (fn [i]
-     (let [outdir (str "out/" dir)
-           outfile (str outdir "/" i ".clj")
+     (let [rn (relative-name dir i)
+           outfile (str "out/" rn ".clj")
            clj (doall (less->clj dir i))]
        (clojure.java.io/make-parents outfile)
-
-       ;; (def a clj)
        (spit outfile
              (fmt clj))))
    (get-files dir)))

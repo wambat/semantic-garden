@@ -1,7 +1,7 @@
 (ns semantic-garden.core-test
   (:require [clojure.test :refer :all]
             [semantic-garden.core :refer :all]))
-(deftest translate
+#_(deftest translate
   (testing "Translate into garden"
     (is (=
          `(ns test.problems
@@ -11,13 +11,13 @@
          #_(translate-stylesheet "test.problems"
                                (parse-file-tree "test/" "problems"))))))
 
-#_(deftest translate
+(deftest translate
   (testing "Translate into garden"
     (is (=
          `(ns test.problems
             (:require [theme.config :refer :all]))
          (translate-stylesheet "test.problems"
-                                 (parse-file-tree "test/" "problems"))))))
+                               (parse-file-tree "resources/test/problems.less"))))))
 
 #_(deftest parse
   (testing "Parse into structure"
