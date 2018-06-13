@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "view"))
+(def element (clojure.core/str "feed"))
 (defstyles
  root
  [".ui.feed" {"margin" (clojure.core/str margin)}]
@@ -214,7 +214,20 @@
       {"cursor" (clojure.core/str metadataActionCursor),
        "opacity" (clojure.core/str metadataActionOpacity),
        "color" (clojure.core/str metadataActionColor),
-       "transition" (clojure.core/str metadataActionTransition)}]]]]]
+       "transition"
+       (clojure.core/str metadataActionTransition)}]]]]]EXPR
+(((:variableName @ small)))
+PROP
+(:variableName @ small)
+EXPR
+(((:variableName @ medium)))
+PROP
+(:variableName @ medium)
+EXPR
+(((:variableName @ large)))
+PROP
+(:variableName @ large)
+
  [".ui.feed"
   ["> .event"
    ["> .content"

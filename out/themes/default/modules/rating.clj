@@ -27,8 +27,8 @@
 (def starInactiveColor (clojure.core/str inactiveColor))
 (def starInactiveTextShadow (clojure.core/str "none"))
 (def starActiveBackground (clojure.core/str activeBackground))
-(def starActiveColor nil)
-(def starActiveShadowColor nil)
+(def starActiveColor (clojure.core/str "#FFE623"))
+(def starActiveShadowColor (clojure.core/str "#DDC507"))
 (def
  starActiveTextShadow
  (clojure.core/str
@@ -40,8 +40,8 @@
   " "
   starActiveShadowColor))
 (def starSelectedBackground (clojure.core/str selectedBackground))
-(def starSelectedColor nil)
-(def starSelectedShadowColor nil)
+(def starSelectedColor (clojure.core/str "#FFCC00"))
+(def starSelectedShadowColor (clojure.core/str "#E6A200"))
 (def
  starSelectedTextShadow
  (clojure.core/str
@@ -59,8 +59,8 @@
 (def heartInactiveColor (clojure.core/str inactiveColor))
 (def heartInactiveTextShadow (clojure.core/str "none"))
 (def heartActiveBackground (clojure.core/str activeBackground))
-(def heartActiveColor nil)
-(def heartActiveShadowColor nil)
+(def heartActiveColor (clojure.core/str "#FF6D75"))
+(def heartActiveShadowColor (clojure.core/str "#CD0707"))
 (def
  heartActiveTextShadow
  (clojure.core/str
@@ -72,8 +72,8 @@
   " "
   heartActiveShadowColor))
 (def heartSelectedBackground (clojure.core/str selectedBackground))
-(def heartSelectedColor nil)
-(def heartSelectedShadowColor nil)
+(def heartSelectedColor (clojure.core/str "#FF3000"))
+(def heartSelectedShadowColor (clojure.core/str "#AA0101"))
 (def
  heartSelectedTextShadow
  (clojure.core/str

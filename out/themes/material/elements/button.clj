@@ -5,18 +5,18 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def googleFontName nil)
+(def googleFontName (clojure.core/str "Roboto"))
 (def pageFont (clojure.core/str "sans-serif"))
 (def medium (clojure.core/str "13px"))
 (def verticalPadding (clojure.core/str "0.8em"))
 (def horizontalPadding (clojure.core/str "0.8em"))
 (def borderRadius (clojure.core/str relative3px))
-(def color nil)
+(def color (clojure.core/str "#222222"))
 (def fontWeight (clojure.core/str "normal"))
 (def textTransform (clojure.core/str "none"))
 (def backgroundColor (clojure.core/str white))
 (def backgroundImage (clojure.core/str "linear-gradient"))
-(def solidBorderColor nil)
+(def solidBorderColor (clojure.core/str "#DDDDDD"))
 (def borderBoxShadowColor (clojure.core/str solidBorderColor))
 (def
  borderBoxShadow
@@ -53,10 +53,12 @@
  (clojure.core/str "0px" " " "2px" " " "3px" " " "0px" " " "rgba"))
 (def downBackgroundColor (clojure.core/str white))
 (def downBackgroundImage (clojure.core/str "linear-gradient"))
-(def downTextColor nil)
+(def downTextColor (clojure.core/str "#222222"))
 (def downBoxShadow (clojure.core/str borderBoxShadow))
-(def activeBackgroundColor nil)
-(def activeBoxShadow nil)
+(def activeBackgroundColor (clojure.core/str "#F0F0F0"))
+(def
+ activeBoxShadow
+ (clojure.core/str "0px" " " "0px" " " "0px" " " "1px" " " "#DDDDDD"))
 (def basicBorderSize (clojure.core/str "0px"))
 (def basicBorderRadius (clojure.core/str "4px"))
 (def basicColoredBorderSize (clojure.core/str "1px"))
@@ -64,7 +66,7 @@
 (def basicHoverBoxShadow (clojure.core/str hoverBoxShadow))
 (def basicDownBackground (clojure.core/str white))
 (def basicDownBoxShadow (clojure.core/str downBoxShadow))
-(def basicActiveBackground nil)
+(def basicActiveBackground (clojure.core/str "#FFFFFF"))
 (def
  basicActiveBoxShadow
  (clojure.core/str "0px" " " "0px" " " "0px" " " "1px" " " "rgba"))
@@ -86,13 +88,26 @@
   "rgba"
   " "
   "inset"))
-(def primaryColor nil)
-(def primaryBoxShadow nil)
-(def secondaryColor nil)
+(def primaryColor (clojure.core/str "#4184F3"))
+(def
+ primaryBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  "#0157E4"
+  " "
+  "inset"))
+(def secondaryColor (clojure.core/str "#EEEEEE"))
 (def secondaryBackgroundImage (clojure.core/str backgroundImage))
 (def secondaryTextColor (clojure.core/str textColor))
 (def secondaryBoxShadow (clojure.core/str borderBoxShadow))
-(def positiveColor nil)
-(def negativeColor nil)
+(def positiveColor (clojure.core/str "#3D9400"))
+(def negativeColor (clojure.core/str "#D34836"))
 (def invertedBorderSize (clojure.core/str "1px"))
 (defstyles root)

@@ -9,7 +9,7 @@
 (def verticalPadding (clojure.core/str "1em"))
 (def horizontalPadding (clojure.core/str "1.5em"))
 (def padding (clojure.core/str verticalPadding " " horizontalPadding))
-(def background nil)
+(def background (clojure.core/str "#F8F8F9"))
 (def lineHeightOffset (clojure.core/str))
 (def borderRadius (clojure.core/str defaultBorderRadius))
 (def borderWidth (clojure.core/str "1px"))

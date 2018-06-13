@@ -5,7 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def fontPath nil)
+(def fontPath (clojure.core/str "../../themes/material/assets/fonts"))
 (def width (clojure.core/str "1em"))
 (def height (clojure.core/str "1em"))
 (def small (clojure.core/str "13px"))

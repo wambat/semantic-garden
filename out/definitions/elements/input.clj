@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "input"))
 (defstyles
  root
  [".ui.input"
@@ -61,7 +61,7 @@
  [".ui.loading.loading.input"
   ["> i.icon:before"
    {"position" (clojure.core/str "absolute"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "top" (clojure.core/str "50%"),
     "left" (clojure.core/str "50%"),
     "margin" (clojure.core/str loaderMargin),
@@ -94,7 +94,7 @@
     "animation-iteration-count" (clojure.core/str "infinite"),
     "animation"
     (clojure.core/str "button-spin" " " loaderSpeed " " "linear"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "box-shadow"
     (clojure.core/str
      "0px"

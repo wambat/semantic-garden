@@ -14,7 +14,20 @@
 (def dividedBorder (clojure.core/str "1px" " " "dotted" " " "rgba"))
 (def blockVerticalPadding (clojure.core/str "1.3em"))
 (def blockHorizontalPadding (clojure.core/str "1em"))
-(def attachedBackground nil)
+(def
+ attachedBackground
+ (clojure.core/str
+  "linear-gradient"
+  " "
+  "repeat"
+  " "
+  "scroll"
+  " "
+  "00"
+  " "
+  "00"
+  " "
+  "#F8F8F8"))
 (def attachedVerticalPadding (clojure.core/str "1.31.3"))
 (def attachedHorizontalPadding (clojure.core/str "1em"))
 (def h1 (clojure.core/str "1.751.75" " " "rem"))

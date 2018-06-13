@@ -8,7 +8,7 @@
 (def verticalMargin (clojure.core/str medium))
 (def horizontalMargin (clojure.core/str "0em"))
 (def margin (clojure.core/str verticalMargin " " horizontalMargin))
-(def background nil)
+(def background (clojure.core/str "#FFFFFF"))
 (def fontFamily (clojure.core/str pageFont))
 (def itemBackground (clojure.core/str "none"))
 (def fontWeight (clojure.core/str normal))
@@ -40,7 +40,7 @@
 (def iconOpacity (clojure.core/str "0.90.9"))
 (def dropdownIconFloat (clojure.core/str "right"))
 (def dropdownIconDistance (clojure.core/str "1em"))
-(def headerBackground nil)
+(def headerBackground (clojure.core/str ""))
 (def headerWeight (clojure.core/str bold))
 (def headerTextTransform (clojure.core/str normal))
 (def verticalIconFloat (clojure.core/str "right"))
@@ -61,7 +61,7 @@
  arrowTransition
  (clojure.core/str "background" " " defaultDuration " " defaultEasing))
 (def arrowZIndex (clojure.core/str "22"))
-(def arrowHoverColor nil)
+(def arrowHoverColor (clojure.core/str "#F2F2F2"))
 (def arrowActiveColor (clojure.core/str arrowHoverColor))
 (def arrowActiveHoverColor (clojure.core/str arrowActiveColor))
 (def arrowVerticalHoverColor (clojure.core/str arrowHoverColor))
@@ -79,7 +79,7 @@
 (def imageWidth (clojure.core/str "2.5em"))
 (def verticalImageWidth (clojure.core/str "auto"))
 (def labelOffset (clojure.core/str "-0.15em"))
-(def labelBackground nil)
+(def labelBackground (clojure.core/str "#999999"))
 (def labelTextColor (clojure.core/str white))
 (def labelTextMargin (clojure.core/str "1em"))
 (def labelVerticalPadding (clojure.core/str "0.3em"))
@@ -91,7 +91,7 @@
 (def
  dropdownMenuBoxShadow
  (clojure.core/str "0px" " " "1px" " " "3px" " " "0px" " " "rgba"))
-(def dropdownBackground nil)
+(def dropdownBackground (clojure.core/str "#FFFFFF"))
 (def dropdownMenuDistance (clojure.core/str "0em"))
 (def dropdownMenuBorderRadius (clojure.core/str borderRadius))
 (def dropdownItemFontSize (clojure.core/str relativeMedium))
@@ -142,7 +142,7 @@
 (def subMenuActiveFontWeight (clojure.core/str bold))
 (def verticalBoxShadow (clojure.core/str boxShadow))
 (def verticalPointerWidth (clojure.core/str "2px"))
-(def verticalBackground nil)
+(def verticalBackground (clojure.core/str "#FFFFFF"))
 (def verticalItemBackground (clojure.core/str "none"))
 (def verticalDividerBackground (clojure.core/str dividerBackground))
 (def verticalActiveBoxShadow (clojure.core/str "none"))
@@ -249,8 +249,8 @@
 (def
  secondaryPointingInvertedActiveColor
  (clojure.core/str invertedSelectedTextColor))
-(def tieredActiveItemBackground nil)
-(def tieredActiveMenuBackground nil)
+(def tieredActiveItemBackground (clojure.core/str "#FCFCFC"))
+(def tieredActiveMenuBackground (clojure.core/str "#FCFCFC"))
 (def tieredSubMenuTextTransform (clojure.core/str normal))
 (def tieredSubMenuFontWeight (clojure.core/str normal))
 (def tieredSubMenuColor (clojure.core/str lightTextColor))
@@ -350,7 +350,7 @@
  (clojure.core/str invertedSelectedTextColor))
 (def invertedActiveBackground (clojure.core/str strongTransparentWhite))
 (def invertedActiveColor (clojure.core/str invertedSelectedTextColor))
-(def invertedArrowActiveColor nil)
+(def invertedArrowActiveColor (clojure.core/str "#3D3E3F"))
 (def
  invertedActiveHoverBackground
  (clojure.core/str invertedActiveBackground))

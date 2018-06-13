@@ -7,7 +7,7 @@
   [garden.units :refer [px]]))
 (def stepMargin (clojure.core/str "1em" " " "0em"))
 (def stepsBorderRadius (clojure.core/str defaultBorderRadius))
-(def stepsBackground nil)
+(def stepsBackground (clojure.core/str ""))
 (def stepsBoxShadow (clojure.core/str "none"))
 (def stepsBorder (clojure.core/str "1px" " " "solid" " " borderColor))
 (def verticalMargin (clojure.core/str "0em"))

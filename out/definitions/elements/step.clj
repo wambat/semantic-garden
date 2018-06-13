@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "step"))
 (defstyles
  root
  [".ui.steps"
@@ -55,7 +55,7 @@
     "border-style" (clojure.core/str "solid"),
     "position" (clojure.core/str "absolute"),
     "z-index" (clojure.core/str "22"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "background-color" (clojure.core/str arrowBackgroundColor),
     "display" (clojure.core/str "none"),
     "transition" (clojure.core/str transition)}]]
@@ -202,7 +202,11 @@
   [".step:after" {"display" (clojure.core/str verticalArrowDisplay)}]]
  [".ui.vertical.steps"
   [".active.step:after"
-   {"display" (clojure.core/str verticalActiveArrowDisplay)}]]
+   {"display" (clojure.core/str verticalActiveArrowDisplay)}]]EXPR
+(((:variableName @ verticalActiveLastArrowDisplay)))
+PROP
+(:variableName @ verticalActiveLastArrowDisplay)
+
  [".ui.vertical.steps"
   [".step:last-child"
    {"display" (clojure.core/str verticalLastArrowDisplay)}]]

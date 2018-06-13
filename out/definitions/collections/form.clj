@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "collection"))
+(def element (clojure.core/str "form"))
 (defstyles
  root
  [".ui.form"
@@ -543,7 +543,215 @@
       "inset"),
      "border-color" (clojure.core/str inputAutoFillErrorBorder)}]]]
  [".ui.form::-webkit-input-placeholder"
-  {"color" (clojure.core/str inputPlaceholderColor)}]
+  {"color" (clojure.core/str inputPlaceholderColor)}]EXPR
+(((:variableName @ inputPlaceholderColor)))
+PROP
+(:variableName @ inputPlaceholderColor)
+EXPR
+(((:variableName @ inputPlaceholderFocusColor)))
+PROP
+(:variableName @ inputPlaceholderFocusColor)
+EXPR
+(((:variableName @ inputPlaceholderFocusColor)))
+PROP
+(:variableName @ inputPlaceholderFocusColor)
+EXPR
+(((:variableName @ inputPlaceholderFocusColor)))
+PROP
+(:variableName @ inputPlaceholderFocusColor)
+EXPR
+(((:variableName @ inputErrorPlaceholderColor)))
+PROP
+(:variableName @ inputErrorPlaceholderColor)
+EXPR
+(((:variableName @ inputErrorPlaceholderColor) !important))
+PROP
+!important
+EXPR
+(((:variableName @ inputErrorPlaceholderColor)))
+PROP
+(:variableName @ inputErrorPlaceholderColor)
+EXPR
+(((:variableName @ inputErrorPlaceholderFocusColor)))
+PROP
+(:variableName @ inputErrorPlaceholderFocusColor)
+EXPR
+(((:variableName @ inputErrorPlaceholderFocusColor) !important))
+PROP
+!important
+EXPR
+(((:variableName @ inputErrorPlaceholderFocusColor)))
+PROP
+(:variableName @ inputErrorPlaceholderFocusColor)
+EXPR
+(((:variableName @ inputFocusColor)))
+PROP
+(:variableName @ inputFocusColor)
+EXPR
+(((:variableName @ inputFocusBorderColor)))
+PROP
+(:variableName @ inputFocusBorderColor)
+EXPR
+(((:variableName @ inputFocusBorderRadius)))
+PROP
+(:variableName @ inputFocusBorderRadius)
+EXPR
+(((:variableName @ inputFocusBackground)))
+PROP
+(:variableName @ inputFocusBackground)
+EXPR
+(((:variableName @ inputFocusBoxShadow)))
+PROP
+(:variableName @ inputFocusBoxShadow)
+EXPR
+(((:variableName @ textAreaFocusColor)))
+PROP
+(:variableName @ textAreaFocusColor)
+EXPR
+(((:variableName @ textAreaFocusBorderColor)))
+PROP
+(:variableName @ textAreaFocusBorderColor)
+EXPR
+(((:variableName @ textAreaFocusBorderRadius)))
+PROP
+(:variableName @ textAreaFocusBorderRadius)
+EXPR
+(((:variableName @ textAreaFocusBackground)))
+PROP
+(:variableName @ textAreaFocusBackground)
+EXPR
+(((:variableName @ textAreaFocusBoxShadow)))
+PROP
+(:variableName @ textAreaFocusBoxShadow)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+(((:identifier flex)))
+PROP
+(:identifier flex)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+(((:identifier flex)))
+PROP
+(:identifier flex)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+(((:identifier flex)))
+PROP
+(:identifier flex)
+EXPR
+(((:variableName @ formErrorColor)))
+PROP
+(:variableName @ formErrorColor)
+EXPR
+(((:variableName @ formErrorColor)))
+PROP
+(:variableName @ formErrorColor)
+EXPR
+(((:variableName @ white)))
+PROP
+(:variableName @ white)
+EXPR
+(((:variableName @ formErrorBackground)))
+PROP
+(:variableName @ formErrorBackground)
+EXPR
+(((:variableName @ formErrorBorder)))
+PROP
+(:variableName @ formErrorBorder)
+EXPR
+(((:variableName @ formErrorColor)))
+PROP
+(:variableName @ formErrorColor)
+EXPR
+(((:variableName @ inputErrorBorderRadius)))
+PROP
+(:variableName @ inputErrorBorderRadius)
+EXPR
+(((:variableName @ inputErrorBoxShadow)))
+PROP
+(:variableName @ inputErrorBoxShadow)
+EXPR
+(((:variableName @ inputErrorFocusBackground)))
+PROP
+(:variableName @ inputErrorFocusBackground)
+EXPR
+(((:variableName @ inputErrorFocusBorder)))
+PROP
+(:variableName @ inputErrorFocusBorder)
+EXPR
+(((:variableName @ inputErrorFocusColor)))
+PROP
+(:variableName @ inputErrorFocusColor)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:variableName @ inputErrorFocusBoxShadow)))
+PROP
+(:variableName @ inputErrorFocusBoxShadow)
+EXPR
+(((:identifier menulist-button)))
+PROP
+(:identifier menulist-button)
+EXPR
+(((:variableName @ formErrorBackground)))
+PROP
+(:variableName @ formErrorBackground)
+EXPR
+(((:variableName @ formErrorColor)))
+PROP
+(:variableName @ formErrorColor)
+EXPR
+(((:variableName @ formErrorBorder) !important))
+PROP
+!important
+EXPR
+(((:variableName @ formErrorBorder) !important))
+PROP
+!important
+EXPR
+(((:variableName @ formErrorBorder)))
+PROP
+(:variableName @ formErrorBorder)
+EXPR
+(((:variableName @ dropdownErrorLabelBackground)))
+PROP
+(:variableName @ dropdownErrorLabelBackground)
+EXPR
+(((:variableName @ dropdownErrorLabelColor)))
+PROP
+(:variableName @ dropdownErrorLabelColor)
+EXPR
+(((:variableName @ dropdownErrorHoverBackground)))
+PROP
+(:variableName @ dropdownErrorHoverBackground)
+
  [".ui.form:-ms-input-placeholder"
   {"color" (clojure.core/str inputPlaceholderColor)}]
  [".ui.form::-moz-placeholder"

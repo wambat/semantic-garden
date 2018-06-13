@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "module"))
+(def element (clojure.core/str "tab"))
 (defstyles
  root
  [".ui.tab" {"display" (clojure.core/str "none")}]
@@ -21,7 +21,7 @@
  nil
  [".ui.tab.loading:before"
   {"position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "top" (clojure.core/str loaderDistanceFromTop),
    "left" (clojure.core/str "50%"),
    "margin" (clojure.core/str loaderMargin),
@@ -32,7 +32,7 @@
    (clojure.core/str loaderLineWidth " " "solid" " " loaderFillColor)}]
  [".ui.tab.loading.segment:before"
   {"position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "top" (clojure.core/str loaderDistanceFromTop),
    "left" (clojure.core/str "50%"),
    "margin" (clojure.core/str loaderMargin),
@@ -59,7 +59,7 @@
    "animation-iteration-count" (clojure.core/str "infinite"),
    "animation"
    (clojure.core/str "button-spin" " " loaderSpeed " " "linear"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow"
    (clojure.core/str
     "0px"
@@ -91,7 +91,7 @@
    "animation-iteration-count" (clojure.core/str "infinite"),
    "animation"
    (clojure.core/str "button-spin" " " loaderSpeed " " "linear"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow"
    (clojure.core/str
     "0px"

@@ -5,7 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def background nil)
+(def background (clojure.core/str "linear-gradient" " " "#FEFEFE"))
 (def
  boxShadow
  (clojure.core/str
@@ -23,9 +23,9 @@
 (def verticalPadding (clojure.core/str "15px"))
 (def horizontalPadding (clojure.core/str "15px"))
 (def headerFontSize (clojure.core/str "1.15em"))
-(def infoTextColor nil)
-(def warningTextColor nil)
-(def errorTextColor nil)
+(def infoTextColor (clojure.core/str "#264C72"))
+(def warningTextColor (clojure.core/str "#613A00"))
+(def errorTextColor (clojure.core/str "#991111"))
 (def
  floatingBoxShadow
  (clojure.core/str
@@ -40,9 +40,9 @@
   "rgba"
   " "
   "inset"))
-(def infoBorderColor nil)
-(def errorBorderColor nil)
-(def warningBorderColor nil)
+(def infoBorderColor (clojure.core/str "#97C1DA"))
+(def errorBorderColor (clojure.core/str "#DA9797"))
+(def warningBorderColor (clojure.core/str "#DCA874"))
 (def small (clojure.core/str "12px"))
 (def medium (clojure.core/str "13px"))
 (def large (clojure.core/str "14px"))

@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "flag"))
 (defstyles
  root
  ["i.flag:not([.icon])"
@@ -23,7 +23,7 @@
    "display" (clojure.core/str "inline-block")}]
  ["i.flag:not([.icon]):before"
   {"display" (clojure.core/str "inline-block"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "background" nil,
    "width" (clojure.core/str width),
    "height" (clojure.core/str height)}])

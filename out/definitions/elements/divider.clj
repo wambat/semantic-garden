@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "divider"))
 (defstyles
  root
  [".ui.divider"
@@ -38,14 +38,14 @@
    "line-height" (clojure.core/str "11"),
    "text-align" (clojure.core/str "center")}]
  [".ui.horizontal.divider:before"
-  {"content" nil,
+  {"content" (clojure.core/str ""),
    "display" (clojure.core/str "table-cell"),
    "position" (clojure.core/str "relative"),
    "top" (clojure.core/str "50%"),
    "width" (clojure.core/str "50%"),
    "background-repeat" (clojure.core/str "no-repeat")}]
  [".ui.horizontal.divider:after"
-  {"content" nil,
+  {"content" (clojure.core/str ""),
    "display" (clojure.core/str "table-cell"),
    "position" (clojure.core/str "relative"),
    "top" (clojure.core/str "50%"),
@@ -86,7 +86,7 @@
  [".ui.vertical.divider:before"
   {"position" (clojure.core/str "absolute"),
    "left" (clojure.core/str "50%"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "z-index" (clojure.core/str "33"),
    "border-left"
    (clojure.core/str shadowWidth " " "solid" " " shadowColor),
@@ -97,7 +97,7 @@
  [".ui.vertical.divider:after"
   {"position" (clojure.core/str "absolute"),
    "left" (clojure.core/str "50%"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "z-index" (clojure.core/str "33"),
    "border-left"
    (clojure.core/str shadowWidth " " "solid" " " shadowColor),

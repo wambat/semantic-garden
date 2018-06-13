@@ -35,7 +35,7 @@
 (def loaderLineZIndex (clojure.core/str "101101"))
 (def piledZIndex (clojure.core/str "auto"))
 (def piledMargin (clojure.core/str "3em"))
-(def piledBoxShadow nil)
+(def piledBoxShadow (clojure.core/str ""))
 (def piledDegrees (clojure.core/str "1.2deg"))
 (def piledBorder (clojure.core/str border))
 (def circularPadding (clojure.core/str "2em"))

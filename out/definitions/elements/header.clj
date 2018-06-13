@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "header"))
 (defstyles
  root
  [".ui.header"
@@ -119,7 +119,252 @@
   [".sub.header"
    {"font-size" (clojure.core/str hugeSubHeaderFontSize)}]]
  [".ui.header"
-  [".sub.header" {"font-size" (clojure.core/str subHeaderFontSize)}]]
+  [".sub.header"
+   {"font-size" (clojure.core/str subHeaderFontSize)}]]EXPR
+(((:variableName @ tinySubHeaderFontSize)))
+PROP
+(:variableName @ tinySubHeaderFontSize)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ subHeadingDistance)))
+PROP
+(:variableName @ subHeadingDistance)
+EXPR
+(((:variableName @ subHeadingFontWeight)))
+PROP
+(:variableName @ subHeadingFontWeight)
+EXPR
+(((:variableName @ subHeadingFontSize)))
+PROP
+(:variableName @ subHeadingFontSize)
+EXPR
+(((:variableName @ subHeadingTextTransform)))
+PROP
+(:variableName @ subHeadingTextTransform)
+EXPR
+(((:variableName @ subHeadingColor)))
+PROP
+(:variableName @ subHeadingColor)
+EXPR
+(((:variableName @ smallSubHeadingSize)))
+PROP
+(:variableName @ smallSubHeadingSize)
+EXPR
+(((:variableName @ subHeadingFontSize)))
+PROP
+(:variableName @ subHeadingFontSize)
+EXPR
+(((:variableName @ largeSubHeadingSize)))
+PROP
+(:variableName @ largeSubHeadingSize)
+EXPR
+(((:variableName @ hugeSubHeadingSize)))
+PROP
+(:variableName @ hugeSubHeadingSize)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+(((:identifier center)))
+PROP
+(:identifier center)
+EXPR
+(((:variableName @ iconHeaderTopMargin)) ((:measurement 0 em)) ((:variableName @ iconHeaderBottomMargin)))
+PROP
+(:variableName @ iconHeaderTopMargin)
+PROP
+(:measurement 0 em)
+PROP
+(:variableName @ iconHeaderBottomMargin)
+EXPR
+((''))
+PROP
+''
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:identifier both)))
+PROP
+(:identifier both)
+EXPR
+(((:identifier hidden)))
+PROP
+(:identifier hidden)
+EXPR
+(((:variableName @ iconHeaderFirstMargin)))
+PROP
+(:variableName @ iconHeaderFirstMargin)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:measurement 1)))
+PROP
+(:measurement 1)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ iconHeaderSize)))
+PROP
+(:variableName @ iconHeaderSize)
+EXPR
+(((:measurement 0 em)) ((:identifier auto)) ((:variableName @ iconHeaderMargin)))
+PROP
+(:measurement 0 em)
+PROP
+(:identifier auto)
+PROP
+(:variableName @ iconHeaderMargin)
+EXPR
+(((:variableName @ iconHeaderOpacity)))
+PROP
+(:variableName @ iconHeaderOpacity)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ circularHeaderIconSize)))
+PROP
+(:variableName @ circularHeaderIconSize)
+EXPR
+(((:variableName @ squareHeaderIconSize)))
+PROP
+(:variableName @ squareHeaderIconSize)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:variableName @ disabledOpacity)))
+PROP
+(:variableName @ disabledOpacity)
+EXPR
+(((:variableName @ invertedColor)))
+PROP
+(:variableName @ invertedColor)
+EXPR
+(((:variableName @ invertedSubHeaderColor)))
+PROP
+(:variableName @ invertedSubHeaderColor)
+EXPR
+(((:variableName @ invertedAttachedBackground)))
+PROP
+(:variableName @ invertedAttachedBackground)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier transparent)))
+PROP
+(:identifier transparent)
+EXPR
+(((:variableName @ invertedBlockBackground)))
+PROP
+(:variableName @ invertedBlockBackground)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:variableName @ red) !important))
+PROP
+!important
+EXPR
+(((:variableName @ redHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ red)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ red)
+EXPR
+(((:variableName @ lightRed) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightRedHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ orange) !important))
+PROP
+!important
+EXPR
+(((:variableName @ orangeHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ orange)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ orange)
+EXPR
+(((:variableName @ lightOrange) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightOrangeHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ olive) !important))
+PROP
+!important
+
  [".ui.small.header"
   [".sub.header"
    {"font-size" (clojure.core/str smallSubHeaderFontSize)}]]
@@ -151,7 +396,7 @@
     " "
     iconHeaderBottomMargin)}]
  [".ui.icon.header:after"
-  {"content" nil,
+  {"content" (clojure.core/str ""),
    "display" (clojure.core/str "block"),
    "height" (clojure.core/str "0px"),
    "clear" (clojure.core/str "both"),
@@ -219,7 +464,163 @@
  [".ui.inverted.orange.header"
   {"color" (clojure.core/str lightOrange)}]
  ["a.ui.inverted.orange.header:hover"
-  {"color" (clojure.core/str lightOrangeHover)}]
+  {"color" (clojure.core/str lightOrangeHover)}]EXPR
+(((:variableName @ oliveHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ olive)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ olive)
+EXPR
+(((:variableName @ lightOlive) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightOliveHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ yellow) !important))
+PROP
+!important
+EXPR
+(((:variableName @ yellowHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ yellow)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ yellow)
+EXPR
+(((:variableName @ lightYellow) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightYellowHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ green) !important))
+PROP
+!important
+EXPR
+(((:variableName @ greenHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ green)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ green)
+EXPR
+(((:variableName @ lightGreen) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightGreenHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ teal) !important))
+PROP
+!important
+EXPR
+(((:variableName @ tealHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ teal)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ teal)
+EXPR
+(((:variableName @ lightTeal) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightTealHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ blue) !important))
+PROP
+!important
+EXPR
+(((:variableName @ blueHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ blue)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ blue)
+EXPR
+(((:variableName @ lightBlue) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightBlueHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ violet) !important))
+PROP
+!important
+EXPR
+(((:variableName @ violetHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ violet)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ violet)
+EXPR
+(((:variableName @ lightViolet) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightVioletHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ purple) !important))
+PROP
+!important
+EXPR
+(((:variableName @ purpleHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ purple)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ purple)
+
  [".ui.olive.header" {"color" (clojure.core/str olive)}]
  ["a.ui.olive.header:hover" {"color" (clojure.core/str oliveHover)}]
  [".ui.olive.dividing.header"
@@ -281,5 +682,192 @@
  ["a.ui.inverted.violet.header:hover"
   {"color" (clojure.core/str lightVioletHover)}]
  [".ui.purple.header" {"color" (clojure.core/str purple)}]
- ["a.ui.purple.header:hover" {"color" (clojure.core/str purpleHover)}]
+ ["a.ui.purple.header:hover"
+  {"color" (clojure.core/str purpleHover)}]EXPR
+(((:variableName @ lightPurple) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightPurpleHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ pink) !important))
+PROP
+!important
+EXPR
+(((:variableName @ pinkHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ pink)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ pink)
+EXPR
+(((:variableName @ lightPink) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightPinkHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ brown) !important))
+PROP
+!important
+EXPR
+(((:variableName @ brownHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ brown)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ brown)
+EXPR
+(((:variableName @ lightBrown) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightBrownHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ grey) !important))
+PROP
+!important
+EXPR
+(((:variableName @ greyHover) !important))
+PROP
+!important
+EXPR
+(((:variableName @ dividedColoredBorderWidth)) ((:identifier solid)) ((:variableName @ grey)))
+PROP
+(:variableName @ dividedColoredBorderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ grey)
+EXPR
+(((:variableName @ lightGrey) !important))
+PROP
+!important
+EXPR
+(((:variableName @ lightGreyHover) !important))
+PROP
+!important
+EXPR
+(((:identifier left)))
+PROP
+(:identifier left)
+EXPR
+(((:identifier right)))
+PROP
+(:identifier right)
+EXPR
+(((:identifier center)))
+PROP
+(:identifier center)
+EXPR
+(((:identifier justify)))
+PROP
+(:identifier justify)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+((''))
+PROP
+''
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:identifier left)))
+PROP
+(:identifier left)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ floatedMargin)))
+PROP
+(:variableName @ floatedMargin)
+EXPR
+(((:identifier right)))
+PROP
+(:identifier right)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ floatedMargin)))
+PROP
+(:variableName @ floatedMargin)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ dividedBorderPadding)))
+PROP
+(:variableName @ dividedBorderPadding)
+EXPR
+(((:variableName @ dividedBorder)))
+PROP
+(:variableName @ dividedBorder)
+EXPR
+(((:variableName @ dividedSubHeaderPadding)))
+PROP
+(:variableName @ dividedSubHeaderPadding)
+EXPR
+(((:variableName @ dividedIconPadding)))
+PROP
+(:variableName @ dividedIconPadding)
+EXPR
+(((:variableName @ invertedDividedBorderColor)))
+PROP
+(:variableName @ invertedDividedBorderColor)
+EXPR
+(((:variableName @ blockBackground)))
+PROP
+(:variableName @ blockBackground)
+EXPR
+(((:variableName @ blockVerticalPadding)) ((:variableName @ blockHorizontalPadding)))
+PROP
+(:variableName @ blockVerticalPadding)
+PROP
+(:variableName @ blockHorizontalPadding)
+EXPR
+(((:variableName @ blockBoxShadow)))
+PROP
+(:variableName @ blockBoxShadow)
+EXPR
+(((:variableName @ blockBorder)))
+PROP
+(:variableName @ blockBorder)
+EXPR
+(((:variableName @ blockBorderRadius)))
+PROP
+(:variableName @ blockBorderRadius)
+EXPR
+(((:variableName @ tinyBlock)))
+PROP
+(:variableName @ tinyBlock)
+EXPR
+(((:variableName @ smallBlock)))
+PROP
+(:variableName @ smallBlock)
+
  ...)

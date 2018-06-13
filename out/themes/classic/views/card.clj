@@ -8,7 +8,7 @@
 (def shadowDistance (clojure.core/str "0em"))
 (def padding (clojure.core/str "0em"))
 (def extraDivider (clojure.core/str "1px" " " "solid" " " "rgba"))
-(def extraBackground nil)
+(def extraBackground (clojure.core/str "#FAFAFA" " " subtleGradient))
 (def extraPadding (clojure.core/str "0.75em" " " "1em"))
 (def
  extraBoxShadow

@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "loader"))
 (defstyles
  root
  [".ui.loader"
@@ -21,7 +21,7 @@
    "transform" (clojure.core/str "translateX" " " "translateY")}]
  [".ui.loader:before"
   {"position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "top" (clojure.core/str "0%"),
    "left" (clojure.core/str "50%"),
    "width" (clojure.core/str "100%"),
@@ -40,7 +40,7 @@
    "animation-iteration-count" (clojure.core/str "infinite"),
    "animation"
    (clojure.core/str "loader" " " loaderSpeed " " "linear"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow"
    (clojure.core/str
     "0px"

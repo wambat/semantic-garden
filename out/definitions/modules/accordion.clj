@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "module"))
+(def element (clojure.core/str "accordion"))
 (defstyles
  root
  [".ui.accordion" {"max-width" (clojure.core/str "100%")}]

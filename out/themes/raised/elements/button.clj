@@ -5,7 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def backgroundColor nil)
+(def backgroundColor (clojure.core/str "#F8F8F8"))
 (def backgroundImage (clojure.core/str "linear-gradient"))
 (def verticalAlign (clojure.core/str "middle"))
 (def borderRadius (clojure.core/str "0.4em"))

@@ -169,7 +169,7 @@
             (string? ch)
             (recur
              (rest chunks)
-             (conj props ch))
+             (conj props (unq ch)))
             (and
              (seq? ch)
              (= :identifier (first ch)))

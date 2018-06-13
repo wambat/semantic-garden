@@ -6,6 +6,6 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "module"))
+(def element (clojure.core/str "sidebar"))
 (defstyles root [".ui.sidebar" nil])

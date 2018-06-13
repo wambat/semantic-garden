@@ -8,7 +8,7 @@
 (def pageFont (clojure.core/str "sans-serif"))
 (def textTransform (clojure.core/str "none"))
 (def fontWeight (clojure.core/str "bold"))
-(def textColor nil)
+(def textColor (clojure.core/str "#333333"))
 (def textShadow (clojure.core/str "0px" " " "1px" " " "0px" " " "rgba"))
 (def
  invertedTextShadow
@@ -16,22 +16,22 @@
 (def borderRadius (clojure.core/str relativeBorderRadius))
 (def verticalPadding (clojure.core/str "0.75em"))
 (def horizontalPadding (clojure.core/str "1.15em"))
-(def backgroundColor nil)
+(def backgroundColor (clojure.core/str "#FAFAFA"))
 (def backgroundImage (clojure.core/str "linear-gradient"))
 (def boxShadow (clojure.core/str "00" " " "1px" " " "3px" " " "rgba"))
 (def coloredBackgroundImage (clojure.core/str "linear-gradient"))
 (def
  coloredBoxShadow
  (clojure.core/str "00" " " "1px" " " "3px" " " "rgba"))
-(def hoverBackgroundColor nil)
+(def hoverBackgroundColor (clojure.core/str "#E0E0E0"))
 (def hoverBackgroundImage (clojure.core/str "linear-gradient"))
 (def hoverBoxShadow (clojure.core/str boxShadow))
-(def downBackgroundColor nil)
-(def downBackgroundImage nil)
+(def downBackgroundColor (clojure.core/str ""))
+(def downBackgroundImage (clojure.core/str ""))
 (def
  downBoxShadow
  (clojure.core/str "00" " " "3px" " " "5px" " " "rgba" " " "inset"))
-(def activeBackgroundColor nil)
+(def activeBackgroundColor (clojure.core/str "#DFDFDF"))
 (def activeBackgroundImage (clojure.core/str "none"))
 (def
  activeBoxShadow
@@ -42,10 +42,10 @@
 (def basicFontWeight (clojure.core/str "bold"))
 (def basicTextColor (clojure.core/str linkColor))
 (def basicHoverTextColor (clojure.core/str linkHoverColor))
-(def basicHoverBackground nil)
-(def blue nil)
-(def green nil)
-(def black nil)
+(def basicHoverBackground (clojure.core/str "#E0E0E0"))
+(def blue (clojure.core/str "#3072B3"))
+(def green (clojure.core/str "#60B044"))
+(def black (clojure.core/str "#5D5D5D"))
 (def primaryColor (clojure.core/str blue))
 (def secondaryColor (clojure.core/str black))
 (def mini (clojure.core/str "0.60.6" " " "rem"))

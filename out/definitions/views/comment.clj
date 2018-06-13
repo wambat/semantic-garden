@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "view"))
+(def element (clojure.core/str "comment"))
 (defstyles
  root
  [".ui.comments"
@@ -173,7 +173,31 @@
   [".comment"
    ["> .content:hover"
     ["> .actions" {"opacity" (clojure.core/str "11")}]]]]
- [".ui.mini.comments" {"font-size" (clojure.core/str mini)}]
+ [".ui.mini.comments" {"font-size" (clojure.core/str mini)}]EXPR
+(((:variableName @ small)))
+PROP
+(:variableName @ small)
+EXPR
+(((:variableName @ medium)))
+PROP
+(:variableName @ medium)
+EXPR
+(((:variableName @ large)))
+PROP
+(:variableName @ large)
+EXPR
+(((:variableName @ big)))
+PROP
+(:variableName @ big)
+EXPR
+(((:variableName @ huge)))
+PROP
+(:variableName @ huge)
+EXPR
+(((:variableName @ massive)))
+PROP
+(:variableName @ massive)
+
  [".ui.tiny.comments" {"font-size" (clojure.core/str tiny)}]
  [".ui.small.comments" {"font-size" (clojure.core/str small)}]
  [".ui.comments" {"font-size" (clojure.core/str medium)}]

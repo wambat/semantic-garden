@@ -7,7 +7,7 @@
   [garden.units :refer [px]]))
 (def borderRadius (clojure.core/str circularRadius))
 (def textTransform (clojure.core/str "uppercase"))
-(def backgroundColor nil)
+(def backgroundColor (clojure.core/str "#FFFFFF"))
 (def backgroundImage (clojure.core/str "none"))
 (def fontWeight (clojure.core/str "bold"))
 (def textColor (clojure.core/str "rgba"))
@@ -48,7 +48,7 @@
   borderColor
   " "
   "inset"))
-(def hoverBackgroundColor nil)
+(def hoverBackgroundColor (clojure.core/str "#FAFAFA"))
 (def hoverBackgroundImage (clojure.core/str "none"))
 (def
  hoverBoxShadow
@@ -64,7 +64,7 @@
   "rgba"
   " "
   "inset"))
-(def downBackgroundColor nil)
+(def downBackgroundColor (clojure.core/str "#F0F0F0"))
 (def downBackgroundImage (clojure.core/str "none"))
 (def
  downBoxShadow
@@ -80,7 +80,7 @@
   "rgba"
   " "
   "inset"))
-(def activeBackgroundColor nil)
+(def activeBackgroundColor (clojure.core/str "#DDDDDD"))
 (def activeBackgroundImage (clojure.core/str "none"))
 (def
  activeBoxShadow
@@ -96,20 +96,20 @@
   "rgba"
   " "
   "inset"))
-(def loadingBackgroundColor nil)
+(def loadingBackgroundColor (clojure.core/str "#FFFFFF"))
 (def labeledIconWidth nil)
 (def labeledIconBackgroundColor (clojure.core/str "transparent"))
 (def labeledIconPadding nil)
 (def labeledIconBorder (clojure.core/str "rgba"))
-(def labeledIconColor nil)
+(def labeledIconColor (clojure.core/str ""))
 (def labeledIconLeftShadow (clojure.core/str "none"))
 (def labeledIconRightShadow (clojure.core/str "none"))
 (def
  basicBoxShadow
  (clojure.core/str "0px" " " "0px" " " "0px" " " "1px" " " borderColor))
 (def iconOffset (clojure.core/str "0.05em"))
-(def basicLoadingColor nil)
-(def basicHoverBackground nil)
+(def basicLoadingColor (clojure.core/str "#FFFFFF"))
+(def basicHoverBackground (clojure.core/str "#FAFAFA"))
 (def
  basicHoverBoxShadow
  (clojure.core/str "0px" " " "0px" " " "0px" " " "1px" " " "rgba"))

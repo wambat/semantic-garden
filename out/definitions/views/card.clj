@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "view"))
+(def element (clojure.core/str "card"))
 (def borderRadius (clojure.core/str borderRadius " " "0em" " " "0em"))
 (defstyles
  root
@@ -57,14 +57,14 @@
     "float" (clojure.core/str groupCardFloat)}]]
  [".ui.cards:after"
   {"display" (clojure.core/str "block"),
-   "content" nil,
+   "content" (clojure.core/str " "),
    "height" (clojure.core/str "0px"),
    "clear" (clojure.core/str "both"),
    "overflow" (clojure.core/str "hidden"),
    "visibility" (clojure.core/str "hidden")}]
  [".ui.card:after"
   {"display" (clojure.core/str "block"),
-   "content" nil,
+   "content" (clojure.core/str " "),
    "height" (clojure.core/str "0px"),
    "clear" (clojure.core/str "both"),
    "overflow" (clojure.core/str "hidden"),
@@ -148,7 +148,7 @@
   ["> .card"
    ["> .content:after"
     {"display" (clojure.core/str "block"),
-     "content" nil,
+     "content" (clojure.core/str " "),
      "height" (clojure.core/str "0px"),
      "clear" (clojure.core/str "both"),
      "overflow" (clojure.core/str "hidden"),
@@ -156,7 +156,7 @@
  [".ui.card"
   ["> .content:after"
    {"display" (clojure.core/str "block"),
-    "content" nil,
+    "content" (clojure.core/str " "),
     "height" (clojure.core/str "0px"),
     "clear" (clojure.core/str "both"),
     "overflow" (clojure.core/str "hidden"),
@@ -292,7 +292,111 @@
  [".ui.card"
   [".meta"
    {"font-size" (clojure.core/str metaFontSize),
-    "color" (clojure.core/str metaColor)}]]
+    "color" (clojure.core/str metaColor)}]]EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ metaSpacing)))
+PROP
+(:variableName @ metaSpacing)
+EXPR
+(((:variableName @ contentLinkColor)))
+PROP
+(:variableName @ contentLinkColor)
+EXPR
+(((:variableName @ contentLinkTransition)))
+PROP
+(:variableName @ contentLinkTransition)
+EXPR
+(((:variableName @ contentLinkHoverColor)))
+PROP
+(:variableName @ contentLinkHoverColor)
+EXPR
+(((:variableName @ headerLinkColor)))
+PROP
+(:variableName @ headerLinkColor)
+EXPR
+(((:variableName @ headerLinkHoverColor)))
+PROP
+(:variableName @ headerLinkHoverColor)
+EXPR
+(((:variableName @ metaLinkColor)))
+PROP
+(:variableName @ metaLinkColor)
+EXPR
+(((:variableName @ metaLinkHoverColor)))
+PROP
+(:variableName @ metaLinkHoverColor)
+EXPR
+(((:variableName @ buttonMargin)))
+PROP
+(:variableName @ buttonMargin)
+EXPR
+(((:variableName @ buttonWidth)))
+PROP
+(:variableName @ buttonWidth)
+EXPR
+(((:variableName @ dimmerColor)))
+PROP
+(:variableName @ dimmerColor)
+EXPR
+(((:variableName @ dimmerZIndex)))
+PROP
+(:variableName @ dimmerZIndex)
+EXPR
+(((:identifier pointer)))
+PROP
+(:identifier pointer)
+EXPR
+(((:variableName @ actionOpacity)))
+PROP
+(:variableName @ actionOpacity)
+EXPR
+(((:variableName @ actionTransition)))
+PROP
+(:variableName @ actionTransition)
+EXPR
+(((:variableName @ actionHoverOpacity)))
+PROP
+(:variableName @ actionHoverOpacity)
+EXPR
+(((:variableName @ starColor)))
+PROP
+(:variableName @ starColor)
+EXPR
+(((:variableName @ starActiveColor)))
+PROP
+(:variableName @ starActiveColor)
+EXPR
+(((:identifier pointer)))
+PROP
+(:identifier pointer)
+EXPR
+(((:variableName @ actionOpacity)))
+PROP
+(:variableName @ actionOpacity)
+EXPR
+(((:variableName @ actionTransition)))
+PROP
+(:variableName @ actionTransition)
+EXPR
+(((:variableName @ actionHoverOpacity)))
+PROP
+(:variableName @ actionHoverOpacity)
+EXPR
+(((:variableName @ likeColor)))
+PROP
+(:variableName @ likeColor)
+EXPR
+(((:variableName @ likeActiveColor)))
+PROP
+(:variableName @ likeActiveColor)
+
  nil
  nil
  [".ui.cards"

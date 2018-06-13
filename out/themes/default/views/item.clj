@@ -14,7 +14,7 @@
 (def width (clojure.core/str "100%"))
 (def boxShadow (clojure.core/str "none"))
 (def border (clojure.core/str "none"))
-(def zIndex nil)
+(def zIndex (clojure.core/str ""))
 (def
  transition
  (clojure.core/str "box-shadow" " " defaultDuration " " defaultEasing))
@@ -30,7 +30,7 @@
 (def mobileContentImageDistance (clojure.core/str "1.5em"))
 (def imageDisplay (clojure.core/str "block"))
 (def imageFloat (clojure.core/str "none"))
-(def imageMaxHeight nil)
+(def imageMaxHeight (clojure.core/str ""))
 (def imageVerticalAlign (clojure.core/str "top"))
 (def imageMargin (clojure.core/str "0em"))
 (def imagePadding (clojure.core/str "0em"))
@@ -63,16 +63,16 @@
 (def
  actionTransition
  (clojure.core/str "color" " " defaultDuration " " defaultEasing))
-(def favoriteColor nil)
-(def favoriteActiveColor nil)
-(def likeColor nil)
-(def likeActiveColor nil)
+(def favoriteColor (clojure.core/str "#FFB70A"))
+(def favoriteActiveColor (clojure.core/str "#FFE623"))
+(def likeColor (clojure.core/str "#FF2733"))
+(def likeActiveColor (clojure.core/str "#FF2733"))
 (def headerLinkColor (clojure.core/str headerColor))
 (def headerLinkHoverColor (clojure.core/str linkHoverColor))
 (def metaLinkColor (clojure.core/str lightTextColor))
 (def metaLinkHoverColor (clojure.core/str textColor))
-(def contentLinkColor nil)
-(def contentLinkHoverColor nil)
+(def contentLinkColor (clojure.core/str ""))
+(def contentLinkHoverColor (clojure.core/str ""))
 (def
  contentLinkTransition
  (clojure.core/str "color" " " defaultDuration " " defaultEasing))
@@ -81,7 +81,7 @@
 (def descriptionFontSize (clojure.core/str "1em"))
 (def descriptionLineHeight (clojure.core/str lineHeight))
 (def descriptionColor (clojure.core/str textColor))
-(def contentImageWidth nil)
+(def contentImageWidth (clojure.core/str ""))
 (def contentImageVerticalAlign (clojure.core/str "middle"))
 (def avatarSize (clojure.core/str contentImageWidth))
 (def avatarBorderRadius (clojure.core/str circularRadius))

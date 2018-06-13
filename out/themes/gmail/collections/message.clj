@@ -5,7 +5,7 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def background nil)
+(def background (clojure.core/str "#F3F3F3"))
 (def
  boxShadow
  (clojure.core/str
@@ -29,5 +29,5 @@
  (clojure.core/str "0px" " " "2px" " " "4px" " " "rgba"))
 (def iconSize (clojure.core/str "1.5em"))
 (def iconDistance (clojure.core/str "1em"))
-(def warningBackgroundColor nil)
+(def warningBackgroundColor (clojure.core/str "#F9EDBE"))
 (defstyles root)

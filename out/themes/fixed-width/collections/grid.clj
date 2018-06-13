@@ -20,5 +20,5 @@
 (def widescreenMonitorWidth (clojure.core/str "1300px"))
 (def widescreenMargin (clojure.core/str "auto"))
 (def widescreenMonitorGutter (clojure.core/str "00"))
-(def tableWidth nil)
+(def tableWidth (clojure.core/str ""))
 (defstyles root)

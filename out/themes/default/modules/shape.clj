@@ -18,7 +18,7 @@
 (def backfaceVisibility (clojure.core/str "hidden"))
 (def sideMargin (clojure.core/str "0em"))
 (def cubeSize (clojure.core/str "15em"))
-(def cubeBackground nil)
+(def cubeBackground (clojure.core/str "#E6E6E6"))
 (def cubePadding (clojure.core/str "2em"))
 (def cubeTextColor (clojure.core/str textColor))
 (def

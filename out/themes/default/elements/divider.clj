@@ -16,7 +16,7 @@
 (def textTransform (clojure.core/str "uppercase"))
 (def dividerIconSize (clojure.core/str "11" " " "rem"))
 (def dividerIconMargin (clojure.core/str "00" " " "rem"))
-(def horizontalMargin nil)
+(def horizontalMargin (clojure.core/str ""))
 (def horizontalDividerMargin (clojure.core/str "1em"))
 (def verticalDividerMargin (clojure.core/str "11" " " "rem"))
 (def invertedTextColor (clojure.core/str white))

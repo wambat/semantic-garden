@@ -9,7 +9,7 @@
 (def width (clojure.core/str "100%"))
 (def zIndex (clojure.core/str "999999"))
 (def margin (clojure.core/str "0em"))
-(def background nil)
+(def background (clojure.core/str "#555555"))
 (def opacity (clojure.core/str "0.950.95"))
 (def minHeight (clojure.core/str "0em"))
 (def padding (clojure.core/str "0.75em" " " "1em"))

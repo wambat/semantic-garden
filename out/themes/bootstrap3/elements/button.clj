@@ -16,11 +16,11 @@
 (def backgroundColor (clojure.core/str white))
 (def backgroundImage (clojure.core/str "none"))
 (def borderBoxShadowColor (clojure.core/str "rgba"))
-(def green nil)
-(def red nil)
-(def blue nil)
-(def green nil)
-(def orange nil)
+(def green (clojure.core/str "#5CB85C"))
+(def red (clojure.core/str "#D9534F"))
+(def blue (clojure.core/str "#337AB7"))
+(def green (clojure.core/str "#60B044"))
+(def orange (clojure.core/str "#F0AD4E"))
 (def primaryColor (clojure.core/str blue))
 (def secondaryColor (clojure.core/str green))
 (def labeledIconBackgroundColor (clojure.core/str "transparent"))
@@ -38,12 +38,25 @@
 (def
  verticalGroupOffset
  (clojure.core/str "0px" " " "0px" " " "-1px" " " "0px"))
-(def hoverBackgroundColor nil)
-(def hoverBoxShadow nil)
-(def downBackgroundColor nil)
+(def hoverBackgroundColor (clojure.core/str "#E6E6E6"))
+(def
+ hoverBoxShadow
+ (clojure.core/str
+  "0px"
+  " "
+  "0px"
+  " "
+  "0px"
+  " "
+  "1px"
+  " "
+  "#ADADAD"
+  " "
+  "inset"))
+(def downBackgroundColor (clojure.core/str "#E6E6E6"))
 (def
  downBoxShadow
  (clojure.core/str "00" " " "3px" " " "5px" " " "rgba" " " "inset"))
-(def activeBackgroundColor nil)
+(def activeBackgroundColor (clojure.core/str "#E6E6E6"))
 (def disabledOpacity (clojure.core/str "0.650.65"))
 (defstyles root)

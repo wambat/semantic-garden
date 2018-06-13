@@ -110,22 +110,22 @@
 (def formErrorColor (clojure.core/str negativeTextColor))
 (def formErrorBorder (clojure.core/str negativeBorderColor))
 (def formErrorBackground (clojure.core/str negativeBackgroundColor))
-(def inputAutoFillBackground nil)
-(def inputAutoFillBorder nil)
+(def inputAutoFillBackground (clojure.core/str "#FFFFF0"))
+(def inputAutoFillBorder (clojure.core/str "#E5DFA1"))
 (def
  inputAutoFillFocusBackground
  (clojure.core/str inputAutoFillBackground))
-(def inputAutoFillFocusBorder nil)
-(def inputAutoFillErrorBackground nil)
-(def inputAutoFillErrorBorder nil)
-(def inputErrorBorderRadius nil)
+(def inputAutoFillFocusBorder (clojure.core/str "#D5C315"))
+(def inputAutoFillErrorBackground (clojure.core/str "#FFFAF0"))
+(def inputAutoFillErrorBorder (clojure.core/str "#E0B4B4"))
+(def inputErrorBorderRadius (clojure.core/str ""))
 (def inputErrorBoxShadow (clojure.core/str "none"))
-(def dropdownErrorHoverBackground nil)
+(def dropdownErrorHoverBackground (clojure.core/str "#FBE7E7"))
 (def
  dropdownErrorSelectedBackground
  (clojure.core/str dropdownErrorHoverBackground))
-(def dropdownErrorActiveBackground nil)
-(def dropdownErrorLabelBackground nil)
+(def dropdownErrorActiveBackground (clojure.core/str "#FDCFCF"))
+(def dropdownErrorLabelBackground (clojure.core/str "#EACBCB"))
 (def dropdownErrorLabelColor (clojure.core/str errorTextColor))
 (def
  inputErrorFocusBackground
@@ -139,7 +139,7 @@
 (def loaderDimmerZIndex (clojure.core/str "100100"))
 (def loaderSize (clojure.core/str "3em"))
 (def loaderLineZIndex (clojure.core/str "101101"))
-(def requiredContent nil)
+(def requiredContent (clojure.core/str "*"))
 (def requiredColor (clojure.core/str negativeColor))
 (def requiredVerticalOffset (clojure.core/str "-0.2em"))
 (def requiredDistance (clojure.core/str "0.2em"))

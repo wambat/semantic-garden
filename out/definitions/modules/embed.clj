@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "module"))
+(def element (clojure.core/str "embed"))
 (defstyles
  root
  [".ui.embed"
@@ -74,7 +74,7 @@
     "height" (clojure.core/str "100%"),
     "position" (clojure.core/str "absolute"),
     "z-index" (clojure.core/str "33"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "transition" (clojure.core/str placeholderBackgroundTransition),
     "background" (clojure.core/str placeholderBackground),
     "opacity" (clojure.core/str placeholderBackgroundOpacity),

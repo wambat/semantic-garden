@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "segment"))
 (defstyles
  root
  [".ui.segment"
@@ -88,7 +88,7 @@
    "border" (clojure.core/str piledBorder),
    "visibility" (clojure.core/str "visible"),
    "position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow" (clojure.core/str piledBoxShadow),
    "background-color" (clojure.core/str white),
    "display" (clojure.core/str "block"),
@@ -99,7 +99,7 @@
    "border" (clojure.core/str piledBorder),
    "visibility" (clojure.core/str "visible"),
    "position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow" (clojure.core/str piledBoxShadow),
    "background-color" (clojure.core/str white),
    "display" (clojure.core/str "block"),
@@ -110,7 +110,7 @@
    "border" (clojure.core/str piledBorder),
    "visibility" (clojure.core/str "visible"),
    "position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow" (clojure.core/str piledBoxShadow),
    "background-color" (clojure.core/str white),
    "display" (clojure.core/str "block"),
@@ -121,7 +121,7 @@
    "border" (clojure.core/str piledBorder),
    "visibility" (clojure.core/str "visible"),
    "position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow" (clojure.core/str piledBoxShadow),
    "background-color" (clojure.core/str white),
    "display" (clojure.core/str "block"),
@@ -181,7 +181,485 @@
  [".ui.padded.segment"
   {"padding" (clojure.core/str paddedSegmentPadding)}]
  [".ui[class='very']"
-  [nil {"padding" (clojure.core/str veryPaddedSegmentPadding)}]]
+  [nil {"padding" (clojure.core/str veryPaddedSegmentPadding)}]]EXPR
+(((:identifier table)))
+PROP
+(:identifier table)
+EXPR
+(((:identifier inline-flex)))
+PROP
+(:identifier inline-flex)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 0)) ((:measurement 1)) ((:identifier auto)))
+PROP
+(:measurement 0)
+PROP
+(:measurement 1)
+PROP
+(:identifier auto)
+EXPR
+(((:identifier table-cell)))
+PROP
+(:identifier table-cell)
+EXPR
+(((:variableName @ circularPadding)))
+PROP
+(:variableName @ circularPadding)
+EXPR
+(((:identifier center)))
+PROP
+(:identifier center)
+EXPR
+(((:identifier middle)))
+PROP
+(:identifier middle)
+EXPR
+(((:measurement 500 em)))
+PROP
+(:measurement 500 em)
+EXPR
+(((:variableName @ raisedBoxShadow)))
+PROP
+(:variableName @ raisedBoxShadow)
+EXPR
+(((:identifier column)))
+PROP
+(:identifier column)
+EXPR
+(((:identifier relative)))
+PROP
+(:identifier relative)
+EXPR
+(((:variableName @ groupedMargin)))
+PROP
+(:variableName @ groupedMargin)
+EXPR
+(((:variableName @ groupedBorder)))
+PROP
+(:variableName @ groupedBorder)
+EXPR
+(((:variableName @ groupedBoxShadow)))
+PROP
+(:variableName @ groupedBoxShadow)
+EXPR
+(((:variableName @ groupedBorderRadius)))
+PROP
+(:variableName @ groupedBorderRadius)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:variableName @ groupedSegmentMargin)))
+PROP
+(:variableName @ groupedSegmentMargin)
+EXPR
+(((:variableName @ groupedSegmentWidth)))
+PROP
+(:variableName @ groupedSegmentWidth)
+EXPR
+(((:variableName @ groupedSegmentBoxShadow)))
+PROP
+(:variableName @ groupedSegmentBoxShadow)
+EXPR
+(((:variableName @ groupedSegmentBorder)))
+PROP
+(:variableName @ groupedSegmentBorder)
+EXPR
+(((:variableName @ groupedSegmentDivider)))
+PROP
+(:variableName @ groupedSegmentDivider)
+EXPR
+(((:variableName @ attachedTopOffset)))
+PROP
+(:variableName @ attachedTopOffset)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ attachedTopOffset)))
+PROP
+(:variableName @ attachedTopOffset)
+EXPR
+(((:variableName @ borderRadius)) ((:variableName @ borderRadius)) ((:measurement 0 em)) ((:measurement 0 em)))
+PROP
+(:variableName @ borderRadius)
+PROP
+(:variableName @ borderRadius)
+PROP
+(:measurement 0 em)
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ attachedBottomOffset)))
+PROP
+(:variableName @ attachedBottomOffset)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ attachedBottomBoxShadow)))
+PROP
+(:variableName @ attachedBottomBoxShadow)
+EXPR
+(((:measurement 0 em)) ((:measurement 0 em)) ((:variableName @ borderRadius)) ((:variableName @ borderRadius)))
+PROP
+(:measurement 0 em)
+PROP
+(:measurement 0 em)
+PROP
+(:variableName @ borderRadius)
+PROP
+(:variableName @ borderRadius)
+EXPR
+(((:variableName @ borderRadius)))
+PROP
+(:variableName @ borderRadius)
+EXPR
+(((:variableName @ groupedSegmentDivider)))
+PROP
+(:variableName @ groupedSegmentDivider)
+EXPR
+(((:variableName @ nestedGroupMargin)))
+PROP
+(:variableName @ nestedGroupMargin)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:identifier flex)))
+PROP
+(:identifier flex)
+EXPR
+(((:identifier row)))
+PROP
+(:identifier row)
+EXPR
+(((:identifier transparent)))
+PROP
+(:identifier transparent)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:variableName @ background)))
+PROP
+(:variableName @ background)
+EXPR
+(((:variableName @ boxShadow)))
+PROP
+(:variableName @ boxShadow)
+EXPR
+(((:variableName @ margin)))
+PROP
+(:variableName @ margin)
+EXPR
+(((:variableName @ borderRadius)))
+PROP
+(:variableName @ borderRadius)
+EXPR
+(((:variableName @ border)))
+PROP
+(:variableName @ border)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:identifier transparent)))
+PROP
+(:identifier transparent)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:variableName @ groupedSegmentDivider)))
+PROP
+(:variableName @ groupedSegmentDivider)
+EXPR
+(((:measurement 1)) ((:measurement 1)) ((:identifier auto)))
+PROP
+(:measurement 1)
+PROP
+(:measurement 1)
+PROP
+(:identifier auto)
+EXPR
+(((:measurement 1)) ((:measurement 1)) ((:measurement 0 px)))
+PROP
+(:measurement 1)
+PROP
+(:measurement 1)
+PROP
+(:measurement 0 px)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:identifier transparent)))
+PROP
+(:identifier transparent)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:variableName @ borderWidth)) ((:identifier solid)) ((:variableName @ borderColor)))
+PROP
+(:variableName @ borderWidth)
+PROP
+(:identifier solid)
+PROP
+(:variableName @ borderColor)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:variableName @ disabledOpacity)))
+PROP
+(:variableName @ disabledOpacity)
+EXPR
+(((:variableName @ disabledTextColor)))
+PROP
+(:variableName @ disabledTextColor)
+EXPR
+(((:identifier relative)))
+PROP
+(:identifier relative)
+EXPR
+(((:identifier default)))
+PROP
+(:identifier default)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:identifier none) !important))
+PROP
+!important
+EXPR
+(((:identifier transparent) !important))
+PROP
+!important
+EXPR
+(((:identifier all)) ((:measurement 0 s)) ((:identifier linear)))
+PROP
+(:identifier all)
+PROP
+(:measurement 0 s)
+PROP
+(:identifier linear)
+EXPR
+(((:identifier absolute)))
+PROP
+(:identifier absolute)
+EXPR
+((''))
+PROP
+''
+EXPR
+(((:measurement 0 %)))
+PROP
+(:measurement 0 %)
+EXPR
+(((:measurement 0 %)))
+PROP
+(:measurement 0 %)
+EXPR
+(((:variableName @ loaderDimmerColor)))
+PROP
+(:variableName @ loaderDimmerColor)
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:variableName @ borderRadius)))
+PROP
+(:variableName @ borderRadius)
+EXPR
+(((:variableName @ loaderDimmerZIndex)))
+PROP
+(:variableName @ loaderDimmerZIndex)
+EXPR
+(((:identifier absolute)))
+PROP
+(:identifier absolute)
+EXPR
+((''))
+PROP
+''
+EXPR
+(((:measurement 50 %)))
+PROP
+(:measurement 50 %)
+EXPR
+(((:measurement 50 %)))
+PROP
+(:measurement 50 %)
+EXPR
+(((:variableName @ loaderMargin)))
+PROP
+(:variableName @ loaderMargin)
+EXPR
+(((:variableName @ loaderSize)))
+PROP
+(:variableName @ loaderSize)
+EXPR
+(((:variableName @ loaderSize)))
+PROP
+(:variableName @ loaderSize)
+EXPR
+(((:identifier segment-spin)) ((:variableName @ loaderSpeed)) ((:identifier linear)))
+PROP
+(:identifier segment-spin)
+PROP
+(:variableName @ loaderSpeed)
+PROP
+(:identifier linear)
+EXPR
+(((:identifier infinite)))
+PROP
+(:identifier infinite)
+EXPR
+(((:variableName @ circularRadius)))
+PROP
+(:variableName @ circularRadius)
+EXPR
+(((:variableName @ loaderLineColor)) ((:variableName @ loaderFillColor)) ((:variableName @ loaderFillColor)) ((:variableName @ loaderFillColor)))
+PROP
+(:variableName @ loaderLineColor)
+PROP
+(:variableName @ loaderFillColor)
+PROP
+(:variableName @ loaderFillColor)
+PROP
+(:variableName @ loaderFillColor)
+EXPR
+(((:identifier solid)))
+PROP
+(:identifier solid)
+EXPR
+(((:variableName @ loaderLineWidth)))
+PROP
+(:variableName @ loaderLineWidth)
+EXPR
+(((:measurement 0 px)) ((:measurement 0 px)) ((:measurement 0 px)) ((:measurement 1 px)) ((:identifier transparent)))
+PROP
+(:measurement 0 px)
+PROP
+(:measurement 0 px)
+PROP
+(:measurement 0 px)
+PROP
+(:measurement 1 px)
+PROP
+(:identifier transparent)
+EXPR
+(((:identifier visible)))
+PROP
+(:identifier visible)
+EXPR
+(((:variableName @ loaderLineZIndex)))
+PROP
+(:variableName @ loaderLineZIndex)
+EXPR
+(((:identifier rotate) ( (:values (:commandStatement (:expression (:measurement 0 deg)))) )))
+PROP
+)
+EXPR
+(((:identifier rotate) ( (:values (:commandStatement (:expression (:measurement 360 deg)))) )))
+PROP
+)
+
  [".ui.padded.segment.vertical.segment"
   {"padding-left" (clojure.core/str "0px"),
    "padding-right" (clojure.core/str "0px")}]
@@ -319,7 +797,7 @@
    "transition" (clojure.core/str "all" " " "0s" " " "linear")}]
  [".ui.loading.segment:before"
   {"position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "top" (clojure.core/str "0%"),
    "left" (clojure.core/str "0%"),
    "background" (clojure.core/str loaderDimmerColor),
@@ -349,7 +827,7 @@
    "animation"
    (clojure.core/str "segment-spin" " " loaderSpeed " " "linear"),
    "z-index" (clojure.core/str loaderLineZIndex),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "box-shadow"
    (clojure.core/str
     "0px"

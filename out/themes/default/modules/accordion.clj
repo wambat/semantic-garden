@@ -38,7 +38,7 @@
 (def iconTransform (clojure.core/str "none"))
 (def childAccordionMargin (clojure.core/str "1em" " " "0em" " " "0em"))
 (def childAccordionPadding (clojure.core/str "0em"))
-(def contentMargin nil)
+(def contentMargin (clojure.core/str ""))
 (def contentPadding (clojure.core/str "0.5em" " " "0em" " " "1em"))
 (def menuTitlePadding (clojure.core/str "0em"))
 (def menuIconFloat (clojure.core/str "right"))

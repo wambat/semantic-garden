@@ -5,13 +5,13 @@
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def fontName nil)
+(def fontName (clojure.core/str "icons"))
 (def src nil)
 (def fallbackSRC nil)
-(def outlineFontName nil)
+(def outlineFontName (clojure.core/str "outline-icons"))
 (def outlineSrc nil)
 (def outlineFallbackSRC nil)
-(def brandFontName nil)
+(def brandFontName (clojure.core/str "brand-icons"))
 (def brandSrc nil)
 (def brandFallbackSRC nil)
 (def opacity (clojure.core/str "11"))

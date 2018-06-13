@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "collection"))
+(def element (clojure.core/str "message"))
 (defstyles
  root
  [".ui.message"
@@ -75,7 +75,7 @@
   [".list:not([.ui])"
    ["li:before"
     {"position" (clojure.core/str "absolute"),
-     "content" nil,
+     "content" (clojure.core/str "•"),
      "left" (clojure.core/str "-1em"),
      "height" (clojure.core/str "100%"),
      "vertical-align" (clojure.core/str "baseline")}]]]
@@ -139,7 +139,239 @@
    "box-shadow" (clojure.core/str attachedBottomBoxShadow)}]
  [".ui.bottom.attached.message:not([:last-child])"
   {"margin-bottom" (clojure.core/str verticalMargin)}]
- [".ui.attached.icon.message" {"width" (clojure.core/str "auto")}]
+ [".ui.attached.icon.message" {"width" (clojure.core/str "auto")}]EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 0)) ((:measurement 0)) ((:identifier auto)))
+PROP
+(:measurement 0)
+PROP
+(:measurement 0)
+PROP
+(:identifier auto)
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:measurement 1)))
+PROP
+(:measurement 1)
+EXPR
+(((:variableName @ iconVerticalAlign)))
+PROP
+(:variableName @ iconVerticalAlign)
+EXPR
+(((:variableName @ iconSize)))
+PROP
+(:variableName @ iconSize)
+EXPR
+(((:variableName @ iconOpacity)))
+PROP
+(:variableName @ iconOpacity)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 1)) ((:measurement 1)) ((:identifier auto)))
+PROP
+(:measurement 1)
+PROP
+(:measurement 1)
+PROP
+(:identifier auto)
+EXPR
+(((:variableName @ iconVerticalAlign)))
+PROP
+(:variableName @ iconVerticalAlign)
+EXPR
+(((:variableName @ iconContentDistance)))
+PROP
+(:variableName @ iconContentDistance)
+EXPR
+(((:measurement 1 em)))
+PROP
+(:measurement 1 em)
+EXPR
+(((:variableName @ floatingBoxShadow)))
+PROP
+(:variableName @ floatingBoxShadow)
+EXPR
+(((:variableName @ black)))
+PROP
+(:variableName @ black)
+EXPR
+(((:variableName @ invertedTextColor)))
+PROP
+(:variableName @ invertedTextColor)
+EXPR
+(((:variableName @ positiveBackgroundColor)))
+PROP
+(:variableName @ positiveBackgroundColor)
+EXPR
+(((:variableName @ positiveTextColor)))
+PROP
+(:variableName @ positiveTextColor)
+EXPR
+(((:variableName @ positiveBoxShadow)))
+PROP
+(:variableName @ positiveBoxShadow)
+EXPR
+(((:variableName @ positiveHeaderColor)))
+PROP
+(:variableName @ positiveHeaderColor)
+EXPR
+(((:variableName @ negativeBackgroundColor)))
+PROP
+(:variableName @ negativeBackgroundColor)
+EXPR
+(((:variableName @ negativeTextColor)))
+PROP
+(:variableName @ negativeTextColor)
+EXPR
+(((:variableName @ negativeBoxShadow)))
+PROP
+(:variableName @ negativeBoxShadow)
+EXPR
+(((:variableName @ negativeHeaderColor)))
+PROP
+(:variableName @ negativeHeaderColor)
+EXPR
+(((:variableName @ infoBackgroundColor)))
+PROP
+(:variableName @ infoBackgroundColor)
+EXPR
+(((:variableName @ infoTextColor)))
+PROP
+(:variableName @ infoTextColor)
+EXPR
+(((:variableName @ infoBoxShadow)))
+PROP
+(:variableName @ infoBoxShadow)
+EXPR
+(((:variableName @ infoHeaderColor)))
+PROP
+(:variableName @ infoHeaderColor)
+EXPR
+(((:variableName @ warningBackgroundColor)))
+PROP
+(:variableName @ warningBackgroundColor)
+EXPR
+(((:variableName @ warningTextColor)))
+PROP
+(:variableName @ warningTextColor)
+EXPR
+(((:variableName @ warningBoxShadow)))
+PROP
+(:variableName @ warningBoxShadow)
+EXPR
+(((:variableName @ warningHeaderColor)))
+PROP
+(:variableName @ warningHeaderColor)
+EXPR
+(((:variableName @ errorBackgroundColor)))
+PROP
+(:variableName @ errorBackgroundColor)
+EXPR
+(((:variableName @ errorTextColor)))
+PROP
+(:variableName @ errorTextColor)
+EXPR
+(((:variableName @ errorBoxShadow)))
+PROP
+(:variableName @ errorBoxShadow)
+EXPR
+(((:variableName @ errorHeaderColor)))
+PROP
+(:variableName @ errorHeaderColor)
+EXPR
+(((:variableName @ successBackgroundColor)))
+PROP
+(:variableName @ successBackgroundColor)
+EXPR
+(((:variableName @ successTextColor)))
+PROP
+(:variableName @ successTextColor)
+EXPR
+(((:variableName @ successBoxShadow)))
+PROP
+(:variableName @ successBoxShadow)
+EXPR
+(((:variableName @ successHeaderColor)))
+PROP
+(:variableName @ successHeaderColor)
+EXPR
+(((:variableName @ black)))
+PROP
+(:variableName @ black)
+EXPR
+(((:variableName @ invertedTextColor)))
+PROP
+(:variableName @ invertedTextColor)
+EXPR
+(((:variableName @ redBackground)))
+PROP
+(:variableName @ redBackground)
+EXPR
+(((:variableName @ redTextColor)))
+PROP
+(:variableName @ redTextColor)
+EXPR
+(((:variableName @ redBoxShadow)))
+PROP
+(:variableName @ redBoxShadow)
+EXPR
+(((:variableName @ redHeaderColor)))
+PROP
+(:variableName @ redHeaderColor)
+EXPR
+(((:variableName @ orangeBackground)))
+PROP
+(:variableName @ orangeBackground)
+EXPR
+(((:variableName @ orangeTextColor)))
+PROP
+(:variableName @ orangeTextColor)
+EXPR
+(((:variableName @ orangeBoxShadow)))
+PROP
+(:variableName @ orangeBoxShadow)
+EXPR
+(((:variableName @ orangeHeaderColor)))
+PROP
+(:variableName @ orangeHeaderColor)
+EXPR
+(((:variableName @ yellowBackground)))
+PROP
+(:variableName @ yellowBackground)
+EXPR
+(((:variableName @ yellowTextColor)))
+PROP
+(:variableName @ yellowTextColor)
+EXPR
+(((:variableName @ yellowBoxShadow)))
+PROP
+(:variableName @ yellowBoxShadow)
+EXPR
+(((:variableName @ yellowHeaderColor)))
+PROP
+(:variableName @ yellowHeaderColor)
+EXPR
+(((:variableName @ oliveBackground)))
+PROP
+(:variableName @ oliveBackground)
+EXPR
+(((:variableName @ oliveTextColor)))
+PROP
+(:variableName @ oliveTextColor)
+EXPR
+(((:variableName @ oliveBoxShadow)))
+PROP
+(:variableName @ oliveBoxShadow)
+
  [".ui.icon.message"
   {"display" (clojure.core/str "flex"),
    "width" (clojure.core/str "100%"),
@@ -244,7 +476,155 @@
    "color" (clojure.core/str yellowTextColor),
    "box-shadow" (clojure.core/str yellowBoxShadow)}]
  [".ui.yellow.message"
-  [".header" {"color" (clojure.core/str yellowHeaderColor)}]]
+  [".header" {"color" (clojure.core/str yellowHeaderColor)}]]EXPR
+(((:variableName @ oliveHeaderColor)))
+PROP
+(:variableName @ oliveHeaderColor)
+EXPR
+(((:variableName @ greenBackground)))
+PROP
+(:variableName @ greenBackground)
+EXPR
+(((:variableName @ greenTextColor)))
+PROP
+(:variableName @ greenTextColor)
+EXPR
+(((:variableName @ greenBoxShadow)))
+PROP
+(:variableName @ greenBoxShadow)
+EXPR
+(((:variableName @ greenHeaderColor)))
+PROP
+(:variableName @ greenHeaderColor)
+EXPR
+(((:variableName @ tealBackground)))
+PROP
+(:variableName @ tealBackground)
+EXPR
+(((:variableName @ tealTextColor)))
+PROP
+(:variableName @ tealTextColor)
+EXPR
+(((:variableName @ tealBoxShadow)))
+PROP
+(:variableName @ tealBoxShadow)
+EXPR
+(((:variableName @ tealHeaderColor)))
+PROP
+(:variableName @ tealHeaderColor)
+EXPR
+(((:variableName @ blueBackground)))
+PROP
+(:variableName @ blueBackground)
+EXPR
+(((:variableName @ blueTextColor)))
+PROP
+(:variableName @ blueTextColor)
+EXPR
+(((:variableName @ blueBoxShadow)))
+PROP
+(:variableName @ blueBoxShadow)
+EXPR
+(((:variableName @ blueHeaderColor)))
+PROP
+(:variableName @ blueHeaderColor)
+EXPR
+(((:variableName @ violetBackground)))
+PROP
+(:variableName @ violetBackground)
+EXPR
+(((:variableName @ violetTextColor)))
+PROP
+(:variableName @ violetTextColor)
+EXPR
+(((:variableName @ violetBoxShadow)))
+PROP
+(:variableName @ violetBoxShadow)
+EXPR
+(((:variableName @ violetHeaderColor)))
+PROP
+(:variableName @ violetHeaderColor)
+EXPR
+(((:variableName @ purpleBackground)))
+PROP
+(:variableName @ purpleBackground)
+EXPR
+(((:variableName @ purpleTextColor)))
+PROP
+(:variableName @ purpleTextColor)
+EXPR
+(((:variableName @ purpleBoxShadow)))
+PROP
+(:variableName @ purpleBoxShadow)
+EXPR
+(((:variableName @ purpleHeaderColor)))
+PROP
+(:variableName @ purpleHeaderColor)
+EXPR
+(((:variableName @ pinkBackground)))
+PROP
+(:variableName @ pinkBackground)
+EXPR
+(((:variableName @ pinkTextColor)))
+PROP
+(:variableName @ pinkTextColor)
+EXPR
+(((:variableName @ pinkBoxShadow)))
+PROP
+(:variableName @ pinkBoxShadow)
+EXPR
+(((:variableName @ pinkHeaderColor)))
+PROP
+(:variableName @ pinkHeaderColor)
+EXPR
+(((:variableName @ brownBackground)))
+PROP
+(:variableName @ brownBackground)
+EXPR
+(((:variableName @ brownTextColor)))
+PROP
+(:variableName @ brownTextColor)
+EXPR
+(((:variableName @ brownBoxShadow)))
+PROP
+(:variableName @ brownBoxShadow)
+EXPR
+(((:variableName @ brownHeaderColor)))
+PROP
+(:variableName @ brownHeaderColor)
+EXPR
+(((:variableName @ relativeMini)))
+PROP
+(:variableName @ relativeMini)
+EXPR
+(((:variableName @ relativeTiny)))
+PROP
+(:variableName @ relativeTiny)
+EXPR
+(((:variableName @ relativeSmall)))
+PROP
+(:variableName @ relativeSmall)
+EXPR
+(((:variableName @ relativeMedium)))
+PROP
+(:variableName @ relativeMedium)
+EXPR
+(((:variableName @ relativeLarge)))
+PROP
+(:variableName @ relativeLarge)
+EXPR
+(((:variableName @ relativeBig)))
+PROP
+(:variableName @ relativeBig)
+EXPR
+(((:variableName @ relativeHuge)))
+PROP
+(:variableName @ relativeHuge)
+EXPR
+(((:variableName @ relativeMassive)))
+PROP
+(:variableName @ relativeMassive)
+
  [".ui.olive.message"
   {"background-color" (clojure.core/str oliveBackground),
    "color" (clojure.core/str oliveTextColor),

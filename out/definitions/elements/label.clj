@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "label"))
 (defstyles
  root
  [".ui.label"
@@ -188,7 +188,7 @@
     "transform"
     (clojure.core/str "translateY" " " "translateX" " " "rotate"),
     "position" (clojure.core/str "absolute"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "background-color" (clojure.core/str "inherit"),
     "background-image" (clojure.core/str tagTriangleBackgroundImage),
     "transition" (clojure.core/str tagTransition)}]]
@@ -200,7 +200,7 @@
    "transform"
    (clojure.core/str "translateY" " " "translateX" " " "rotate"),
    "position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "background-color" (clojure.core/str "inherit"),
    "background-image" (clojure.core/str tagTriangleBackgroundImage),
    "transition" (clojure.core/str tagTransition)}]

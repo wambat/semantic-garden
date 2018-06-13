@@ -29,7 +29,7 @@
 (def blurredInvertedBackgroundColor (clojure.core/str "rgba"))
 (def hiddenOpacity (clojure.core/str "00"))
 (def visibleOpacity (clojure.core/str "11"))
-(def transformStyle nil)
+(def transformStyle (clojure.core/str ""))
 (def pageDimmerPosition (clojure.core/str "fixed"))
 (def invertedBackgroundColor (clojure.core/str "rgba"))
 (def invertedTextColor (clojure.core/str textColor))

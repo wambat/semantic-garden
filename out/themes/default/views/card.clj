@@ -41,7 +41,7 @@
   solidBorderColor))
 (def boxShadow (clojure.core/str borderShadow))
 (def border (clojure.core/str "none"))
-(def zIndex nil)
+(def zIndex (clojure.core/str ""))
 (def
  transition
  (clojure.core/str "transform" " " defaultDuration " " defaultEasing))
@@ -67,7 +67,7 @@
 (def contentBorderRadius (clojure.core/str "0em"))
 (def contentBoxShadow (clojure.core/str "none"))
 (def contentBorder (clojure.core/str "none"))
-(def headerMargin nil)
+(def headerMargin (clojure.core/str ""))
 (def headerFontWeight (clojure.core/str bold))
 (def headerFontSize (clojure.core/str relativeBig))
 (def headerLineHeightOffset (clojure.core/str))
@@ -80,12 +80,12 @@
 (def
  actionTransition
  (clojure.core/str "color" " " defaultDuration " " defaultEasing))
-(def starColor nil)
-(def starActiveColor nil)
-(def likeColor nil)
-(def likeActiveColor nil)
-(def contentLinkColor nil)
-(def contentLinkHoverColor nil)
+(def starColor (clojure.core/str "#FFB70A"))
+(def starActiveColor (clojure.core/str "#FFE623"))
+(def likeColor (clojure.core/str "#FF2733"))
+(def likeActiveColor (clojure.core/str "#FF2733"))
+(def contentLinkColor (clojure.core/str ""))
+(def contentLinkHoverColor (clojure.core/str ""))
 (def
  contentLinkTransition
  (clojure.core/str "color" " " defaultDuration " " defaultEasing))
@@ -95,13 +95,13 @@
 (def metaLinkHoverColor (clojure.core/str textColor))
 (def descriptionDistance (clojure.core/str "0.5em"))
 (def descriptionColor (clojure.core/str "rgba"))
-(def contentImageWidth nil)
+(def contentImageWidth (clojure.core/str ""))
 (def contentImageVerticalAlign (clojure.core/str "middle"))
 (def avatarSize (clojure.core/str "2em"))
 (def avatarBorderRadius (clojure.core/str circularRadius))
 (def paragraphDistance (clojure.core/str "0.5em"))
 (def dimmerZIndex (clojure.core/str "1010"))
-(def dimmerColor nil)
+(def dimmerColor (clojure.core/str ""))
 (def extraDivider (clojure.core/str "1px" " " "solid" " " "rgba"))
 (def extraBackground (clojure.core/str "none"))
 (def extraPosition (clojure.core/str "static"))

@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "module"))
+(def element (clojure.core/str "popup"))
 (defstyles
  root
  [".ui.popup"
@@ -39,7 +39,7 @@
    ["+ .content" {"padding-top" (clojure.core/str headerDistance)}]]]
  [".ui.popup:before"
   {"position" (clojure.core/str "absolute"),
-   "content" nil,
+   "content" (clojure.core/str ""),
    "width" (clojure.core/str arrowSize),
    "height" (clojure.core/str arrowSize),
    "background" (clojure.core/str arrowBackground),

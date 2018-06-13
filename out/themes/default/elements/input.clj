@@ -49,7 +49,7 @@
  placeholderFocusColor
  (clojure.core/str inputPlaceholderFocusColor))
 (def downBorderColor (clojure.core/str "rgba"))
-(def downBackground nil)
+(def downBackground (clojure.core/str "#FAFAFA"))
 (def downColor (clojure.core/str textColor))
 (def downBoxShadow (clojure.core/str "none"))
 (def focusBorderColor (clojure.core/str focusedFormBorderColor))

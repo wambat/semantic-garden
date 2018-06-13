@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "view"))
+(def element (clojure.core/str "item"))
 (defstyles
  root
  [".ui.items"
@@ -31,7 +31,7 @@
  [".ui.items"
   ["> .item:after"
    {"display" (clojure.core/str "block"),
-    "content" nil,
+    "content" (clojure.core/str " "),
     "height" (clojure.core/str "0px"),
     "clear" (clojure.core/str "both"),
     "overflow" (clojure.core/str "hidden"),
@@ -80,7 +80,7 @@
   ["> .item"
    ["> .content:after"
     {"display" (clojure.core/str "block"),
-     "content" nil,
+     "content" (clojure.core/str " "),
      "height" (clojure.core/str "0px"),
      "clear" (clojure.core/str "both"),
      "overflow" (clojure.core/str "hidden"),
@@ -183,7 +183,107 @@
   ["> .item"
    ["> .content"
     ["> a.header:hover"
-     {"color" (clojure.core/str headerLinkHoverColor)}]]]]
+     {"color" (clojure.core/str headerLinkHoverColor)}]]]]EXPR
+(((:variableName @ metaLinkHoverColor)))
+PROP
+(:variableName @ metaLinkHoverColor)
+EXPR
+(((:identifier pointer)))
+PROP
+(:identifier pointer)
+EXPR
+(((:variableName @ actionOpacity)))
+PROP
+(:variableName @ actionOpacity)
+EXPR
+(((:variableName @ actionTransition)))
+PROP
+(:variableName @ actionTransition)
+EXPR
+(((:variableName @ actionHoverOpacity)))
+PROP
+(:variableName @ actionHoverOpacity)
+EXPR
+(((:variableName @ favoriteColor)))
+PROP
+(:variableName @ favoriteColor)
+EXPR
+(((:variableName @ favoriteActiveColor)))
+PROP
+(:variableName @ favoriteActiveColor)
+EXPR
+(((:identifier pointer)))
+PROP
+(:identifier pointer)
+EXPR
+(((:variableName @ actionOpacity)))
+PROP
+(:variableName @ actionOpacity)
+EXPR
+(((:variableName @ actionTransition)))
+PROP
+(:variableName @ actionTransition)
+EXPR
+(((:variableName @ actionHoverOpacity)))
+PROP
+(:variableName @ actionHoverOpacity)
+EXPR
+(((:variableName @ likeColor)))
+PROP
+(:variableName @ likeColor)
+EXPR
+(((:variableName @ likeActiveColor)))
+PROP
+(:variableName @ likeActiveColor)
+EXPR
+(((:variableName @ extraDisplay)))
+PROP
+(:variableName @ extraDisplay)
+EXPR
+(((:variableName @ extraPosition)))
+PROP
+(:variableName @ extraPosition)
+EXPR
+(((:variableName @ extraBackground)))
+PROP
+(:variableName @ extraBackground)
+EXPR
+(((:variableName @ extraMargin)))
+PROP
+(:variableName @ extraMargin)
+EXPR
+(((:variableName @ extraWidth)))
+PROP
+(:variableName @ extraWidth)
+EXPR
+(((:variableName @ extraPadding)))
+PROP
+(:variableName @ extraPadding)
+EXPR
+(((:variableName @ extraTop)))
+PROP
+(:variableName @ extraTop)
+EXPR
+(((:variableName @ extraLeft)))
+PROP
+(:variableName @ extraLeft)
+EXPR
+(((:variableName @ extraColor)))
+PROP
+(:variableName @ extraColor)
+EXPR
+(((:variableName @ extraBoxShadow)))
+PROP
+(:variableName @ extraBoxShadow)
+EXPR
+(((:variableName @ extraTransition)))
+PROP
+(:variableName @ extraTransition)
+EXPR
+(((:variableName @ extraDivider)))
+PROP
+(:variableName @ extraDivider)
+
  [".ui.items"
   ["> .item"
    [".meta"

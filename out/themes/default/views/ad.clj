@@ -10,7 +10,7 @@
 (def testBackground (clojure.core/str lightBlack))
 (def testColor (clojure.core/str white))
 (def testFontWeight (clojure.core/str bold))
-(def testText nil)
+(def testText (clojure.core/str "Ad"))
 (def testFontSize (clojure.core/str relativeMedium))
 (def testMobileFontSize (clojure.core/str relativeTiny))
 (defstyles root)

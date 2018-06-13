@@ -6,8 +6,8 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "collection"))
+(def element (clojure.core/str "menu"))
 (def
  dropdownMenuBorderRadius
  (clojure.core/str dropdownMenuBorderRadius))
@@ -25,7 +25,7 @@
    "border-radius" (clojure.core/str borderRadius),
    "min-height" (clojure.core/str minHeight)}]
  [".ui.menu:after"
-  {"content" nil,
+  {"content" (clojure.core/str ""),
    "display" (clojure.core/str "block"),
    "height" (clojure.core/str "0px"),
    "clear" (clojure.core/str "both"),
@@ -71,7 +71,7 @@
  [".ui.menu"
   [".item:before"
    {"position" (clojure.core/str "absolute"),
-    "content" nil,
+    "content" (clojure.core/str ""),
     "top" (clojure.core/str "0%"),
     "right" (clojure.core/str "0px"),
     "height" (clojure.core/str "100%"),
@@ -226,7 +226,166 @@
  [".ui.menu"
   [".pointing.dropdown.item"
    [".menu"
-    {"margin-top" (clojure.core/str pointingDropdownMenuDistance)}]]]
+    {"margin-top"
+     (clojure.core/str pointingDropdownMenuDistance)}]]]EXPR
+(((:identifier right)))
+PROP
+(:identifier right)
+EXPR
+(("\f0da"))
+PROP
+"\f0da"
+EXPR
+(((:measurement 1 em)))
+PROP
+(:measurement 1 em)
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:measurement 0)))
+PROP
+(:measurement 0)
+EXPR
+(((:measurement 0 em)) ((:measurement 0 em)) ((:measurement 0 em)) ((:variableName @ dropdownMenuDistance)))
+PROP
+(:measurement 0 em)
+PROP
+(:measurement 0 em)
+PROP
+(:measurement 0 em)
+PROP
+(:variableName @ dropdownMenuDistance)
+EXPR
+(((:variableName @ dropdownVerticalMenuBoxShadow)))
+PROP
+(:variableName @ dropdownVerticalMenuBoxShadow)
+EXPR
+(((:measurement 0 em)) ((:variableName @ dropdownMenuBorderRadius)) ((:variableName @ dropdownMenuBorderRadius)) ((:variableName @ dropdownMenuBorderRadius)))
+PROP
+(:measurement 0 em)
+PROP
+(:variableName @ dropdownMenuBorderRadius)
+PROP
+(:variableName @ dropdownMenuBorderRadius)
+PROP
+(:variableName @ dropdownMenuBorderRadius)
+EXPR
+(((:measurement 0)))
+PROP
+(:measurement 0)
+EXPR
+(((:measurement 0)))
+PROP
+(:measurement 0)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:measurement 0 em)))
+PROP
+(:measurement 0 em)
+EXPR
+(((:identifier none)))
+PROP
+(:identifier none)
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:variableName @ labelBackground)))
+PROP
+(:variableName @ labelBackground)
+EXPR
+(((:variableName @ labelTextColor)))
+PROP
+(:variableName @ labelTextColor)
+EXPR
+(((:variableName @ labelTextMargin)))
+PROP
+(:variableName @ labelTextMargin)
+EXPR
+(((:variableName @ labelVerticalPadding)) ((:variableName @ labelHorizontalPadding)))
+PROP
+(:variableName @ labelVerticalPadding)
+PROP
+(:variableName @ labelHorizontalPadding)
+EXPR
+(((:variableName @ labelBackground)))
+PROP
+(:variableName @ labelBackground)
+EXPR
+(((:variableName @ labelTextColor)))
+PROP
+(:variableName @ labelTextColor)
+EXPR
+(((:variableName @ labelOffset)))
+PROP
+(:variableName @ labelOffset)
+EXPR
+(((:variableName @ labelOffset)))
+PROP
+(:variableName @ labelOffset)
+EXPR
+(((:variableName @ labelVerticalPadding)) ((:variableName @ labelHorizontalPadding)))
+PROP
+(:variableName @ labelVerticalPadding)
+PROP
+(:variableName @ labelHorizontalPadding)
+EXPR
+(((:variableName @ labelVerticalPadding)) ((:variableName @ labelHorizontalPadding)))
+PROP
+(:variableName @ labelVerticalPadding)
+PROP
+(:variableName @ labelHorizontalPadding)
+EXPR
+(((:identifier inline-block)))
+PROP
+(:identifier inline-block)
+EXPR
+(((:identifier middle)))
+PROP
+(:identifier middle)
+EXPR
+(((:variableName @ imageMargin)))
+PROP
+(:variableName @ imageMargin)
+EXPR
+(((:variableName @ imageWidth)))
+PROP
+(:variableName @ imageWidth)
+EXPR
+(((:identifier block)))
+PROP
+(:identifier block)
+EXPR
+(((:measurement 100 %)))
+PROP
+(:measurement 100 %)
+EXPR
+(((:variableName @ verticalImageWidth)))
+PROP
+(:variableName @ verticalImageWidth)
+EXPR
+(((:identifier none) !important))
+PROP
+!important
+EXPR
+(((:identifier block) !important))
+PROP
+!important
+EXPR
+(((:identifier auto)))
+PROP
+(:identifier auto)
+EXPR
+(((:measurement 0 px)))
+PROP
+(:measurement 0 px)
+
  [".ui.inverted.menu"
   [".search.dropdown.item"
    ["> .search"
@@ -239,7 +398,7 @@
   [".dropdown.item"
    ["> .icon"
     {"float" (clojure.core/str "right"),
-     "content" nil,
+     "content" (clojure.core/str "\\f0da"),
      "margin-left" (clojure.core/str "1em")}]]]
  [".ui.vertical.menu"
   [".dropdown.item"

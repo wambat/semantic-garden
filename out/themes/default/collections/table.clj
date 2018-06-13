@@ -94,10 +94,10 @@
 (def definitionColumnFontWeight (clojure.core/str bold))
 (def definitionColumnColor (clojure.core/str selectedTextColor))
 (def definitionColumnFontSize (clojure.core/str relativeMedium))
-(def definitionColumnTextTransform nil)
-(def definitionColumnBoxShadow nil)
-(def definitionColumnTextAlign nil)
-(def definitionColumnHorizontalPadding nil)
+(def definitionColumnTextTransform (clojure.core/str ""))
+(def definitionColumnBoxShadow (clojure.core/str ""))
+(def definitionColumnTextAlign (clojure.core/str ""))
+(def definitionColumnHorizontalPadding (clojure.core/str ""))
 (def iconVerticalAlign (clojure.core/str "baseline"))
 (def stateMarkerWidth (clojure.core/str "0px"))
 (def positiveColor (clojure.core/str positiveTextColor))
@@ -161,7 +161,7 @@
 (def warningBackgroundHover (clojure.core/str "darken"))
 (def warningColorHover (clojure.core/str "darken"))
 (def activeColor (clojure.core/str textColor))
-(def activeBackgroundColor nil)
+(def activeBackgroundColor (clojure.core/str "#E0E0E0"))
 (def
  activeBoxShadow
  (clojure.core/str
@@ -174,7 +174,7 @@
   activeColor
   " "
   "inset"))
-(def activeBackgroundHover nil)
+(def activeBackgroundHover (clojure.core/str "#EFEFEF"))
 (def activeColorHover (clojure.core/str selectedTextColor))
 (def attachedTopOffset (clojure.core/str "0px"))
 (def attachedBottomOffset (clojure.core/str "0px"))
@@ -193,7 +193,7 @@
 (def
  selectableInvertedTextColor
  (clojure.core/str invertedSelectedTextColor))
-(def sortableBackground nil)
+(def sortableBackground (clojure.core/str ""))
 (def sortableColor (clojure.core/str textColor))
 (def
  sortableBorder
@@ -201,9 +201,9 @@
 (def sortableIconWidth (clojure.core/str "auto"))
 (def sortableIconDistance (clojure.core/str "0.5em"))
 (def sortableIconOpacity (clojure.core/str "0.80.8"))
-(def sortableIconFont nil)
-(def sortableIconAscending nil)
-(def sortableIconDescending nil)
+(def sortableIconFont (clojure.core/str "Icons"))
+(def sortableIconAscending (clojure.core/str "\\f0d8"))
+(def sortableIconDescending (clojure.core/str "\\f0d7"))
 (def sortableDisabledColor (clojure.core/str disabledTextColor))
 (def sortableHoverBackground (clojure.core/str transparentBlack))
 (def sortableHoverColor (clojure.core/str hoveredTextColor))
@@ -228,7 +228,7 @@
 (def
  coloredBorderRadius
  (clojure.core/str "0em" " " "0em" " " borderRadius " " borderRadius))
-(def invertedBackground nil)
+(def invertedBackground (clojure.core/str "#333333"))
 (def invertedBorder (clojure.core/str "none"))
 (def invertedCellBorderColor (clojure.core/str whiteBorderColor))
 (def invertedCellColor (clojure.core/str invertedTextColor))
@@ -257,7 +257,7 @@
 (def
  basicTableCellBorder
  (clojure.core/str "1px" " " "solid" " " "rgba"))
-(def basicTableCellPadding nil)
+(def basicTableCellPadding (clojure.core/str ""))
 (def basicTableStripedBackground (clojure.core/str transparentBlack))
 (def paddedVerticalPadding (clojure.core/str "1em"))
 (def paddedHorizontalPadding (clojure.core/str "1em"))

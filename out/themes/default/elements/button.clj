@@ -7,7 +7,7 @@
   [garden.units :refer [px]]))
 (def verticalMargin (clojure.core/str "0em"))
 (def horizontalMargin (clojure.core/str "0.25em"))
-(def backgroundColor nil)
+(def backgroundColor (clojure.core/str "#E0E1E2"))
 (def backgroundImage (clojure.core/str "none"))
 (def background (clojure.core/str backgroundColor " " backgroundImage))
 (def lineHeight (clojure.core/str "1em"))
@@ -45,17 +45,17 @@
 (def iconHeight (clojure.core/str relativeTiny))
 (def iconOpacity (clojure.core/str "0.80.8"))
 (def iconDistance (clojure.core/str relative6px))
-(def iconColor nil)
+(def iconColor (clojure.core/str ""))
 (def
  iconTransition
  (clojure.core/str "opacity" " " defaultDuration " " defaultEasing))
-(def iconVerticalAlign nil)
+(def iconVerticalAlign (clojure.core/str ""))
 (def iconMargin nil)
 (def invertedLoaderFillColor (clojure.core/str "rgba"))
 (def
  transition
  (clojure.core/str "background" " " defaultDuration " " defaultEasing))
-(def willChange nil)
+(def willChange (clojure.core/str ""))
 (def groupBoxShadow (clojure.core/str "none"))
 (def groupButtonBoxShadow (clojure.core/str boxShadow))
 (def verticalBoxShadow (clojure.core/str "none"))
@@ -65,24 +65,24 @@
 (def
  verticalGroupOffset
  (clojure.core/str "0px" " " "0px" " " "0px" " " "0px"))
-(def hoverBackgroundColor nil)
+(def hoverBackgroundColor (clojure.core/str "#CACBCD"))
 (def hoverBackgroundImage (clojure.core/str backgroundImage))
 (def hoverBoxShadow (clojure.core/str boxShadow))
 (def hoverColor (clojure.core/str hoveredTextColor))
 (def iconHoverOpacity (clojure.core/str "0.850.85"))
 (def focusBackgroundColor (clojure.core/str hoverBackgroundColor))
-(def focusBackgroundImage nil)
-(def focusBoxShadow nil)
+(def focusBackgroundImage (clojure.core/str ""))
+(def focusBoxShadow (clojure.core/str ""))
 (def focusColor (clojure.core/str hoveredTextColor))
 (def iconFocusOpacity (clojure.core/str "0.850.85"))
 (def disabledBackgroundImage (clojure.core/str "none"))
 (def disabledBoxShadow (clojure.core/str "none"))
-(def downBackgroundColor nil)
-(def downBackgroundImage nil)
+(def downBackgroundColor (clojure.core/str "#BABBBC"))
+(def downBackgroundImage (clojure.core/str ""))
 (def downPressedShadow (clojure.core/str "none"))
 (def downBoxShadow (clojure.core/str downPressedShadow))
 (def downColor (clojure.core/str pressedTextColor))
-(def activeBackgroundColor nil)
+(def activeBackgroundColor (clojure.core/str "#C0C1C2"))
 (def activeBackgroundImage (clojure.core/str "none"))
 (def activeColor (clojure.core/str selectedTextColor))
 (def activeBoxShadow (clojure.core/str borderBoxShadow))
@@ -97,7 +97,7 @@
 (def
  loadingTransition
  (clojure.core/str "opacity" " " defaultDuration " " defaultEasing))
-(def orText nil)
+(def orText (clojure.core/str "or"))
 (def orGap (clojure.core/str "0.3em"))
 (def orZIndex (clojure.core/str "33"))
 (def orCircleDistanceToEdge nil)
@@ -116,7 +116,7 @@
 (def iconButtonOpacity (clojure.core/str "0.90.9"))
 (def labeledLabelFontSize (clojure.core/str medium))
 (def labeledLabelAlign (clojure.core/str "center"))
-(def labeledLabelPadding nil)
+(def labeledLabelPadding (clojure.core/str ""))
 (def labeledLabelFontSize (clojure.core/str relativeMedium))
 (def labeledLabelBorderColor (clojure.core/str borderColor))
 (def labeledLabelBorderOffset nil)
@@ -126,7 +126,7 @@
 (def labeledIconBackgroundColor (clojure.core/str "rgba"))
 (def labeledIconPadding nil)
 (def labeledIconBorder (clojure.core/str "transparent"))
-(def labeledIconColor nil)
+(def labeledIconColor (clojure.core/str ""))
 (def
  labeledIconLeftShadow
  (clojure.core/str
@@ -182,7 +182,7 @@
   "inset"))
 (def basicLoadingColor (clojure.core/str offWhite))
 (def basicTextTransform (clojure.core/str "none"))
-(def basicHoverBackground nil)
+(def basicHoverBackground (clojure.core/str "#FFFFFF"))
 (def basicHoverTextColor (clojure.core/str hoveredTextColor))
 (def
  basicHoverBoxShadow
@@ -201,7 +201,7 @@
 (def basicFocusBackground (clojure.core/str basicHoverBackground))
 (def basicFocusTextColor (clojure.core/str basicHoverTextColor))
 (def basicFocusBoxShadow (clojure.core/str basicHoverBoxShadow))
-(def basicDownBackground nil)
+(def basicDownBackground (clojure.core/str "#F8F8F8"))
 (def basicDownTextColor (clojure.core/str pressedTextColor))
 (def
  basicDownBoxShadow
@@ -218,7 +218,7 @@
   " "
   "inset"))
 (def basicActiveBackground (clojure.core/str transparentBlack))
-(def basicActiveBoxShadow nil)
+(def basicActiveBoxShadow (clojure.core/str ""))
 (def basicActiveTextColor (clojure.core/str selectedTextColor))
 (def basicInvertedBackground (clojure.core/str "transparent"))
 (def basicInvertedFocusBackground (clojure.core/str "transparent"))

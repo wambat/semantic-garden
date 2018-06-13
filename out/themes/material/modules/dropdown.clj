@@ -6,7 +6,7 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
 (def menuBorderRadius (clojure.core/str borderRadius))
-(def menuBorderColor nil)
+(def menuBorderColor (clojure.core/str "#DADADA"))
 (def
  menuBoxShadow
  (clojure.core/str "0px" " " "2px" " " "4px" " " "rgba"))

@@ -6,13 +6,13 @@
   [garden.selectors :as sel]
   [garden.units :refer [px]]
   [../../theme.config :refer :all]))
-(def type nil)
-(def element nil)
+(def type (clojure.core/str "element"))
+(def element (clojure.core/str "icon"))
 (defstyles
  root
  ["i.icon"
   {"width" (clojure.core/str width),
-   "font-family" nil,
+   "font-family" (clojure.core/str "Icons"),
    "height" (clojure.core/str height),
    "margin"
    (clojure.core/str "0em" " " distanceFromText " " "0em" " " "0em"),

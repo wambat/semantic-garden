@@ -11,11 +11,11 @@
 (def lastArrowDisplay (clojure.core/str "none"))
 (def activeArrowDisplay (clojure.core/str "block"))
 (def activeLastArrowDisplay (clojure.core/str "block"))
-(def stepsBackground nil)
+(def stepsBackground (clojure.core/str "#FFFFFF"))
 (def
  stepsBoxShadow
  (clojure.core/str "0px" " " "0px" " " "1px" " " "0px" " " "rgba"))
-(def activeBackground nil)
+(def activeBackground (clojure.core/str "#FFFFFF"))
 (def activeIconColor (clojure.core/str darkTextColor))
 (def arrowTopOffset (clojure.core/str "100%"))
 (def arrowRightOffset (clojure.core/str "50%"))

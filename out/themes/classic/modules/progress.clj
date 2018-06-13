@@ -9,7 +9,7 @@
 (def
  boxShadow
  (clojure.core/str "0px" " " "0px" " " "4px" " " "rgba" " " "inset"))
-(def barBackground nil)
+(def barBackground (clojure.core/str subtleGradient " " "#888888"))
 (def border (clojure.core/str "1px" " " "solid" " " borderColor))
 (def padding (clojure.core/str relative3px))
 (defstyles root)
