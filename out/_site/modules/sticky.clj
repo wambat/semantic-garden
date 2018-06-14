@@ -1,5 +1,5 @@
 (clojure.core/ns
- _site.modules.sticky
+ styles._site.modules.sticky
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

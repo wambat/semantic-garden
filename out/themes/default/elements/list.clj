@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.elements.list
+ styles.themes.default.elements.list
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

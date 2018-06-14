@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.classic.elements.button
+ styles.themes.classic.elements.button
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

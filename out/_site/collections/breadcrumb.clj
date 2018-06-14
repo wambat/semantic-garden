@@ -1,5 +1,5 @@
 (clojure.core/ns
- _site.collections.breadcrumb
+ styles._site.collections.breadcrumb
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

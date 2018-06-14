@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.github.elements.input
+ styles.themes.github.elements.input
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

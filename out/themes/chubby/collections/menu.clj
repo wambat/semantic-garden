@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.chubby.collections.menu
+ styles.themes.chubby.collections.menu
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

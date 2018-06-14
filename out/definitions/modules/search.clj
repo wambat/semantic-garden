@@ -1,11 +1,11 @@
 (clojure.core/ns
- definitions.modules.search
+ styles.definitions.modules.search
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]
-  [../../theme.config :refer :all]))
+  [styles.theme.config :refer :all]))
 (def type (clojure.core/str "module"))
 (def element (clojure.core/str "search"))
 (defstyles

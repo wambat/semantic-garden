@@ -1,5 +1,5 @@
 (clojure.core/ns
- _site.views.item
+ styles._site.views.item
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

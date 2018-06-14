@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.colored.modules.checkbox
+ styles.themes.colored.modules.checkbox
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.material.modules.modal
+ styles.themes.material.modules.modal
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.modules.sidebar
+ styles.themes.default.modules.sidebar
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

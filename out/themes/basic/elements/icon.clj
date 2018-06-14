@@ -1,10 +1,10 @@
 (clojure.core/ns
- themes.basic.elements.icon
+ styles.themes.basic.elements.icon
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def fontPath (clojure.core/str "../../themes/basic/assets/fonts"))
+(def fontPath (clojure.core/str "themes/basic/assets/fonts"))
 (def src nil)
 (defstyles root)

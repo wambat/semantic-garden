@@ -1,11 +1,11 @@
 (clojure.core/ns
- themes.github.elements.icon
+ styles.themes.github.elements.icon
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def fontPath (clojure.core/str "../../themes/github/assets/fonts"))
+(def fontPath (clojure.core/str "themes/github/assets/fonts"))
 (def fontName (clojure.core/str "octicons"))
 (def fallbackSRC (clojure.core/str ""))
 (def width (clojure.core/str "1em"))

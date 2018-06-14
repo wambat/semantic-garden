@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.instagram.views.card
+ styles.themes.instagram.views.card
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

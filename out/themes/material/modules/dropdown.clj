@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.material.modules.dropdown
+ styles.themes.material.modules.dropdown
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

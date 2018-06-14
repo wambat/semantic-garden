@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.classic.views.card
+ styles.themes.classic.views.card
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- semantic
+ styles.semantic
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

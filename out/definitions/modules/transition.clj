@@ -1,11 +1,11 @@
 (clojure.core/ns
- definitions.modules.transition
+ styles.definitions.modules.transition
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]
-  [../../theme.config :refer :all]))
+  [styles.theme.config :refer :all]))
 (def type (clojure.core/str "module"))
 (def element (clojure.core/str "transition"))
 (defstyles

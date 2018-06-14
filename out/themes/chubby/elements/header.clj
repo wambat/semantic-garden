@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.chubby.elements.header
+ styles.themes.chubby.elements.header
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

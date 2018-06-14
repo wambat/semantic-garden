@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.amazon.elements.button
+ styles.themes.amazon.elements.button
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

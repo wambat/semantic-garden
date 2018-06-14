@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.basic.globals.reset
+ styles.themes.basic.globals.reset
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

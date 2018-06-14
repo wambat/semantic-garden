@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.duo.elements.loader
+ styles.themes.duo.elements.loader
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

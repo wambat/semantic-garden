@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.bookish.elements.header
+ styles.themes.bookish.elements.header
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

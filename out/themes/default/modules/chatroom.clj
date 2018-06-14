@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.modules.chatroom
+ styles.themes.default.modules.chatroom
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

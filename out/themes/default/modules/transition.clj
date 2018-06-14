@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.modules.transition
+ styles.themes.default.modules.transition
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

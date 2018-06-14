@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.views.statistic
+ styles.themes.default.views.statistic
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.github.collections.form
+ styles.themes.github.collections.form
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

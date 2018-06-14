@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.github.modules.popup
+ styles.themes.github.modules.popup
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

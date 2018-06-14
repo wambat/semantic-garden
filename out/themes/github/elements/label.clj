@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.github.elements.label
+ styles.themes.github.elements.label
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- _site.modules.dimmer
+ styles._site.modules.dimmer
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

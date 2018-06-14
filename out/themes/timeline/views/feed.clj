@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.timeline.views.feed
+ styles.themes.timeline.views.feed
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

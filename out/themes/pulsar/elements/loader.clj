@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.pulsar.elements.loader
+ styles.themes.pulsar.elements.loader
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.modules.progress
+ styles.themes.default.modules.progress
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

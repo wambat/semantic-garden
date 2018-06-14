@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.views.comment
+ styles.themes.default.views.comment
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

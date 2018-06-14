@@ -1,11 +1,11 @@
 (clojure.core/ns
- definitions.collections.table
+ styles.definitions.collections.table
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]
-  [../../theme.config :refer :all]))
+  [styles.theme.config :refer :all]))
 (def type (clojure.core/str "collection"))
 (def element (clojure.core/str "table"))
 (defstyles

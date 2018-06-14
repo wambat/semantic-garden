@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.globals.site
+ styles.themes.default.globals.site
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
@@ -207,8 +207,8 @@
 (def warningBackgroundColor (clojure.core/str "#FFFAF3"))
 (def warningHeaderColor (clojure.core/str "#794B02"))
 (def warningTextColor (clojure.core/str "#573A08"))
-(def imagePath (clojure.core/str "../../themes/default/assets/images"))
-(def fontPath (clojure.core/str "../../themes/default/assets/fonts"))
+(def imagePath (clojure.core/str "themes/default/assets/images"))
+(def fontPath (clojure.core/str "themes/default/assets/fonts"))
 (def mini (clojure.core/str "unit"))
 (def tiny (clojure.core/str "unit"))
 (def small (clojure.core/str "unit"))

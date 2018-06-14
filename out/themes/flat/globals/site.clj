@@ -1,12 +1,12 @@
 (clojure.core/ns
- themes.flat.globals.site
+ styles.themes.flat.globals.site
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]))
-(def imagePath (clojure.core/str "../../themes/default/assets/images"))
-(def fontPath (clojure.core/str "../../themes/default/assets/fonts"))
+(def imagePath (clojure.core/str "themes/default/assets/images"))
+(def fontPath (clojure.core/str "themes/default/assets/fonts"))
 (def headerFont (clojure.core/str "sans-serif"))
 (def pageFont (clojure.core/str "sans-serif"))
 (def fontSmoothing (clojure.core/str "antialiased"))

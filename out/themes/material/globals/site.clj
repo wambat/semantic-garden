@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.material.globals.site
+ styles.themes.material.globals.site
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
@@ -20,8 +20,8 @@
 (def h3 (clojure.core/str "1.751.75" " " "rem"))
 (def h4 (clojure.core/str "1.51.5" " " "rem"))
 (def h5 (clojure.core/str "1.251.25" " " "rem"))
-(def imagePath (clojure.core/str "../../themes/material/assets/images"))
-(def fontPath (clojure.core/str "../../themes/material/assets/fonts"))
+(def imagePath (clojure.core/str "themes/material/assets/images"))
+(def fontPath (clojure.core/str "themes/material/assets/fonts"))
 (def paragraphLineHeight (clojure.core/str "1.7em"))
 (def black (clojure.core/str "#1B1C1D"))
 (def blue (clojure.core/str "#2196F3"))

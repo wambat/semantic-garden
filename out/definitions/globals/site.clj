@@ -1,11 +1,11 @@
 (clojure.core/ns
- definitions.globals.site
+ styles.definitions.globals.site
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
   [garden.selectors :as sel]
   [garden.units :refer [px]]
-  [../../theme.config :refer :all]))
+  [styles.theme.config :refer :all]))
 (def type (clojure.core/str "global"))
 (def element (clojure.core/str "site"))
 (defstyles

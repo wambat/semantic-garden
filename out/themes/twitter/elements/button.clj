@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.twitter.elements.button
+ styles.themes.twitter.elements.button
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

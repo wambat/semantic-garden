@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.modules.rating
+ styles.themes.default.modules.rating
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]

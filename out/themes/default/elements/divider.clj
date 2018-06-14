@@ -1,5 +1,5 @@
 (clojure.core/ns
- themes.default.elements.divider
+ styles.themes.default.elements.divider
  (:require
   [garden.def :refer [defstyles]]
   [garden.stylesheet :refer [at-media]]
