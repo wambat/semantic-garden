@@ -28,23 +28,17 @@
 
 (defn sexpr-named? [name]
   (fn [sexpr]
-    ;; (info sexpr)
     (when (seq? sexpr)
       (= (first sexpr)
          name))))
-;; (defn dig-s [name]
-;;   "call it like (dig-s sexprs [:variableDeclaration :values :commandStatement :expression])
-;; (dig-s sexprs [:variableDeclaration :variableName])
-;; "
-;;   ())
 (defn unq [n]
   (if n
-    (let [nn (str/replace n #"\'|\"" "")]
+    (let [nn (str/replace n #"\'|\"|\.\.\/" "")]
       nn)
     ""))
 
 (defn import-path [n]
-  (symbol(unq n)))
+  (symbol (str "styles."(unq n))))
 
 (defn translate-imports [ss]
   (when-let [imports (sp/select [sp/ALL
@@ -271,7 +265,7 @@
 (defn translate-stylesheet
   [filename ss]
   (info ss)
-  `((ns ~(symbol filename)
+  `((ns ~(symbol (str "styles."filename))
       ~(translate-imports (rest ss)))
     ~@(translate-variables (rest ss))
     ;;DEFSTYLES
@@ -282,61 +276,7 @@
 (defn w [out s]
   (.write out s))
 
-(defn parser [filename out]
-  (let [cursor (atom {})
-        add-to-cursor! (fn [content]
-                         (swap! cursor #(merge-with into % content)))
-        add! (fn [content]
-            (swap! out #(merge-with into % content)))
-        commit-cursor! (fn []
-                         (add! {:elements [@cursor]})
-                         (reset! cursor {}))
-        ]
-    (proxy [LessParserBaseListener] []
-      (enterStylesheet [ctx]
-        ;; (info "CTX" (.getText ctx))
-        (add! {:ns [filename]} ))
 
-      (enterRuleset [ctx]
-        ;; (info "CTX" (.getText ctx))
-        ;; (set-cursor! (.selectors ctx))
-        ;; (add! {:elements ["e"]})
-        )
-
-      (exitRuleset [ctx]
-        ;; (info "CTX" (.getText ctx))
-        ;; (w out (str ")\n"))
-        (commit-cursor!)
-        )
-
-      (enterSelector [ctx]
-        (info "CTX" (.getText ctx))
-        (info (map (fn [e]
-                        (.getText e))
-                      (.element ctx)))
-        ;; (add! {:elements ["e"]})
-        (add-to-cursor! {:selectors [(.toString ctx)]}) 
-        ;; (w out (str "[" (.getText ctx) "]"))
-        ))))
-
-(defn parse-file
-  ([filename]
-   (parse-file "Semantic-UI/src/definitions/" filename))
-  ([root filename]
-   (let [output (atom {})
-         ext ".less"
-         is (ANTLRInputStream. (slurp (io/resource (str
-                                                    root
-                                                    filename
-                                                    ext))))
-         lessLexer (LessLexer. is)
-         tokenStream (CommonTokenStream. lessLexer)
-         tokenParser (LessParser. tokenStream)
-         lessListener (parser filename output)
-         stylesheet (.stylesheet tokenParser)
-         ]
-     (.walk ParseTreeWalker/DEFAULT lessListener stylesheet)
-     @output)))
 
 (defn parse-file-tree
   ([filename]
@@ -348,7 +288,6 @@
          lessLexer (LessLexer. is)
          tokenStream (CommonTokenStream. lessLexer)
          tokenParser (LessParser. tokenStream)
-         lessListener (parser filename output)
          stylesheet (.stylesheet tokenParser)]
      (antlr.coerce/tree->sexpr {:tree stylesheet
                                 :parser tokenParser}))))
